@@ -1,2 +1,0 @@
-gradlew setDecompWorkspace
-pause
