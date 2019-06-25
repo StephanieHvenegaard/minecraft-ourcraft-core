@@ -1,0 +1,33 @@
+item.obsidian_pickaxe.name=Obsidian Pickaxe
+item.obsidian_axe.name=Obsidian Axe
+item.obsidian_spade.name=Obsidian Spade
+item.obsidian_hoe.name=Obsidian Hoe
+item.obsidian_sword.name=Obsidian Stabby
+
+item.goldendiamond_scullprotector.name=Golden Diamond Scull Protector
+item.goldendiamond_chestplate.name=Golden Diamond Chest Plate
+item.goldendiamond_leggings.name=Golden Diamond Leggings
+item.goldendiamond_booties.name=Golden Diamond Booties
+item.goldendiamond_ingot.name=Golden Diamond Ingot
+item.goldendiamond_sword.name=Golden Diamond Stabby
+item.goldendiamond_pickaxe.name=Golden Diamond Pickaxe
+item.goldendiamond_axe.name=Golden Diamond Axe
+item.goldendiamond_spade.name=Golden Diamond Spade
+item.goldendiamond_hoe.name=Golden Diamond Hoe
+
+item.wooden_coin.name=Wooden Coin
+item.iron_coin.name=Iron Coin
+item.gold_coin.name=Gold Coin
+item.emarald_coin.name=Emarald Coin
+item.goldendiamond_coin.name=Golden Diamond Coin
+item.diamond_coin.name=Diamond Coin
+
+item.chicken_on_a_can_raw.name=Raw chicken on a can
+
+tile.reinforced_dirt.name=Reinforced Dirt
+tile.reinforced_gravel.name=Reinforced Gravel
+tile.reinforced_stone.name=Reinforced Stone
+
+itemGroup.tabTools=UMC Tools
+itemGroup.tabMats=UMC Materials
+itemGroup.tabCombats=UMC Combat
