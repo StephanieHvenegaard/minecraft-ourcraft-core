@@ -20,3 +20,21 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
+package com.the_nights.ourcraftmod.core.items.lists;
+
+import net.minecraft.item.Item;
+
+/**
+ *
+ * @author Stephanie
+ */
+
+
+public class ObsidianItems {
+    public static Item Pickaxe;
+    public static Item Axe;
+    public static Item Spade;
+    public static Item Hoe;
+    public static Item Sword;
+    public static Item Ingot;    
+}
