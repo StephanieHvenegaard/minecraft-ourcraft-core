@@ -1,4 +1,6 @@
-/*MIT License
+/* 
+
+MIT License
 
 Copyright (c) 2019 Stephanie Hvenegaard
 
@@ -19,6 +21,7 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
 */
 package com.the_nights.ourcraftmod.core.items.lists;
 
@@ -28,8 +31,6 @@ import net.minecraft.item.Item;
  *
  * @author Stephanie
  */
-
-
 public class ObsidianItems {
     public static Item Pickaxe;
     public static Item Axe;

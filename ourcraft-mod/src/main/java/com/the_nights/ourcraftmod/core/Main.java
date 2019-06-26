@@ -1,7 +1,13 @@
 package com.the_nights.ourcraftmod.core;
 
-import com.the_nights.ourcraftmod.core.items.lists.CoinItems;
-import com.the_nights.ourcraftmod.core.items.lists.ObsidianItems;
+import com.the_nights.ourcraftmod.core.items.ItemCustomAxe;
+import com.the_nights.ourcraftmod.core.items.ItemCustomHoe;
+import com.the_nights.ourcraftmod.core.items.ItemCustomPickAxe;
+import com.the_nights.ourcraftmod.core.items.ItemCustomShovel;
+import com.the_nights.ourcraftmod.core.items.ItemCustomSword;
+import com.the_nights.ourcraftmod.core.lists.CoinItems;
+import com.the_nights.ourcraftmod.core.lists.ObsidianItems;
+import com.the_nights.ourcraftmod.core.lists.ToolMaterial;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -25,10 +31,11 @@ import net.minecraft.util.ResourceLocation;
 @Mod("ourcraftmod")
 public class Main {
 
-    public static Main INSTANCE;                                        // public instance of the main mod class
-    public static final String MODID = "ourcraftmod";                  // Mod id 
+    public static Main INSTANCE;                                                    // public instance of the main mod class
+    public static final String MODID = "ourcraftmod";                               // Mod id 
+    public static final ItemGroup OURCRAFT_GROUP = new OurcraftItemGroup(); // creative tap  
     // Directly reference a log4j logger.
-    private static final Logger LOGGER = LogManager.getLogger(MODID);   // Logger
+    private static final Logger LOGGER = LogManager.getLogger(MODID);               // Logger
 
     public Main() {
         INSTANCE = this;
@@ -65,15 +72,22 @@ public class Main {
         public static void registerItems(final RegistryEvent.Register<Item> event) {
             // register a new item here
             LOGGER.info("HELLO from Register Item");
-            event.getRegistry().registerAll(// Obsidian
+            event.getRegistry().registerAll(
+                    // Ingots
                     ObsidianItems.Ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("obsidian_ingot")),
+                    // Weapons                    
+                    ObsidianItems.Sword = new ItemCustomSword(ToolMaterial.Obsidian,0,4.0f, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_sword")),
+                    ObsidianItems.Axe = new ItemCustomAxe(ToolMaterial.Obsidian,0.0f,4.0f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_axe")),
+                    ObsidianItems.Hoe = new ItemCustomHoe(ToolMaterial.Obsidian,4.0f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_hoe")),
+                    ObsidianItems.Pickaxe = new ItemCustomPickAxe(ToolMaterial.Obsidian,0,4.0f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_pickaxe")),
+                    ObsidianItems.Spade = new ItemCustomShovel(ToolMaterial.Obsidian,0.0f,4.0f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_spade")),
                     // Coins
-                    CoinItems.wooden_coin = new Item(new Item.Properties().group(ItemGroup.MISC)).setRegistryName(getLocation("wooden_coin")),
-                    CoinItems.iron_coin = new Item(new Item.Properties().group(ItemGroup.MISC)).setRegistryName(getLocation("iron_coin")),
-                    CoinItems.gold_coin = new Item(new Item.Properties().group(ItemGroup.MISC)).setRegistryName(getLocation("gold_coin")),
-                    CoinItems.golden_diamond_coin = new Item(new Item.Properties().group(ItemGroup.MISC)).setRegistryName(getLocation("golden_diamond_coin")),
-                    CoinItems.diamond_coin = new Item(new Item.Properties().group(ItemGroup.MISC)).setRegistryName(getLocation("diamond_coin")),
-                    CoinItems.emarald_coin = new Item(new Item.Properties().group(ItemGroup.MISC)).setRegistryName(getLocation("emarald_coin"))
+                    CoinItems.wooden_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("wooden_coin")),
+                    CoinItems.iron_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("iron_coin")),
+                    CoinItems.gold_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("gold_coin")),
+                    CoinItems.golden_diamond_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("golden_diamond_coin")),
+                    CoinItems.diamond_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("diamond_coin")),
+                    CoinItems.emarald_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_coin"))
             );
         }
 
@@ -85,6 +99,7 @@ public class Main {
         private static ResourceLocation getLocation(String name) {
             return new ResourceLocation(MODID, name);
         }
+   
     }
 
     /* ========================================================

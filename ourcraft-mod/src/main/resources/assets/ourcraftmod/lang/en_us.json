@@ -1,4 +1,6 @@
 {
+    "itemGroup.ourCraft-core": "ourcraft-core",
+    
     "item.ourcraftmod.wooden_coin": "Wooden Coin",
     "item.ourcraftmod.iron_coin": "Iron Coin",
     "item.ourcraftmod.gold_coin": "Gold Coin",
@@ -6,5 +8,11 @@
     "item.ourcraftmod.diamond_coin": "Diamond Coin",
     "item.ourcraftmod.emarald_coin": "Emarald Coin",
     
-    "item.ourcraftmod.obsidian_ingot": "Obsidian Ingot"
+    "item.ourcraftmod.obsidian_ingot": "Obsidian Ingot",
+    "item.ourcraftmod.obsidian_sword": "Obsidian Sword",
+    "item.ourcraftmod.obsidian_axe": "Obsidian Axe",
+    "item.ourcraftmod.obsidian_hoe": "Obsidian Hoe",
+    "item.ourcraftmod.obsidian_pickaxe": "Obsidian Pickaxe",
+    "item.ourcraftmod.obsidian_spade": "Obsidian Spade"
+    
 }
