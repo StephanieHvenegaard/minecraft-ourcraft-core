@@ -35,7 +35,7 @@ import net.minecraft.item.crafting.Ingredient;
  */
 public enum ToolMaterial implements IItemTier
 {
-    Obsidian(3.0f,25.0f,1562*10,3,25,ObsidianItems.o_ingot);
+    Obsidian(3.0f,25.0f,1562*10,3,25,ObsidianItems.ingot);
     
     
     private float dmg;
