@@ -99,13 +99,13 @@ public class Main {
             LOGGER.info("HELLO from Register Item");
             event.getRegistry().registerAll(
                     // Ingots
-                    ObsidianItems.o_ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("obsidian_ingot")),
+                    ObsidianItems.ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("obsidian_ingot")),
                     // Weapons                    
-                    ObsidianItems.o_sword = new ItemCustomSword(ToolMaterial.Obsidian,0,4.0f, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_sword")),
-                    ObsidianItems.Axe = new ItemCustomAxe(ToolMaterial.Obsidian,0.0f,4.0f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_axe")),
-                    ObsidianItems.Hoe = new ItemCustomHoe(ToolMaterial.Obsidian,4.0f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_hoe")),
-                    ObsidianItems.Pickaxe = new ItemCustomPickAxe(ToolMaterial.Obsidian,0,4.0f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_pickaxe")),
-                    ObsidianItems.Spade = new ItemCustomShovel(ToolMaterial.Obsidian,0.0f,4.0f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_spade")),
+                    ObsidianItems.sword = new ItemCustomSword(ToolMaterial.Obsidian,0,4.0f, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_sword")),
+                    ObsidianItems.axe = new ItemCustomAxe(ToolMaterial.Obsidian,0.0f,4.0f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_axe")),
+                    ObsidianItems.hoe = new ItemCustomHoe(ToolMaterial.Obsidian,4.0f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_hoe")),
+                    ObsidianItems.pickaxe = new ItemCustomPickAxe(ToolMaterial.Obsidian,0,4.0f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_pickaxe")),
+                    ObsidianItems.spade = new ItemCustomShovel(ToolMaterial.Obsidian,0.0f,4.0f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_spade")),
                     // Coins
                     CoinItems.wooden_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("wooden_coin")),
                     CoinItems.iron_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("iron_coin")),
