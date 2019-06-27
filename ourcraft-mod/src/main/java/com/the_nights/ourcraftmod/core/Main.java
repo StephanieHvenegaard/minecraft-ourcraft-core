@@ -1,3 +1,28 @@
+/* 
+
+MIT License
+
+Copyright (c) 2019 Stephanie Hvenegaard
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+ */
 package com.the_nights.ourcraftmod.core;
 
 import com.the_nights.ourcraftmod.core.items.ItemCustomAxe;
@@ -74,9 +99,9 @@ public class Main {
             LOGGER.info("HELLO from Register Item");
             event.getRegistry().registerAll(
                     // Ingots
-                    ObsidianItems.Ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("obsidian_ingot")),
+                    ObsidianItems.o_ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("obsidian_ingot")),
                     // Weapons                    
-                    ObsidianItems.Sword = new ItemCustomSword(ToolMaterial.Obsidian,0,4.0f, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_sword")),
+                    ObsidianItems.o_sword = new ItemCustomSword(ToolMaterial.Obsidian,0,4.0f, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_sword")),
                     ObsidianItems.Axe = new ItemCustomAxe(ToolMaterial.Obsidian,0.0f,4.0f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_axe")),
                     ObsidianItems.Hoe = new ItemCustomHoe(ToolMaterial.Obsidian,4.0f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_hoe")),
                     ObsidianItems.Pickaxe = new ItemCustomPickAxe(ToolMaterial.Obsidian,0,4.0f, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_pickaxe")),

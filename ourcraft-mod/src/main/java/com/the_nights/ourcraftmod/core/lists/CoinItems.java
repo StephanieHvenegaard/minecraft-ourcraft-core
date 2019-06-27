@@ -23,7 +23,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 */
-package com.the_nights.ourcraftmod.core.items.lists;
+package com.the_nights.ourcraftmod.core.lists;
 
 import net.minecraft.item.Item;
 

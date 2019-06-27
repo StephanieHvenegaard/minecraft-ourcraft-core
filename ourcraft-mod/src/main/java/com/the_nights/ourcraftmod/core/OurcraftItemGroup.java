@@ -41,7 +41,7 @@ public class OurcraftItemGroup extends ItemGroup {
 
     @Override
     public ItemStack createIcon() {
-        return new ItemStack(ObsidianItems.Ingot);
+        return new ItemStack(ObsidianItems.o_ingot);
     }
 
 }

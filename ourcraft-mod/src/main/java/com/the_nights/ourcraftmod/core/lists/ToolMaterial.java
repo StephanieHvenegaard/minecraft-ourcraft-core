@@ -1,11 +1,30 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/* 
+
+MIT License
+
+Copyright (c) 2019 Stephanie Hvenegaard
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
  */
 package com.the_nights.ourcraftmod.core.lists;
 
-import com.the_nights.ourcraftmod.core.items.lists.ObsidianItems;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.Ingredient;
@@ -16,7 +35,9 @@ import net.minecraft.item.crafting.Ingredient;
  */
 public enum ToolMaterial implements IItemTier
 {
-    obsidian(3.0f,25.0f,1562*10,3,25,ObsidianItems.Ingot);
+    Obsidian(3.0f,25.0f,1562*10,3,25,ObsidianItems.o_ingot);
+    
+    
     private float dmg;
     private float effiency;
     private int durability;
@@ -33,53 +54,24 @@ public enum ToolMaterial implements IItemTier
         this.repItem = repItem;
     }
 
-    public float getDmg() {
-        return dmg;
-    }
-
-    public float getEffiency() {
-        return effiency;
-    }
-
-    public int getHarvestLVL() {
-        return harvestLVL;
-    }
-
-    public int getEnchantAbility() {
-        return enchantAbility;
-    }
-
-    public Ingredient getRepItem() {
-        return Ingredient.fromItems(this.repItem);
-    }
+    @Override
+    public int getMaxUses() {
+        return durability; }
 
     @Override
-    public int getMaxUses() {return durability; }
+    public float getEfficiency() {return effiency;}
 
     @Override
-    public float getEfficiency() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public float getAttackDamage() {return dmg; }
 
     @Override
-    public float getAttackDamage() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public int getHarvestLevel() {  return harvestLVL;  }
 
     @Override
-    public int getHarvestLevel() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public int getEnchantability() {return enchantAbility; }
 
     @Override
-    public int getEnchantability() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public Ingredient getRepairMaterial() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public Ingredient getRepairMaterial() {  return Ingredient.fromItems(this.repItem);  }
     
 }
 
