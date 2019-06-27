@@ -32,10 +32,10 @@ import net.minecraft.item.Item;
  * @author Stephanie
  */
 public class ObsidianItems {
-    public static Item Pickaxe;
-    public static Item Axe;
-    public static Item Spade;
-    public static Item Hoe;
-    public static Item o_sword;
-    public static Item o_ingot;    
+    public static Item pickaxe;
+    public static Item axe;
+    public static Item spade;
+    public static Item hoe;
+    public static Item sword;
+    public static Item ingot;    
 }
