@@ -32,7 +32,7 @@ import com.the_nights.ourcraftmod.core.items.ItemCustomShovel;
 import com.the_nights.ourcraftmod.core.items.ItemCustomSword;
 import com.the_nights.ourcraftmod.core.lists.CoinItems;
 import com.the_nights.ourcraftmod.core.lists.ObsidianItems;
-import com.the_nights.ourcraftmod.core.lists.ToolMaterial;
+import com.the_nights.ourcraftmod.core.Materials.ToolMaterial;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
