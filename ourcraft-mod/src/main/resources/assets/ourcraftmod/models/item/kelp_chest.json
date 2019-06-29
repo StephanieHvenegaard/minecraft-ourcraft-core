@@ -2,7 +2,7 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0" : "ourcraftmod:item/obsidian_pickaxe"
+        "layer0" : "ourcraftmod:item/kelp_chest"
     }
 }
 
