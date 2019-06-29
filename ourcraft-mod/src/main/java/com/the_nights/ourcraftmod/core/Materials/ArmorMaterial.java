@@ -21,9 +21,9 @@ import net.minecraft.util.SoundEvent;
  * @author Stephanie
  */
 public enum ArmorMaterial implements IArmorMaterial {
-    obsidian("obsidian",  400, 25, 13, 15, 16, 11, 0.0f, ObsidianItems.ingot),
-    wood("wooden",  100, 2,3, 5, 6, 1, 1.0f, null),
-    kelp("kelp", 20, 25,1, 2, 1, 1, 0.0f, Items.DRIED_KELP);
+    obsidian("obsidian",  400, 25, 10, 12, 9, 7, 3.0f, ObsidianItems.ingot),
+    wood("wooden",  100, 2, 1, 1,1, 1, 1.0f, null),
+    kelp("kelp", 20, 25,1, 1, 1, 1, 0.0f, Items.DRIED_KELP);
 
     private static final int[] MAX_DAMAGE = new int[]{13, 15, 16, 11};
     private final String name;
