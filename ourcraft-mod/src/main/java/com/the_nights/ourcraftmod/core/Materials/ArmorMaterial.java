@@ -7,7 +7,6 @@ package com.the_nights.ourcraftmod.core.Materials;
 
 import com.the_nights.ourcraftmod.core.Main;
 import com.the_nights.ourcraftmod.core.lists.ObsidianItems;
-import net.minecraft.client.Minecraft;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.Item;
@@ -21,25 +20,25 @@ import net.minecraft.util.SoundEvent;
  * @author Stephanie
  */
 public enum ArmorMaterial implements IArmorMaterial {
-    obsidian("obsidian", ObsidianItems.ingot, "", 400, 25, new int[]{13, 15, 16, 11}, 0.0f),
-    wood("wooden", null, "", 100, 2, new int[]{3, 5, 6, 1}, 1.0f),
-    kelp("kelp", Items.DRIED_KELP, "", 20, 25, new int[]{1, 2, 1, 1}, 0.0f);
+    obsidian("obsidian",  400, 25, 13, 15, 16, 11, 0.0f, ObsidianItems.ingot),
+    wood("wooden",  100, 2,3, 5, 6, 1, 1.0f, null),
+    kelp("kelp", 20, 25,1, 2, 1, 1, 0.0f, Items.DRIED_KELP);
 
     private static final int[] MAX_DAMAGE = new int[]{13, 15, 16, 11};
-    private String name;
-    private String equipSound;
-    private int durability;
-    private int enchantability;
-    private int[] dmgReduction;
-    private float toughness;
-    private Item repairItem;
+    private final String name;
+    private final String equipSound;
+    private final int durability;
+    private final int enchantability;
+    private final int[] dmgReduction;
+    private final float toughness;
+    private final Item repairItem;
 
-    private ArmorMaterial(String name, Item repItem, String equipSound, int durability, int enchantability, int[] dmgReduction, float toughness) {
+    private ArmorMaterial(String name, int durability, int enchantability, int dmgRedux_head,int dmgRedux_chest, int dmgRedux_legs, int dmgRedux_feet, float toughness,Item repItem) {
         this.name = name;
-        this.equipSound = equipSound;
+        this.equipSound = "";
         this.durability = durability;
         this.enchantability = enchantability;
-        this.dmgReduction = dmgReduction;
+        this.dmgReduction = new int[]{dmgRedux_head,dmgRedux_chest,dmgRedux_legs, dmgRedux_feet};
         this.toughness = toughness;
         this.repairItem = repItem;
     }
