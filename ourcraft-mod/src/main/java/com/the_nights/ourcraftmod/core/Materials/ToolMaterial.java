@@ -25,7 +25,7 @@ SOFTWARE.
  */
 package com.the_nights.ourcraftmod.core.Materials;
 
-import com.the_nights.ourcraftmod.core.lists.ObsidianItems;
+import com.the_nights.ourcraftmod.core.lists.items.ObsidianItems;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.Ingredient;

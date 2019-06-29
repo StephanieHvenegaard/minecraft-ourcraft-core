@@ -22,26 +22,20 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
- */
-package com.the_nights.ourcraftmod.core;
+*/
+package com.the_nights.ourcraftmod.core.lists.items;
 
-import com.the_nights.ourcraftmod.core.lists.items.ObsidianItems;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.Item;
 
 /**
  *
  * @author Stephanie
  */
-public class OurcraftItemGroup extends ItemGroup {
-
-    public OurcraftItemGroup() {
-        super("ourCraft-core");
-    }
-
-    @Override
-    public ItemStack createIcon() {
-        return new ItemStack(ObsidianItems.ingot);
-    }
-
+public class ObsidianItems {
+    public static Item pickaxe;
+    public static Item axe;
+    public static Item spade;
+    public static Item hoe;
+    public static Item sword;
+    public static Item ingot;    
 }
