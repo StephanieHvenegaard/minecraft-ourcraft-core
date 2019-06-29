@@ -6,7 +6,7 @@
 package com.the_nights.ourcraftmod.core.Materials;
 
 import com.the_nights.ourcraftmod.core.Main;
-import com.the_nights.ourcraftmod.core.lists.ObsidianItems;
+import com.the_nights.ourcraftmod.core.lists.items.ObsidianItems;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.Item;

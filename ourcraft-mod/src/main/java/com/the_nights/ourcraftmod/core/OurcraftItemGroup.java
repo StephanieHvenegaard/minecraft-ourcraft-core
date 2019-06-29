@@ -25,7 +25,7 @@ SOFTWARE.
  */
 package com.the_nights.ourcraftmod.core;
 
-import com.the_nights.ourcraftmod.core.lists.ObsidianItems;
+import com.the_nights.ourcraftmod.core.lists.items.ObsidianItems;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
