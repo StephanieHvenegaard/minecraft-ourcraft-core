@@ -5,10 +5,21 @@
  */
 package com.the_nights.ourcraftmod.core.items;
 
+import net.minecraft.item.IItemTier;
+import net.minecraft.item.Item;
+import net.minecraft.item.SwordItem;
+
 /**
  *
  * @author Stephanie
  */
-public class ItemCustomKatana {
+public class ItemCustomKatana extends SwordItem {
+
+    public ItemCustomKatana(IItemTier itemTier, int dmgModifier, float Speed, Item.Properties props) {
+        super(itemTier, dmgModifier, Speed*2, props);
+    }
+
+
+    
     
 }
