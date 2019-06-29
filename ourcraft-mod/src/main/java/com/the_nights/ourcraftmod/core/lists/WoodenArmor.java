@@ -13,8 +13,9 @@ import net.minecraft.item.Item;
  */
 public class WoodenArmor {
 
+
     public static Item helmet;
     public static Item chestplate;
-    public static Item leggins;
+    public static Item leggings;
     public static Item boots;
 }
