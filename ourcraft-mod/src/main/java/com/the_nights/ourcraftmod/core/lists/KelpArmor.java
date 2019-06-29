@@ -5,10 +5,16 @@
  */
 package com.the_nights.ourcraftmod.core.lists;
 
+import net.minecraft.item.Item;
+
 /**
  *
  * @author Stephanie
  */
 public class KelpArmor {
-    
+
+    public static Item helmet;
+    public static Item chestplate;
+    public static Item leggings;
+    public static Item boots;
 }

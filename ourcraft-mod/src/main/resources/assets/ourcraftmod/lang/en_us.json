@@ -1,18 +1,31 @@
 {
     "itemGroup.ourCraft-core": "ourcraft-core",
-    
+
     "item.ourcraftmod.wooden_coin": "Wooden Coin",
     "item.ourcraftmod.iron_coin": "Iron Coin",
     "item.ourcraftmod.gold_coin": "Gold Coin",
     "item.ourcraftmod.golden_diamond_coin": "Golden Diamond Coin",
     "item.ourcraftmod.diamond_coin": "Diamond Coin",
     "item.ourcraftmod.emarald_coin": "Emarald Coin",
-    
+
     "item.ourcraftmod.obsidian_ingot": "Obsidian Ingot",
     "item.ourcraftmod.obsidian_sword": "Obsidian Sword",
     "item.ourcraftmod.obsidian_axe": "Obsidian Axe",
     "item.ourcraftmod.obsidian_hoe": "Obsidian Hoe",
     "item.ourcraftmod.obsidian_pickaxe": "Obsidian Pickaxe",
-    "item.ourcraftmod.obsidian_spade": "Obsidian Spade"
+    "item.ourcraftmod.obsidian_spade": "Obsidian Spade",
+    "item.ourcraftmod.obsidian_helmet": "Obsidian helmet",
+    "item.ourcraftmod.obsidian_chest": "Obsidian Chestplate",
+    "item.ourcraftmod.obsidian_leggings": "Obsidian Leggins",
+    "item.ourcraftmod.obsidian_boots": "Obsidian Boots",
     
+     "item.ourcraftmod.kelp_helmet": "Kelp helmet",
+    "item.ourcraftmod.kelp_chest": "Kelp Chestplate",
+    "item.ourcraftmod.kelp_leggings": "Kelp Leggins",
+    "item.ourcraftmod.kelp_boots": "Kelp Boots",
+    
+     "item.ourcraftmod.wood_helmet": "Wooden helmet",
+    "item.ourcraftmod.wood_chest": "Wooden Chestplate",
+    "item.ourcraftmod.wood_leggings": "Wooden Leggins",
+    "item.ourcraftmod.wood_boots": "Wooden Boots"
 }
