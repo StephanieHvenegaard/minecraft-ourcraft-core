@@ -1,5 +1,5 @@
 {
-    "itemGroup.ourCraft-core": "ourcraft-core",
+    "itemGroup.ourCraft-core": "Ourcraft core",
 
     "item.ourcraftmod.wooden_coin": "Wooden Coin",
     "item.ourcraftmod.iron_coin": "Iron Coin",
@@ -10,6 +10,7 @@
 
     "item.ourcraftmod.obsidian_ingot": "Obsidian Ingot",
     "item.ourcraftmod.obsidian_sword": "Obsidian Sword",
+    "item.ourcraftmod.obsidian_katana": "Obsidian Katana",
     "item.ourcraftmod.obsidian_axe": "Obsidian Axe",
     "item.ourcraftmod.obsidian_hoe": "Obsidian Hoe",
     "item.ourcraftmod.obsidian_pickaxe": "Obsidian Pickaxe",
@@ -18,14 +19,21 @@
     "item.ourcraftmod.obsidian_chest": "Obsidian Chestplate",
     "item.ourcraftmod.obsidian_leggings": "Obsidian Leggins",
     "item.ourcraftmod.obsidian_boots": "Obsidian Boots",
-    
-     "item.ourcraftmod.kelp_helmet": "Kelp helmet",
+
+    "item.ourcraftmod.kelp_helmet": "Kelp helmet",
     "item.ourcraftmod.kelp_chest": "Kelp Chestplate",
     "item.ourcraftmod.kelp_leggings": "Kelp Leggins",
     "item.ourcraftmod.kelp_boots": "Kelp Boots",
-    
-     "item.ourcraftmod.wood_helmet": "Wooden helmet",
+
+    "item.ourcraftmod.wood_helmet": "Wooden helmet",
     "item.ourcraftmod.wood_chest": "Wooden Chestplate",
     "item.ourcraftmod.wood_leggings": "Wooden Leggins",
-    "item.ourcraftmod.wood_boots": "Wooden Boots"
+    "item.ourcraftmod.wood_boots": "Wooden Boots",
+
+    "item.ourcraftmod.emarald_katana": "Emarald Katana",
+    "item.ourcraftmod.diamond_katana": "Diamond Katana",
+    "item.ourcraftmod.gold_katana": "Gold Katana",    
+    "item.ourcraftmod.iron_katana": "Iron Katana",
+    "item.ourcraftmod.stone_katana": "Stone Katana",
+    "item.ourcraftmod.wood_katana": "Wooden Katana"
 }
