@@ -17,7 +17,7 @@ import net.minecraft.item.SwordItem;
 public class ItemCustomKatana extends SwordItem {
 
     public ItemCustomKatana(IItemTier itemTier,  Item.Properties props) {
-        super(itemTier, 1, ((ToolMaterial)itemTier).getSpeed()*1.2f, props);
+        super(itemTier, 1, -1.6f, props);
     }
 
 

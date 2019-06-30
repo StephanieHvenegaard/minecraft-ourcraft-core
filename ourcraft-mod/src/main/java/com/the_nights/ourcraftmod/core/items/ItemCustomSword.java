@@ -37,7 +37,7 @@ import net.minecraft.item.SwordItem;
 public class ItemCustomSword extends SwordItem{
 
     public ItemCustomSword(IItemTier itemTier, Item.Properties props) {
-        super(itemTier, 0, ((ToolMaterial)itemTier).getSpeed(), props);
+        super(itemTier, 0, -2.6f, props);
     }
     
     
