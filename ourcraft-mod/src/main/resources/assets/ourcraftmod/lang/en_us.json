@@ -12,7 +12,7 @@
     "item.ourcraftmod.obsidian_sword": "Obsidian Sword",
     "item.ourcraftmod.obsidian_katana": "Obsidian Katana",
     "item.ourcraftmod.obsidian_axe": "Obsidian Axe",
-    "item.ourcraftmod.obsidian_hoe": "Obsidian Hoe",
+    "item.ourcraftmod.obsidian_hoe": "Obsidian Scythe",
     "item.ourcraftmod.obsidian_pickaxe": "Obsidian Pickaxe",
     "item.ourcraftmod.obsidian_spade": "Obsidian Spade",
     "item.ourcraftmod.obsidian_helmet": "Obsidian helmet",
@@ -31,6 +31,12 @@
     "item.ourcraftmod.wood_boots": "Wooden Boots",
 
     "item.ourcraftmod.emarald_katana": "Emarald Katana",
+    "item.ourcraftmod.emarald_sword": "Emarald Sword",
+    "item.ourcraftmod.emarald_axe": "Emarald Axe",
+    "item.ourcraftmod.emarald_hoe": "Emarald Hoe",
+    "item.ourcraftmod.emarald_pickaxe": "Emarald Pickaxe",
+    "item.ourcraftmod.emarald_spade": "Emarald Spade",
+
     "item.ourcraftmod.diamond_katana": "Diamond Katana",
     "item.ourcraftmod.gold_katana": "Gold Katana",    
     "item.ourcraftmod.iron_katana": "Iron Katana",
