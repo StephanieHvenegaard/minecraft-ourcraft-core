@@ -1,7 +1,7 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0" : "ourcraftmod:item/iron_katana"
+        "layer0" : "ourcraftmod:item/diamond_katana"
     }
 }
 
