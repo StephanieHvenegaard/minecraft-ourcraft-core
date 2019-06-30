@@ -34,9 +34,15 @@ import com.the_nights.ourcraftmod.core.items.ItemCustomSword;
 import com.the_nights.ourcraftmod.core.lists.armor.CoinItems;
 import com.the_nights.ourcraftmod.core.lists.items.ObsidianItems;
 import com.the_nights.ourcraftmod.core.Materials.ToolMaterial;
+import com.the_nights.ourcraftmod.core.items.ItemCustomKatana;
 import com.the_nights.ourcraftmod.core.lists.armor.KelpArmor;
 import com.the_nights.ourcraftmod.core.lists.armor.ObsidianArmor;
 import com.the_nights.ourcraftmod.core.lists.armor.WoodenArmor;
+import com.the_nights.ourcraftmod.core.lists.items.DiamondItem;
+import com.the_nights.ourcraftmod.core.lists.items.EmaraldItems;
+import com.the_nights.ourcraftmod.core.lists.items.IronItems;
+import com.the_nights.ourcraftmod.core.lists.items.StoneItems;
+import com.the_nights.ourcraftmod.core.lists.items.WoodenItem;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -108,6 +114,13 @@ public class Main {
                     ObsidianItems.ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("obsidian_ingot")),
                     // Weapons                    
                     ObsidianItems.sword = new ItemCustomSword(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_sword")),
+                    ObsidianItems.katana = new ItemCustomKatana(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_katana")),
+                    EmaraldItems.katana = new ItemCustomKatana(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("emarald_katana")),
+                    DiamondItem.katana = new ItemCustomKatana(ToolMaterial.Diamond, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("diamond_katana")),
+                    IronItems.katana = new ItemCustomKatana(ToolMaterial.Iron, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("iron_katana")),
+                    StoneItems.katana = new ItemCustomKatana(ToolMaterial.Stone , new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("stone_katana")),
+                    WoodenItem.katana = new ItemCustomKatana(ToolMaterial.Wood, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_katana")),
+                    
                     // Armor 
                     ObsidianArmor.helmet = new ArmorItem(ArmorMaterial.obsidian, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_helmet")),
                     ObsidianArmor.chestplate = new ArmorItem(ArmorMaterial.obsidian, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_chest")),

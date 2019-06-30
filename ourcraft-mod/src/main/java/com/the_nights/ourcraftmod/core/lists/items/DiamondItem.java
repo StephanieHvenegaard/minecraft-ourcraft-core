@@ -5,10 +5,13 @@
  */
 package com.the_nights.ourcraftmod.core.lists.items;
 
+import net.minecraft.item.Item;
+
 /**
  *
  * @author Stephanie
  */
 public class DiamondItem {
+        public static Item katana;
     
 }
