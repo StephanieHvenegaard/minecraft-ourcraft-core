@@ -51,12 +51,12 @@ public enum ToolMaterial implements IItemTier {
     // turtle 9
     // Diamond 10
     Obsidian(15.0f, 5.0f, 25.0f, 1562 * 10, 3, 25, ObsidianItems.ingot),
-    Emarald(15.0f, 3.0f, 15.0f, 1562 * 2, 3, 12, Items.EMERALD),
-    Diamond(0.0f, 1.0f, 1.0f, 1562, 3, 10, Items.DIAMOND),
-    Iron(0.0f, 1.0f, 1.0f, 251, 2, 9, Items.IRON_INGOT),
-    Golden(0.0f, 1.0f, 1.0f, 33, 1, 25, Items.GOLD_INGOT),
-    Stone(0.0f, 1.0f, 1.0f, 132, 1, 9, Items.COBBLESTONE),
-    Wood(0.0f, 1.0f, 1.0f, 60, 1, 15, null),;
+    Emarald(10.0f, 3.0f, 15.0f, 1562 * 2, 3, 12, Items.EMERALD),
+    Diamond(5.0f, 1.0f, 1.0f, 1562, 3, 10, Items.DIAMOND),
+    Iron(4.0f, 1.0f, 1.0f, 251, 2, 9, Items.IRON_INGOT),
+    Golden(2.0f, 1.0f, 1.0f, 33, 1, 25, Items.GOLD_INGOT),
+    Stone(3.0f, 1.0f, 1.0f, 132, 1, 9, Items.COBBLESTONE),
+    Wood(2.0f, 1.0f, 1.0f, 60, 1, 15, null),;
 
     private final float dmg;
     private final float effiency;
@@ -66,6 +66,16 @@ public enum ToolMaterial implements IItemTier {
     private final Item repItem;
     private final float speed;
 
+    /***
+     * 
+     * @param dmg value of 0 will give a damage of 2 
+     * @param speed value of 0.0 will give a speed of 4
+     * @param effiency
+     * @param durability
+     * @param harvestLVL
+     * @param enchantAbility
+     * @param repItem 
+     */
     private ToolMaterial(float dmg, float speed, float effiency, int durability, int harvestLVL, int enchantAbility, Item repItem) {
         this.dmg = dmg;
         this.speed = speed;
