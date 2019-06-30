@@ -1,5 +1,5 @@
 {
-    "itemGroup.ourCraft-core": "ourcraft-core",
+    "itemGroup.ourCraft-core": "Ourcraft core",
 
     "item.ourcraftmod.wooden_coin": "Wooden Coin",
     "item.ourcraftmod.iron_coin": "Iron Coin",
@@ -10,22 +10,36 @@
 
     "item.ourcraftmod.obsidian_ingot": "Obsidian Ingot",
     "item.ourcraftmod.obsidian_sword": "Obsidian Sword",
+    "item.ourcraftmod.obsidian_katana": "Obsidian Katana",
     "item.ourcraftmod.obsidian_axe": "Obsidian Axe",
-    "item.ourcraftmod.obsidian_hoe": "Obsidian Hoe",
+    "item.ourcraftmod.obsidian_hoe": "Obsidian Scythe",
     "item.ourcraftmod.obsidian_pickaxe": "Obsidian Pickaxe",
     "item.ourcraftmod.obsidian_spade": "Obsidian Spade",
     "item.ourcraftmod.obsidian_helmet": "Obsidian helmet",
     "item.ourcraftmod.obsidian_chest": "Obsidian Chestplate",
     "item.ourcraftmod.obsidian_leggings": "Obsidian Leggins",
     "item.ourcraftmod.obsidian_boots": "Obsidian Boots",
-    
-     "item.ourcraftmod.kelp_helmet": "Kelp helmet",
+
+    "item.ourcraftmod.kelp_helmet": "Kelp helmet",
     "item.ourcraftmod.kelp_chest": "Kelp Chestplate",
     "item.ourcraftmod.kelp_leggings": "Kelp Leggins",
     "item.ourcraftmod.kelp_boots": "Kelp Boots",
-    
-     "item.ourcraftmod.wood_helmet": "Wooden helmet",
+
+    "item.ourcraftmod.wood_helmet": "Wooden helmet",
     "item.ourcraftmod.wood_chest": "Wooden Chestplate",
     "item.ourcraftmod.wood_leggings": "Wooden Leggins",
-    "item.ourcraftmod.wood_boots": "Wooden Boots"
+    "item.ourcraftmod.wood_boots": "Wooden Boots",
+
+    "item.ourcraftmod.emarald_katana": "Emarald Katana",
+    "item.ourcraftmod.emarald_sword": "Emarald Sword",
+    "item.ourcraftmod.emarald_axe": "Emarald Axe",
+    "item.ourcraftmod.emarald_hoe": "Emarald Hoe",
+    "item.ourcraftmod.emarald_pickaxe": "Emarald Pickaxe",
+    "item.ourcraftmod.emarald_spade": "Emarald Spade",
+
+    "item.ourcraftmod.diamond_katana": "Diamond Katana",
+    "item.ourcraftmod.gold_katana": "Gold Katana",    
+    "item.ourcraftmod.iron_katana": "Iron Katana",
+    "item.ourcraftmod.stone_katana": "Stone Katana",
+    "item.ourcraftmod.wood_katana": "Wooden Katana"
 }

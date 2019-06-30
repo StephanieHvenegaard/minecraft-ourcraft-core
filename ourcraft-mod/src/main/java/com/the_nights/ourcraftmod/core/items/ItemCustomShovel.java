@@ -25,6 +25,7 @@ SOFTWARE.
  */
 package com.the_nights.ourcraftmod.core.items;
 
+import com.the_nights.ourcraftmod.core.Materials.ToolMaterial;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
 import net.minecraft.item.ShovelItem;
@@ -35,8 +36,8 @@ import net.minecraft.item.ShovelItem;
  */
 public class ItemCustomShovel extends ShovelItem{
 
-    public ItemCustomShovel(IItemTier itemTier, float dmgModifier, float Speed, Item.Properties props) {
-        super(itemTier, dmgModifier, Speed, props);
+    public ItemCustomShovel(IItemTier itemTier, Item.Properties props) {
+        super(itemTier, -0.5f, ((ToolMaterial)itemTier).getSpeed()-2.0f, props);
     }
     
     

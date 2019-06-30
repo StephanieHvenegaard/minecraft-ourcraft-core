@@ -25,29 +25,60 @@ SOFTWARE.
  */
 package com.the_nights.ourcraftmod.core.Materials;
 
-import com.the_nights.ourcraftmod.core.lists.ObsidianItems;
+import com.the_nights.ourcraftmod.core.lists.items.ObsidianItems;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
 
 /**
  *
  * @author Stephanie
  */
-public enum ToolMaterial implements IItemTier
-{
-    Obsidian(3.0f,25.0f,1562*10,3,25,ObsidianItems.ingot);
-    
-    
-    private float dmg;
-    private float effiency;
-    private int durability;
-    private int harvestLVL;
-    private int enchantAbility;
-    private Item repItem;
+public enum ToolMaterial implements IItemTier {
+    //	Vanilla durability.
+    // Wood: 60 uses
+    // Stone: 132 uses
+    // Iron: 251 uses
+    // Golden: 33 uses
+    // Diamond: 1562 uses
 
-    private ToolMaterial(float dmg, float effiency, int durability, int harvestLVL, int enchantAbility, Item repItem) {
+    // enchanting 
+    // lether 15	
+    // Golden 25
+    // Chain mail 12
+    // Iron 9	
+    // turtle 9
+    // Diamond 10
+    Obsidian(15.0f, 5.0f, 25.0f, 1562 * 10, 3, 25, ObsidianItems.ingot),
+    Emarald(10.0f, 3.0f, 15.0f, 1562 * 2, 3, 12, Items.EMERALD),
+    Diamond(5.0f, 1.0f, 1.0f, 1562, 3, 10, Items.DIAMOND),
+    Iron(4.0f, 1.0f, 1.0f, 251, 2, 9, Items.IRON_INGOT),
+    Golden(2.0f, 1.0f, 1.0f, 33, 1, 25, Items.GOLD_INGOT),
+    Stone(3.0f, 1.0f, 1.0f, 132, 1, 9, Items.COBBLESTONE),
+    Wood(2.0f, 1.0f, 1.0f, 60, 1, 15, null),;
+
+    private final float dmg;
+    private final float effiency;
+    private final int durability;
+    private final int harvestLVL;
+    private final int enchantAbility;
+    private final Item repItem;
+    private final float speed;
+
+    /***
+     * 
+     * @param dmg value of 0 will give a damage of 2 
+     * @param speed value of 0.0 will give a speed of 4
+     * @param effiency
+     * @param durability
+     * @param harvestLVL
+     * @param enchantAbility
+     * @param repItem 
+     */
+    private ToolMaterial(float dmg, float speed, float effiency, int durability, int harvestLVL, int enchantAbility, Item repItem) {
         this.dmg = dmg;
+        this.speed = speed;
         this.effiency = effiency;
         this.durability = durability;
         this.harvestLVL = harvestLVL;
@@ -57,22 +88,36 @@ public enum ToolMaterial implements IItemTier
 
     @Override
     public int getMaxUses() {
-        return durability; }
+        return durability;
+    }
 
     @Override
-    public float getEfficiency() {return effiency;}
+    public float getEfficiency() {
+        return effiency;
+    }
 
     @Override
-    public float getAttackDamage() {return dmg; }
+    public float getAttackDamage() {
+        return dmg;
+    }
 
     @Override
-    public int getHarvestLevel() {  return harvestLVL;  }
+    public int getHarvestLevel() {
+        return harvestLVL;
+    }
 
     @Override
-    public int getEnchantability() {return enchantAbility; }
+    public int getEnchantability() {
+        return enchantAbility;
+    }
 
     @Override
-    public Ingredient getRepairMaterial() {  return Ingredient.fromItems(this.repItem);  }
-    
+    public Ingredient getRepairMaterial() {
+        return Ingredient.fromItems(this.repItem);
+    }
+
+    public float getSpeed() {
+        return speed;
+    }
+
 }
-
