@@ -23,7 +23,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 */
-package com.the_nights.ourcraftmod.core.lists;
+package com.the_nights.ourcraftmod.core.lists.items;
 
 import net.minecraft.item.Item;
 
@@ -37,5 +37,6 @@ public class ObsidianItems {
     public static Item spade;
     public static Item hoe;
     public static Item sword;
+    public static Item katana;
     public static Item ingot;    
 }

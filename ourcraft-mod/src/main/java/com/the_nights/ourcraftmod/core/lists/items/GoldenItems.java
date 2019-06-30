@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.the_nights.ourcraftmod.core.lists;
+package com.the_nights.ourcraftmod.core.lists.items;
 
 import net.minecraft.item.Item;
 
@@ -11,10 +11,6 @@ import net.minecraft.item.Item;
  *
  * @author Stephanie
  */
-public class ObsidianArmor {
-
-    public static Item helmet;
-    public static Item chestplate;
-    public static Item leggings;
-    public static Item boots;
+public class GoldenItems {
+    public static Item katana;
 }

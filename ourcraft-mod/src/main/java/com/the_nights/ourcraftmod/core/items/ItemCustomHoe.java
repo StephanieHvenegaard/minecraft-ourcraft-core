@@ -25,6 +25,7 @@ SOFTWARE.
  */
 package com.the_nights.ourcraftmod.core.items;
 
+import com.the_nights.ourcraftmod.core.Materials.ToolMaterial;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
@@ -35,8 +36,8 @@ import net.minecraft.item.Item;
  */
 public class ItemCustomHoe extends HoeItem{
 
-    public ItemCustomHoe(IItemTier itemTier, float Speed, Item.Properties props) {
-        super(itemTier, Speed, props);
+    public ItemCustomHoe(IItemTier itemTier, Item.Properties props) {
+        super(itemTier, ((ToolMaterial)itemTier).getSpeed(), props);
     }
     
     

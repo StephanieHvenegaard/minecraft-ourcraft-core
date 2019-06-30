@@ -25,6 +25,7 @@ SOFTWARE.
  */
 package com.the_nights.ourcraftmod.core.items;
 
+import com.the_nights.ourcraftmod.core.Materials.ToolMaterial;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.IItemTier;
 
@@ -34,8 +35,8 @@ import net.minecraft.item.IItemTier;
  */
 public class ItemCustomAxe extends AxeItem{
 
-    public ItemCustomAxe(IItemTier itemTier, float dmgModifier, float Speed, Properties props) {
-        super(itemTier, dmgModifier, Speed, props);
+    public ItemCustomAxe(IItemTier itemTier, Properties props) {       
+        super(itemTier, -0.5f,((ToolMaterial)itemTier).getSpeed(), props);
     }
     
     

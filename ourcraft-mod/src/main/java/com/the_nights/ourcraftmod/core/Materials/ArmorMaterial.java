@@ -6,13 +6,12 @@
 package com.the_nights.ourcraftmod.core.Materials;
 
 import com.the_nights.ourcraftmod.core.Main;
-import com.the_nights.ourcraftmod.core.lists.ObsidianItems;
+import com.the_nights.ourcraftmod.core.lists.items.ObsidianItems;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.tags.Tag;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 
@@ -21,9 +20,9 @@ import net.minecraft.util.SoundEvent;
  * @author Stephanie
  */
 public enum ArmorMaterial implements IArmorMaterial {
-    obsidian("obsidian",  400, 25, 10, 12, 9, 7, 3.0f, ObsidianItems.ingot),
-    wood("wooden",  100, 2, 1, 1,1, 1, 1.0f, null),
-    kelp("kelp", 20, 25,1, 1, 1, 1, 0.0f, Items.DRIED_KELP);
+    obsidian("obsidian",  200, 25, 10, 12, 9, 7, 3.0f, ObsidianItems.ingot),
+    wood("wooden",  2, 2, 1, 1,1, 1, 1.0f, null),
+    kelp("kelp", 1, 25,1, 1, 1, 1, 0.0f, Items.DRIED_KELP);
 
     private static final int[] MAX_DAMAGE = new int[]{13, 15, 16, 11};
     private final String name;
