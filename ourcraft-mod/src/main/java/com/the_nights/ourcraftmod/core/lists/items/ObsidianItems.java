@@ -37,5 +37,6 @@ public class ObsidianItems {
     public static Item spade;
     public static Item hoe;
     public static Item sword;
+    public static Item katana;
     public static Item ingot;    
 }
