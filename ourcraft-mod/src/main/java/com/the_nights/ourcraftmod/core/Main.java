@@ -66,7 +66,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod("ourcraftmod")
+@Mod(Main.MODID)
 public class Main {
 
     public static Main INSTANCE;                                                    // public instance of the main mod class
