@@ -36,18 +36,20 @@ import net.minecraft.item.crafting.Ingredient;
  */
 public enum ToolMaterial implements IItemTier
 {
-    Obsidian(3.0f,25.0f,1562*10,3,25,ObsidianItems.ingot);
+    Obsidian(3.0f,5.0f,25.0f,1562*10,3,25,ObsidianItems.ingot);
     
     
-    private float dmg;
-    private float effiency;
-    private int durability;
-    private int harvestLVL;
-    private int enchantAbility;
-    private Item repItem;
+    private final float dmg;
+    private final float effiency;
+    private final int durability;
+    private final int harvestLVL;
+    private final int enchantAbility;
+    private final Item repItem;
+    private final float speed;
 
-    private ToolMaterial(float dmg, float effiency, int durability, int harvestLVL, int enchantAbility, Item repItem) {
+    private ToolMaterial(float dmg, float speed, float effiency, int durability, int harvestLVL, int enchantAbility, Item repItem) {
         this.dmg = dmg;
+        this.speed = speed;
         this.effiency = effiency;
         this.durability = durability;
         this.harvestLVL = harvestLVL;
@@ -73,6 +75,10 @@ public enum ToolMaterial implements IItemTier
 
     @Override
     public Ingredient getRepairMaterial() {  return Ingredient.fromItems(this.repItem);  }
+
+    public float getSpeed() {
+        return speed;
+    }
     
 }
 

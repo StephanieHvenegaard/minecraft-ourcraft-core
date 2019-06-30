@@ -25,6 +25,7 @@ SOFTWARE.
  */
 package com.the_nights.ourcraftmod.core.items;
 
+import com.the_nights.ourcraftmod.core.Materials.ToolMaterial;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
 import net.minecraft.item.SwordItem;
@@ -35,8 +36,8 @@ import net.minecraft.item.SwordItem;
  */
 public class ItemCustomSword extends SwordItem{
 
-    public ItemCustomSword(IItemTier itemTier, int dmgModifier, float Speed, Item.Properties props) {
-        super(itemTier, dmgModifier, Speed, props);
+    public ItemCustomSword(IItemTier itemTier, Item.Properties props) {
+        super(itemTier, 0, ((ToolMaterial)itemTier).getSpeed(), props);
     }
     
     

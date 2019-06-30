@@ -5,6 +5,7 @@
  */
 package com.the_nights.ourcraftmod.core.items;
 
+import com.the_nights.ourcraftmod.core.Materials.ToolMaterial;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
 import net.minecraft.item.SwordItem;
@@ -15,8 +16,8 @@ import net.minecraft.item.SwordItem;
  */
 public class ItemCustomKatana extends SwordItem {
 
-    public ItemCustomKatana(IItemTier itemTier, int dmgModifier, float Speed, Item.Properties props) {
-        super(itemTier, dmgModifier, Speed*2, props);
+    public ItemCustomKatana(IItemTier itemTier,  Item.Properties props) {
+        super(itemTier, 1, ((ToolMaterial)itemTier).getSpeed()*1.2f, props);
     }
 
 
