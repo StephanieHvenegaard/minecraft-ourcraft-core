@@ -66,7 +66,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod("ourcraftmod")
+@Mod(Main.MODID)
 public class Main {
 
     public static Main INSTANCE;                                                    // public instance of the main mod class
@@ -114,9 +114,12 @@ public class Main {
                     // Ingots
                     ObsidianItems.ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("obsidian_ingot")),
                     // Weapons                    
-                    ObsidianItems.sword = new ItemCustomSword(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_sword")),
+                    ObsidianItems.sword = new ItemCustomSword(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_sword")),                    
                     ObsidianItems.katana = new ItemCustomKatana(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_katana")),
+                    
                     EmaraldItems.katana = new ItemCustomKatana(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("emarald_katana")),
+                    EmaraldItems.sword = new ItemCustomSword(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("emarald_sword")),
+                    
                     DiamondItem.katana = new ItemCustomKatana(ToolMaterial.Diamond, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("diamond_katana")),
                     GoldenItems.katana = new ItemCustomKatana(ToolMaterial.Golden, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("gold_katana")),
                     IronItems.katana = new ItemCustomKatana(ToolMaterial.Iron, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("iron_katana")),
