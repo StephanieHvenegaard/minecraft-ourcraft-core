@@ -40,6 +40,8 @@
     "item.ourcraftmod.diamond_katana": "Diamond Katana",
     "item.ourcraftmod.gold_katana": "Gold Katana",    
     "item.ourcraftmod.iron_katana": "Iron Katana",
+    "item.ourcraftmod.iron_musket": "musket",
+
     "item.ourcraftmod.stone_katana": "Stone Katana",
     "item.ourcraftmod.wood_katana": "Wooden Katana"
 }

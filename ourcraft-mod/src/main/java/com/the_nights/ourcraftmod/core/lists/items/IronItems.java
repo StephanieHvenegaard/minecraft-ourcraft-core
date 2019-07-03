@@ -21,4 +21,6 @@ public class IronItems {
     public static Item revolver;
     public static Item leverActionRifle;
     public static Item leverActionShootgun;
+    
+    
 }
