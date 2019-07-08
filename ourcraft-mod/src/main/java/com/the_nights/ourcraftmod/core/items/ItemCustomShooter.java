@@ -5,22 +5,14 @@
  */
 package com.the_nights.ourcraftmod.core.items;
 
-import com.google.common.collect.HashMultimap;
-import com.google.common.collect.Multimap;
 import com.the_nights.ourcraftmod.core.items.components.IItemWeapon;
 import com.the_nights.ourcraftmod.core.items.components.MeleeComponent;
 import com.the_nights.ourcraftmod.core.items.components.RangedComponent;
 import java.util.Random;
-import java.util.UUID;
-import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BowItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 
 /**
  *
@@ -33,7 +25,7 @@ public class ItemCustomShooter extends BowItem implements IItemWeapon {
     public RangedComponent rangedComponent;
     public MeleeComponent meleeComponent;
 
-    public ItemCustomShooter(String id, RangedComponent rangedcomponent, MeleeComponent meleecomponent, Properties props) {
+    public ItemCustomShooter(RangedComponent rangedcomponent, MeleeComponent meleecomponent, Properties props) {
         
         super(props);
 
@@ -45,42 +37,28 @@ public class ItemCustomShooter extends BowItem implements IItemWeapon {
 
         //rangedcomponent.setThisItemProperties();
     }
-
-    // MELEE PART //
-    public float func_150893_a(ItemStack itemstack, Block block) {
-        return meleeComponent.getBlockDamage(itemstack, block);
-    }
-
-    public boolean func_150897_b(Block block) {
-        return meleeComponent.canHarvestBlock(block);
-    }
-
-    public boolean hitEntity(ItemStack itemstack, LivingEntity entityliving, LivingEntity attacker) {
-        return meleeComponent.hitEntity(itemstack, entityliving, attacker);
-    }
-    public boolean onBlockDestroyed(ItemStack itemstack, World world, Block block, int j, int k, int l, LivingEntity entityliving) {
-        return meleeComponent.onBlockDestroyed(itemstack, world, block, j, k, l, entityliving);
-    }
-
-    @Override
-    public int getItemEnchantability() {
-        return meleeComponent.getItemEnchantability();
-    }
-
-//    @Override
-//    public Multimap<String, AttributeModifier> getItemAttributeModifiers() {
-//        Multimap<String, AttributeModifier> multimap = HashMultimap.create();
-//        meleeComponent.addItemAttributeModifiers(multimap);
-//        rangedComponent.addItemAttributeModifiers(multimap);
-//        return multimap;
-//    }
-
     @Override
     public boolean onLeftClickEntity(ItemStack itemstack, PlayerEntity player, Entity entity) {
         return meleeComponent.onLeftClickEntity(itemstack, player, entity) && rangedComponent.onLeftClickEntity(itemstack, player, entity);
     }
 
-    ///////
+    @Override
+    public final Random getItemRand() {
+        return random;
+    }
+
+    @Override
+    public MeleeComponent getMeleeComponent() {
+        return meleeComponent;
+    }
+
+    @Override
+    public RangedComponent getRangedComponent() {
+        return rangedComponent;
+    }
+}
+
+  ///////
 //    @Override
 //    public EnumAction getItemUseAction(ItemStack itemstack) {
 //        return rangedComponent.getItemUseAction(itemstack);
@@ -116,21 +94,3 @@ public class ItemCustomShooter extends BowItem implements IItemWeapon {
 //    public boolean shouldRotateAroundWhenRendering() {
 //        return rangedComponent.shouldRotateAroundWhenRendering();
 //    }
-
-
-
-    @Override
-    public final Random getItemRand() {
-        return random;
-    }
-
-    @Override
-    public MeleeComponent getMeleeComponent() {
-        return meleeComponent;
-    }
-
-    @Override
-    public RangedComponent getRangedComponent() {
-        return rangedComponent;
-    }
-}
