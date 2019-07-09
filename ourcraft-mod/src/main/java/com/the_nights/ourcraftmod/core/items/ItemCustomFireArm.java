@@ -58,14 +58,27 @@ import net.minecraftforge.api.distmarker.OnlyIn;
  *
  * @author Stephanie
  */
-public class ItemCustomShooter extends BowItem {
+public class ItemCustomFireArm extends BowItem {
 
    public static final Predicate<ItemStack> AMMUNITION_MUSKET = (stack) -> {
       return stack.getItem().isIn(ItemTags.ARROWS);
    };
-   
 
-   public ItemCustomShooter(RangedSpecs rangedspecs, Properties props) {
+   private boolean isLoaded = false;
+   private int magazineSize = -1;
+
+   public ItemCustomFireArm(RangedSpecs rangedspecs, Properties props) {
       super(props);
+
+      this.addPropertyOverride(new ResourceLocation("pull"), (p_210310_0_, p_210310_1_, p_210310_2_) -> {
+         if (p_210310_2_ == null) {
+            return 0.0F;
+         } else {
+            return !(p_210310_2_.getActiveItemStack().getItem() instanceof BowItem) ? 0.0F : (float)(p_210310_0_.getUseDuration() - p_210310_2_.getItemInUseCount()) / 20.0F;
+         }
+      });
+      this.addPropertyOverride(new ResourceLocation("pulling"), (p_210309_0_, p_210309_1_, p_210309_2_) -> {
+         return p_210309_2_ != null && p_210309_2_.isHandActive() && p_210309_2_.getActiveItemStack() == p_210309_0_ ? 1.0F : 0.0F;
+      });
    }
 }

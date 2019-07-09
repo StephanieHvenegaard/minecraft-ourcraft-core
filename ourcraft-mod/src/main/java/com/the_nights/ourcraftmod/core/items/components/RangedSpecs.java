@@ -15,28 +15,18 @@ import net.minecraft.item.Item;
 public enum RangedSpecs {
     //BLOWGUN("weaponmod:dart", "blowgun", 250, 1),
     //CROSSBOW("weaponmod:bolt", "crossbow", 250, 1),
-    MUSKET(MiscItems.musketShot, "musket", 80, 1),
+    MUSKET(MiscItems.musketShot, 1, 80, 1),
     //BLUNDERBUSS("weaponmod:shot", "blunderbuss", 80, 1),
-    FLINTLOCK(MiscItems.musketShot, "flintlock", 80, 1);
+    FLINTLOCK(MiscItems.musketShot, 1, 80, 1);
 
-    RangedSpecs(Item ammoitem, String reloadtimetag, int durability, int stacksize) {
+    RangedSpecs(Item ammoitem,int magazinCapasity, int durability,int reloadtime) {
         this.ammoItem = ammoitem;
-        this.reloadTimeTag = reloadtimetag;
+        this.magazinCapasity = magazinCapasity;
         this.durability = durability;
-        this.stackSize = stacksize;
-        this.reloadTime = -1;
+        this.stackSize = 1;
+        this.reloadTime = reloadtime;
     }
 
-    public int getReloadTime() {
-        return reloadTime;
-    }
-
-    public Item getAmmoItem() {
-        return ammoItem;
-    }
-
-    private int reloadTime;
-    private Item ammoItem;
-    public final String reloadTimeTag;
-    public final int durability, stackSize;
+    public Item ammoItem;
+    public final int durability, stackSize,magazinCapasity,reloadTime;
 }

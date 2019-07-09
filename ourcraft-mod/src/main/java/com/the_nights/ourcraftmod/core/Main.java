@@ -34,8 +34,8 @@ import com.the_nights.ourcraftmod.core.items.ItemCustomSword;
 import com.the_nights.ourcraftmod.core.lists.armor.CoinItems;
 import com.the_nights.ourcraftmod.core.lists.items.ObsidianItems;
 import com.the_nights.ourcraftmod.core.Materials.ToolMaterial;
+import com.the_nights.ourcraftmod.core.items.ItemCustomFireArm;
 import com.the_nights.ourcraftmod.core.items.ItemCustomKatana;
-import com.the_nights.ourcraftmod.core.items.ItemCustomShooter;
 import com.the_nights.ourcraftmod.core.items.components.RangedSpecs;
 import com.the_nights.ourcraftmod.core.lists.armor.KelpArmor;
 import com.the_nights.ourcraftmod.core.lists.armor.ObsidianArmor;
@@ -65,7 +65,6 @@ import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
-import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -127,7 +126,7 @@ public class Main {
                     GoldenItems.katana = new ItemCustomKatana(ToolMaterial.Golden, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("gold_katana")),
                     
                     IronItems.katana = new ItemCustomKatana(ToolMaterial.Iron, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("iron_katana")),
-                    IronItems.musket = new ItemCustomShooter(RangedSpecs.MUSKET,new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("iron_musket")),
+                    IronItems.musket = new ItemCustomFireArm(RangedSpecs.MUSKET,new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("iron_musket")),
                     
                     
                     StoneItems.katana = new ItemCustomKatana(ToolMaterial.Stone , new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("stone_katana")),
