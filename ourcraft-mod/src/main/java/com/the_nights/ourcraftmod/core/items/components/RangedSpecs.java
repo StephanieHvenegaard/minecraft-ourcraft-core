@@ -15,12 +15,13 @@ import net.minecraft.item.Item;
 public enum RangedSpecs {
     //BLOWGUN("weaponmod:dart", "blowgun", 250, 1),
     //CROSSBOW("weaponmod:bolt", "crossbow", 250, 1),
-    MUSKET(MiscItems.musketShot, 1, 80, 720000),
+    MUSKET(MiscItems.musketShot,"musket_shot", 1, 80, 720000),
     //BLUNDERBUSS("weaponmod:shot", "blunderbuss", 80, 1),
-    FLINTLOCK(MiscItems.musketShot, 1, 80, 2000);
+    FLINTLOCK(MiscItems.musketShot,"", 1, 80, 2000);
 
-    RangedSpecs(Item ammoitem,int magazinCapasity, int durability,int reloadtime) {
+    RangedSpecs(Item ammoitem,String ammoTag, int magazinCapasity, int durability,int reloadtime) {
         this.ammoItem = ammoitem;
+        this.ammoTag = ammoTag;
         this.magazinCapasity = magazinCapasity;
         this.durability = durability;
         this.stackSize = 1;
@@ -28,5 +29,6 @@ public enum RangedSpecs {
     }
 
     public Item ammoItem;
+    public String ammoTag;
     public final int durability, stackSize,magazinCapasity,reloadTime;
 }
