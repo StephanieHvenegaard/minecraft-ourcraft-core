@@ -15,9 +15,9 @@ import net.minecraft.item.Item;
 public enum RangedSpecs {
     //BLOWGUN("weaponmod:dart", "blowgun", 250, 1),
     //CROSSBOW("weaponmod:bolt", "crossbow", 250, 1),
-    MUSKET(MiscItems.musketShot, 1, 80, 1),
+    MUSKET(MiscItems.musketShot, 1, 80, 720000),
     //BLUNDERBUSS("weaponmod:shot", "blunderbuss", 80, 1),
-    FLINTLOCK(MiscItems.musketShot, 1, 80, 1);
+    FLINTLOCK(MiscItems.musketShot, 1, 80, 2000);
 
     RangedSpecs(Item ammoitem,int magazinCapasity, int durability,int reloadtime) {
         this.ammoItem = ammoitem;
