@@ -43,5 +43,9 @@
     "item.ourcraftmod.iron_musket": "musket",
 
     "item.ourcraftmod.stone_katana": "Stone Katana",
-    "item.ourcraftmod.wood_katana": "Wooden Katana"
+    "item.ourcraftmod.wood_katana": "Wooden Katana",
+    
+    "item.ourcraftmod.flintlock_ammo": "flintlock ammunition"
+    
+    
 }
