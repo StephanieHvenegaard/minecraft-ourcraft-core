@@ -64,7 +64,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class ItemCustomFireArm extends BowItem {
 
    public static final Predicate<ItemStack> AMMUNITION_MUSKET = (stack) -> {
-      return stack.getItem().isIn(ItemTags.ARROWS);
+      return stack.getItem().isIn(makeWrapperTag("flintlock_ammo"));
    };
 
    private boolean isLoaded = false;
