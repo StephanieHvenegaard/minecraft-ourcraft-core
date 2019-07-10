@@ -44,6 +44,7 @@ import com.the_nights.ourcraftmod.core.lists.items.DiamondItem;
 import com.the_nights.ourcraftmod.core.lists.items.EmaraldItems;
 import com.the_nights.ourcraftmod.core.lists.items.GoldenItems;
 import com.the_nights.ourcraftmod.core.lists.items.IronItems;
+import com.the_nights.ourcraftmod.core.lists.items.MiscItems;
 import com.the_nights.ourcraftmod.core.lists.items.StoneItems;
 import com.the_nights.ourcraftmod.core.lists.items.WoodenItem;
 import net.minecraftforge.common.MinecraftForge;
@@ -73,9 +74,9 @@ public class Main {
 
     public static Main INSTANCE;                                                    // public instance of the main mod class
     public static final String MODID = "ourcraftmod";                               // Mod id 
-    public static final ItemGroup OURCRAFT_GROUP = new OurcraftItemGroup(); // creative tap  
+    public static final ItemGroup OURCRAFT_GROUP = new OurcraftItemGroup();         // creative tap  
     // Directly reference a log4j logger.
-    public static final Logger LOGGER = LogManager.getLogger(MODID);               // Logger
+    public static final Logger LOGGER = LogManager.getLogger(MODID);                // Logger
 
     public Main() {
         INSTANCE = this;
@@ -149,6 +150,8 @@ public class Main {
                     EmaraldItems.hoe = new ItemCustomHoe(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("emarald_hoe")),
                     EmaraldItems.pickaxe = new ItemCustomPickAxe(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("emarald_pickaxe")),
                     EmaraldItems.spade = new ItemCustomShovel(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("emarald_spade")),
+                    // Misc Items 
+                    MiscItems.flintlockAmmo = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_ammo")),
                     // Coins
                     CoinItems.wooden_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("wooden_coin")),
                     CoinItems.iron_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("iron_coin")),

@@ -12,5 +12,5 @@ import net.minecraft.item.Item;
  * @author Stephanie
  */
 public class MiscItems {
-      public static Item musketShot;
+      public static Item flintlockAmmo;
 }
