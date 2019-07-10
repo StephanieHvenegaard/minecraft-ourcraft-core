@@ -12,14 +12,14 @@ import net.minecraft.item.Item;
  *
  * @author Stephanie
  */
-public enum RangedSpecs {
+public enum RangedMaterial {
     //BLOWGUN("weaponmod:dart", "blowgun", 250, 1),
     //CROSSBOW("weaponmod:bolt", "crossbow", 250, 1),
     MUSKET(MiscItems.flintlockAmmo,"musket_shot", 1, 80, 720000),
     //BLUNDERBUSS("weaponmod:shot", "blunderbuss", 80, 1),
     FLINTLOCK(MiscItems.flintlockAmmo,"", 1, 80, 2000);
 
-    RangedSpecs(Item ammoitem,String ammoTag, int magazinCapasity, int durability,int reloadtime) {
+    RangedMaterial(Item ammoitem,String ammoTag, int magazinCapasity, int durability,int reloadtime) {
         this.ammoItem = ammoitem;
         this.ammoTag = ammoTag;
         this.magazinCapasity = magazinCapasity;

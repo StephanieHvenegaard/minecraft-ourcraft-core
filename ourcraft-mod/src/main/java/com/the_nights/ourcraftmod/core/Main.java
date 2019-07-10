@@ -36,7 +36,7 @@ import com.the_nights.ourcraftmod.core.lists.items.ObsidianItems;
 import com.the_nights.ourcraftmod.core.materials.ToolMaterial;
 import com.the_nights.ourcraftmod.core.items.ItemCustomFireArm;
 import com.the_nights.ourcraftmod.core.items.ItemCustomKatana;
-import com.the_nights.ourcraftmod.core.materials.RangedSpecs;
+import com.the_nights.ourcraftmod.core.materials.RangedMaterial;
 import com.the_nights.ourcraftmod.core.lists.armor.KelpArmor;
 import com.the_nights.ourcraftmod.core.lists.armor.ObsidianArmor;
 import com.the_nights.ourcraftmod.core.lists.armor.WoodenArmor;
@@ -125,7 +125,7 @@ public class Main {
                     DiamondItem.katana = new ItemCustomKatana(ToolMaterial.Diamond, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("diamond_katana")),
                     GoldenItems.katana = new ItemCustomKatana(ToolMaterial.Golden, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("gold_katana")),
                     IronItems.katana = new ItemCustomKatana(ToolMaterial.Iron, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("iron_katana")),
-                    IronItems.musket = new ItemCustomFireArm(RangedSpecs.MUSKET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("iron_musket")),
+                    IronItems.musket = new ItemCustomFireArm(RangedMaterial.MUSKET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("iron_musket")),
                     StoneItems.katana = new ItemCustomKatana(ToolMaterial.Stone, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("stone_katana")),
                     WoodenItem.katana = new ItemCustomKatana(ToolMaterial.Wood, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_katana")),
                     // Armor 

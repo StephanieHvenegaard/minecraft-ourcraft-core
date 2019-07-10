@@ -7,7 +7,7 @@ package com.the_nights.ourcraftmod.core.items;
 
 import afu.org.checkerframework.checker.nullness.qual.Nullable;
 import com.google.common.collect.Lists;
-import com.the_nights.ourcraftmod.core.materials.RangedSpecs;
+import com.the_nights.ourcraftmod.core.materials.RangedMaterial;
 import com.the_nights.ourcraftmod.core.lists.items.IronItems;
 import com.the_nights.ourcraftmod.core.lists.items.MiscItems;
 
@@ -68,9 +68,9 @@ public class ItemCustomFireArm extends BowItem {
    };
 
    private boolean isLoaded = false;
-   private RangedSpecs specs;
+   private RangedMaterial specs;
 
-   public ItemCustomFireArm(RangedSpecs rangedspecs, Properties props) {
+   public ItemCustomFireArm(RangedMaterial rangedspecs, Properties props) {
       super(props);
       this.specs = rangedspecs;
 
