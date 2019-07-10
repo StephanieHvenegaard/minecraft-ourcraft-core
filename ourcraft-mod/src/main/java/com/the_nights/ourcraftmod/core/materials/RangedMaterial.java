@@ -15,20 +15,18 @@ import net.minecraft.item.Item;
 public enum RangedMaterial {
     //BLOWGUN("weaponmod:dart", "blowgun", 250, 1),
     //CROSSBOW("weaponmod:bolt", "crossbow", 250, 1),
-    MUSKET(MiscItems.flintlockAmmo,"musket_shot", 1, 80, 720000),
+    FLINTLOCK_MUSKET(ProjectileMaterial.FLINT_LOCK_AMMO, 1, 80, 720000),
     //BLUNDERBUSS("weaponmod:shot", "blunderbuss", 80, 1),
-    FLINTLOCK(MiscItems.flintlockAmmo,"", 1, 80, 2000);
+    FLINTLOCK_PISTOL(ProjectileMaterial.FLINT_LOCK_AMMO, 1, 80, 2000);
 
-    RangedMaterial(Item ammoitem,String ammoTag, int magazinCapasity, int durability,int reloadtime) {
-        this.ammoItem = ammoitem;
-        this.ammoTag = ammoTag;
+    RangedMaterial(ProjectileMaterial ammo, int magazinCapasity, int durability,int reloadtime) {
+       this.ammoType = ammo;
         this.magazinCapasity = magazinCapasity;
         this.durability = durability;
         this.stackSize = 1;
         this.reloadTime = reloadtime;
     }
 
-    public Item ammoItem;
-    public String ammoTag;
+    public ProjectileMaterial ammoType;
     public final int durability, stackSize,magazinCapasity,reloadTime;
 }
