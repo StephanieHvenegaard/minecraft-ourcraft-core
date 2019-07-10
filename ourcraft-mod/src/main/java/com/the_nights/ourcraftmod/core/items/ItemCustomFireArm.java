@@ -7,7 +7,7 @@ package com.the_nights.ourcraftmod.core.items;
 
 import afu.org.checkerframework.checker.nullness.qual.Nullable;
 import com.google.common.collect.Lists;
-import com.the_nights.ourcraftmod.core.items.components.RangedSpecs;
+import com.the_nights.ourcraftmod.core.materials.RangedSpecs;
 import com.the_nights.ourcraftmod.core.lists.items.IronItems;
 import com.the_nights.ourcraftmod.core.lists.items.MiscItems;
 
@@ -91,12 +91,13 @@ public class ItemCustomFireArm extends BowItem {
     * Get the predicate to match ammunition when searching the player's inventory,
     * not their main/offhand
     */
+   @Override
    public Predicate<ItemStack> getInventoryAmmoPredicate() {
       switch (specs.ammoTag) {
       case "musket_shot":
          return AMMUNITION_MUSKET;
       default:
-         return null;
+         return ARROWS;
       }
    }
 

@@ -25,7 +25,7 @@ SOFTWARE.
  */
 package com.the_nights.ourcraftmod.core;
 
-import com.the_nights.ourcraftmod.core.Materials.ArmorMaterial;
+import com.the_nights.ourcraftmod.core.materials.ArmorMaterial;
 import com.the_nights.ourcraftmod.core.items.ItemCustomAxe;
 import com.the_nights.ourcraftmod.core.items.ItemCustomHoe;
 import com.the_nights.ourcraftmod.core.items.ItemCustomPickAxe;
@@ -33,10 +33,10 @@ import com.the_nights.ourcraftmod.core.items.ItemCustomShovel;
 import com.the_nights.ourcraftmod.core.items.ItemCustomSword;
 import com.the_nights.ourcraftmod.core.lists.armor.CoinItems;
 import com.the_nights.ourcraftmod.core.lists.items.ObsidianItems;
-import com.the_nights.ourcraftmod.core.Materials.ToolMaterial;
+import com.the_nights.ourcraftmod.core.materials.ToolMaterial;
 import com.the_nights.ourcraftmod.core.items.ItemCustomFireArm;
 import com.the_nights.ourcraftmod.core.items.ItemCustomKatana;
-import com.the_nights.ourcraftmod.core.items.components.RangedSpecs;
+import com.the_nights.ourcraftmod.core.materials.RangedSpecs;
 import com.the_nights.ourcraftmod.core.lists.armor.KelpArmor;
 import com.the_nights.ourcraftmod.core.lists.armor.ObsidianArmor;
 import com.the_nights.ourcraftmod.core.lists.armor.WoodenArmor;
