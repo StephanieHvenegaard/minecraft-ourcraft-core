@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.the_nights.ourcraftmod.core.materials;
+package com.the_nights.ourcraftmod.core.items.materials;
 
 import com.the_nights.ourcraftmod.core.lists.items.MiscItems;
 import net.minecraft.item.Item;
@@ -17,7 +17,7 @@ public enum ProjectileMaterial {
             // CROSSBOW("weaponmod:bolt", "crossbow", 250, 1),
             FLINT_LOCK_AMMO(MiscItems.flintlockAmmo, 1),
             // BLUNDERBUSS("weaponmod:shot", "blunderbuss", 80, 1),
-            Rifle_AMMO(MiscItems.flintlockAmmo, 2000);
+            Rifle_AMMO(MiscItems.flintlockAmmo, 2);
 
             ProjectileMaterial(Item ammoitem, int id) {
         this.ammoItem = ammoitem;;

@@ -25,7 +25,7 @@ SOFTWARE.
  */
 package com.the_nights.ourcraftmod.core.items;
 
-import com.the_nights.ourcraftmod.core.materials.ToolMaterial;
+import com.the_nights.ourcraftmod.core.items.materials.ToolMaterial;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.IItemTier;
 

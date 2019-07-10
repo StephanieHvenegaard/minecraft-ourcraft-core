@@ -7,7 +7,8 @@ package com.the_nights.ourcraftmod.core.items;
 
 import afu.org.checkerframework.checker.nullness.qual.Nullable;
 import com.google.common.collect.Lists;
-import com.the_nights.ourcraftmod.core.materials.RangedMaterial;
+import com.the_nights.ourcraftmod.core.items.materials.RangedMaterial;
+import com.the_nights.ourcraftmod.core.Main;
 import com.the_nights.ourcraftmod.core.lists.items.IronItems;
 import com.the_nights.ourcraftmod.core.lists.items.MiscItems;
 
@@ -90,13 +91,17 @@ public class ItemCustomFireArm extends BowItem {
    /**
     * Get the predicate to match ammunition when searching the player's inventory,
     * not their main/offhand
+    * THIS PART WORKS AS INTENTION.
     */
    @Override
    public Predicate<ItemStack> getInventoryAmmoPredicate() {
-      switch (specs.ammoTag) {
-      case "musket_shot":
+      //Main.LOGGER.info("Ammo type: " +specs.ammoType);
+      switch (specs.ammoType) {
+      case FLINT_LOCK_AMMO:
+         //Main.LOGGER.info("found ammo");
          return AMMUNITION_MUSKET;
       default:
+         Main.LOGGER.info("default ammo");
          return ARROWS;
       }
    }
