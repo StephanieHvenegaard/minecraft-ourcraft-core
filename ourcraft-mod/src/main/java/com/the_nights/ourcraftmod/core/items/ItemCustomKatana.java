@@ -18,6 +18,7 @@ public class ItemCustomKatana extends SwordItem {
 
     public ItemCustomKatana(IItemTier itemTier,  Item.Properties props) {
         super(itemTier, 1, -1.6f, props);
+    
     }
 
 
