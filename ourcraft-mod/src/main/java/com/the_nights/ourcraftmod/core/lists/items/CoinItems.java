@@ -37,6 +37,6 @@ public class CoinItems{
     public static Item iron_coin;
     public static Item gold_coin;
     public static Item emarald_coin;
-    public static Item golden_diamond_coin;
+    //public static Item golden_diamond_coin;
     public static Item diamond_coin;  
 }
