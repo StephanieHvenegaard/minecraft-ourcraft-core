@@ -23,7 +23,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 */
-package com.the_nights.ourcraftmod.core.lists.armor;
+package com.the_nights.ourcraftmod.core.lists.items;
 
 import net.minecraft.item.Item;
 
@@ -31,13 +31,12 @@ import net.minecraft.item.Item;
  *
  * @author Stephanie
  */
-public class CoinItems{    
-    // Coins    
-    public static Item wooden_coin;
-    public static Item iron_coin;
-    public static Item gold_coin;
-    public static Item emarald_coin;
-    public static Item golden_diamond_coin;
-    public static Item diamond_coin;
-    
+public class PinkSapphireItems {
+    public static Item pickaxe;
+    public static Item axe;
+    public static Item spade;
+    public static Item hoe;
+    public static Item sword;
+    public static Item katana;
+    public static Item ingot;    
 }

@@ -24,7 +24,7 @@ SOFTWARE.
 
  */
 package com.the_nights.ourcraftmod.core.Materials;
-
+import com.the_nights.ourcraftmod.core.lists.items.PinkSapphireItems;
 import com.the_nights.ourcraftmod.core.lists.items.ObsidianItems;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
@@ -50,8 +50,10 @@ public enum ToolMaterial implements IItemTier {
     // Iron 9	
     // turtle 9
     // Diamond 10
+    //dmg, speed, effiency, durability, harvestLVL, enchantAbility, repItem) {
     Obsidian(15.0f, 5.0f, 25.0f, 1562 * 10, 3, 25, ObsidianItems.ingot),
     Emarald(10.0f, 3.0f, 15.0f, 1562 * 2, 3, 12, Items.EMERALD),
+    PinkSapphire(7.0f,2.0f,10.0f,2164,3,15,PinkSapphireItems.ingot),
     Diamond(5.0f, 1.0f, 1.0f, 1562, 3, 10, Items.DIAMOND),
     Iron(4.0f, 1.0f, 1.0f, 251, 2, 9, Items.IRON_INGOT),
     Golden(2.0f, 1.0f, 1.0f, 33, 1, 25, Items.GOLD_INGOT),
