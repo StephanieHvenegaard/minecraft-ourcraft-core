@@ -31,12 +31,14 @@ import com.the_nights.ourcraftmod.core.items.ItemCustomHoe;
 import com.the_nights.ourcraftmod.core.items.ItemCustomPickAxe;
 import com.the_nights.ourcraftmod.core.items.ItemCustomShovel;
 import com.the_nights.ourcraftmod.core.items.ItemCustomSword;
-import com.the_nights.ourcraftmod.core.lists.armor.CoinItems;
+import com.the_nights.ourcraftmod.core.lists.items.CoinItems;
 import com.the_nights.ourcraftmod.core.lists.items.ObsidianItems;
+import com.the_nights.ourcraftmod.core.lists.items.PinkSapphireItems;
 import com.the_nights.ourcraftmod.core.Materials.ToolMaterial;
 import com.the_nights.ourcraftmod.core.items.ItemCustomKatana;
 import com.the_nights.ourcraftmod.core.lists.armor.KelpArmor;
 import com.the_nights.ourcraftmod.core.lists.armor.ObsidianArmor;
+import com.the_nights.ourcraftmod.core.lists.armor.SapphireArmor;
 import com.the_nights.ourcraftmod.core.lists.armor.WoodenArmor;
 import com.the_nights.ourcraftmod.core.lists.items.DiamondItem;
 import com.the_nights.ourcraftmod.core.lists.items.EmaraldItems;
@@ -113,13 +115,18 @@ public class Main {
             event.getRegistry().registerAll(
                     // Ingots
                     ObsidianItems.ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("obsidian_ingot")),
+                    PinkSapphireItems.ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("sapphire_ingot")), 
                     // Weapons                    
                     ObsidianItems.sword = new ItemCustomSword(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_sword")),                    
                     ObsidianItems.katana = new ItemCustomKatana(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_katana")),
                     
-                    EmaraldItems.katana = new ItemCustomKatana(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("emarald_katana")),
-                    EmaraldItems.sword = new ItemCustomSword(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("emarald_sword")),
+                    EmaraldItems.katana = new ItemCustomKatana(ToolMaterial.PinkSapphire, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("emarald_katana")),
+                    EmaraldItems.sword = new ItemCustomSword(ToolMaterial.PinkSapphire, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("emarald_sword")),
                     
+                    PinkSapphireItems.katana = new ItemCustomKatana(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("sapphire_katana")),
+                    PinkSapphireItems.sword = new ItemCustomSword(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("sapphire_sword")),
+                    
+
                     DiamondItem.katana = new ItemCustomKatana(ToolMaterial.Diamond, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("diamond_katana")),
                     GoldenItems.katana = new ItemCustomKatana(ToolMaterial.Golden, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("gold_katana")),
                     IronItems.katana = new ItemCustomKatana(ToolMaterial.Iron, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("iron_katana")),
@@ -141,6 +148,12 @@ public class Main {
                     WoodenArmor.chestplate = new ArmorItem(ArmorMaterial.wood, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_chest")),
                     WoodenArmor.leggings = new ArmorItem(ArmorMaterial.wood, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_leggings")),
                     WoodenArmor.boots = new ArmorItem(ArmorMaterial.wood, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_boots")),
+
+                    SapphireArmor.helmet = new ArmorItem(ArmorMaterial.Sapphire, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("sapphire_helmet")),
+                    SapphireArmor.chestplate = new ArmorItem(ArmorMaterial.Sapphire, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("sapphire_chest")),
+                    SapphireArmor.leggings = new ArmorItem(ArmorMaterial.Sapphire, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("sapphire_leggings")),
+                    SapphireArmor.boots = new ArmorItem(ArmorMaterial.Sapphire, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("sapphire_boots")),
+                    
                     // Tools 
                     ObsidianItems.axe = new ItemCustomAxe(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_axe")),
                     ObsidianItems.hoe = new ItemCustomHoe(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_hoe")),
@@ -152,6 +165,10 @@ public class Main {
                     EmaraldItems.pickaxe = new ItemCustomPickAxe(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("emarald_pickaxe")),
                     EmaraldItems.spade = new ItemCustomShovel(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("emarald_spade")),
                     
+                    PinkSapphireItems.axe = new ItemCustomAxe(ToolMaterial.PinkSapphire, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("sapphire_axe")),
+                    PinkSapphireItems.hoe = new ItemCustomHoe(ToolMaterial.PinkSapphire, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("sapphire_hoe")),
+                    PinkSapphireItems.pickaxe = new ItemCustomPickAxe(ToolMaterial.PinkSapphire, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("sapphire_pickaxe")),
+                    PinkSapphireItems.spade = new ItemCustomShovel(ToolMaterial.PinkSapphire, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("sapphire_spade")),
                     // Coins
                     CoinItems.wooden_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("wooden_coin")),
                     CoinItems.iron_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("iron_coin")),
