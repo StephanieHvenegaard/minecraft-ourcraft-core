@@ -7,10 +7,10 @@
             ],
     "key": 
             {
-                "I": {
+                "S": {
                     "item": "minecraft:emerald"
                 },
-                "S": {
+                "I": {
                     "item": "minecraft:diamond"
                 }
             },

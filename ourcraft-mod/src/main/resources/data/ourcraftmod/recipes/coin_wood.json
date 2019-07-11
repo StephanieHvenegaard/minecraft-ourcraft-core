@@ -7,14 +7,14 @@
             ],
     "key": 
             {
-                "I": {
+                "S": {
                     "item": "minecraft:emerald"
                 },
-                "S": {
+                "I": {
                     "item": "minecraft:stick"
                 }
             },
     "result": {
-        "item": "ourcraftmod:wood_coin"
+        "item": "ourcraftmod:wooden_coin"
     }
 }
