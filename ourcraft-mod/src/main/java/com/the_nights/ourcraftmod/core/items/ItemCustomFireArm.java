@@ -113,7 +113,7 @@ public class ItemCustomFireArm extends BowItem {
    public void onPlayerStoppedUsing(ItemStack stack, World worldIn, LivingEntity entityLiving, int timeLeft) {
       int i = this.getUseDuration(stack) - timeLeft;
       Main.LOGGER.info("i is : "+ i);
-      float f =1.2F;// func_220031_a(i, stack);
+      float f =func_220031_a(i, stack);
       if (f >= 1.0F && !isLoaded(stack) ){//&& hasAmmo(entityLiving, stack)) {
          setLoaded(stack, true);
          SoundCategory soundcategory = entityLiving instanceof PlayerEntity ? SoundCategory.PLAYERS
@@ -122,6 +122,15 @@ public class ItemCustomFireArm extends BowItem {
                SoundEvents.ITEM_CROSSBOW_LOADING_END, soundcategory, 1.0F,
                1.0F / (random.nextFloat() * 0.5F + 1.0F) + 0.2F);
       }
+   }
+
+   private static float func_220031_a(int p_220031_0_, ItemStack p_220031_1_) {
+      float f = (float)p_220031_0_ / (float)25; // enhancement level.
+      if (f > 1.0F) {
+         f = 1.0F;
+      }
+
+      return f;
    }
 
    /**
