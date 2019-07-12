@@ -112,8 +112,9 @@ public class ItemCustomFireArm extends BowItem {
 
    public void onPlayerStoppedUsing(ItemStack stack, World worldIn, LivingEntity entityLiving, int timeLeft) {
       int i = this.getUseDuration(stack) - timeLeft;
-      float f = func_220031_a(i, stack);
-      if (f >= 1.0F && !isLoaded(stack) && hasAmmo(entityLiving, stack)) {
+      Main.LOGGER.info("i is : "+ i);
+      float f =1.2F;// func_220031_a(i, stack);
+      if (f >= 1.0F && !isLoaded(stack) ){//&& hasAmmo(entityLiving, stack)) {
          setLoaded(stack, true);
          SoundCategory soundcategory = entityLiving instanceof PlayerEntity ? SoundCategory.PLAYERS
                : SoundCategory.HOSTILE;
