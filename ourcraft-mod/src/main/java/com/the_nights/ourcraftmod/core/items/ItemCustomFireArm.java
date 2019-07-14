@@ -8,7 +8,7 @@ package com.the_nights.ourcraftmod.core.items;
 import afu.org.checkerframework.checker.nullness.qual.Nullable;
 import com.google.common.collect.Lists;
 import com.the_nights.ourcraftmod.core.items.materials.RangedMaterial;
-import com.the_nights.ourcraftmod.core.Main;
+import com.the_nights.ourcraftmod.core.OurcraftCore;
 import com.the_nights.ourcraftmod.core.lists.items.IronItems;
 import com.the_nights.ourcraftmod.core.lists.items.MiscItems;
 
@@ -121,12 +121,12 @@ public class ItemCustomFireArm extends ShootableItem {
     @Override
     public void onPlayerStoppedUsing(ItemStack stack, World worldIn, LivingEntity entityLiving, int timeLeft) {
         int i = this.getUseDuration(stack) - timeLeft;
-        Main.LOGGER.info("i is : " + i);
+        OurcraftCore.LOGGER.info("i is : " + i);
         float f = func_220031_a(i, stack);
         if (f >= 1.0F) {// && hasAmmo(entityLiving, stack)) {
-            Main.LOGGER.info("starting loading.");
+            OurcraftCore.LOGGER.info("starting loading.");
             if (!isLoaded(stack)) {
-                Main.LOGGER.info("loading weapon.");
+                OurcraftCore.LOGGER.info("loading weapon.");
                 setLoaded(stack, true);
                 SoundCategory soundcategory = entityLiving instanceof PlayerEntity ? SoundCategory.PLAYERS
                         : SoundCategory.HOSTILE;
@@ -152,13 +152,13 @@ public class ItemCustomFireArm extends ShootableItem {
      */
     @Override
     public Predicate<ItemStack> getInventoryAmmoPredicate() {
-        // Main.LOGGER.info("Ammo type: " +specs.ammoType);
+        // OurcraftCore.LOGGER.info("Ammo type: " +specs.ammoType);
         switch (specs.ammoType) {
             case FLINT_LOCK_AMMO:
-                Main.LOGGER.info("found ammo");
+                OurcraftCore.LOGGER.info("found ammo");
                 return AMMUNITION_MUSKET;
             default:
-                Main.LOGGER.info("default ammo");
+                OurcraftCore.LOGGER.info("default ammo");
                 return ARROWS;
         }
     }
@@ -201,43 +201,41 @@ public class ItemCustomFireArm extends ShootableItem {
     }
 
     public static void setLoaded(ItemStack weapon, boolean state) {
-        Main.LOGGER.info("setting loaded state :" + state);
+        OurcraftCore.LOGGER.info("setting loaded state :" + state);
         CompoundNBT compoundnbt = weapon.getOrCreateTag();
         compoundnbt.putBoolean(isLoadedTag, state);
     }
 
-    public static void fireProjectiles(World world, LivingEntity livingentity, Hand hand, ItemStack weapon, float p_220014_4_, float p_220014_5_) {
-        Main.LOGGER.info("Fire Projectile");
+    public static void fireProjectiles(World world, LivingEntity livingentity, Hand hand, ItemStack weapon, float p_220014_4_, float p_220014_5_) {       
         int bullets = 1;
+        float spread =0;
         if (weapon.getItem() instanceof ItemCustomFireArm) {
             ItemCustomFireArm firearm = (ItemCustomFireArm) weapon.getItem();
             bullets = firearm.specs.projectiles;
         }
         float[] afloat = func_220028_a(livingentity.getRNG());
-
+        boolean flag = livingentity instanceof PlayerEntity && ((PlayerEntity) livingentity).abilities.isCreativeMode;
         for (int i = 0; i < bullets; ++i) {
-            ItemStack itemstack = new ItemStack(Items.ARROW);
-            boolean flag = livingentity instanceof PlayerEntity && ((PlayerEntity) livingentity).abilities.isCreativeMode;
+            ItemStack itemstack = new ItemStack(Items.ARROW);            
             if (!itemstack.isEmpty()) {
-                if (i == 0) {
-                    shoot(world, livingentity, hand, weapon, itemstack, afloat[i], flag, p_220014_4_,
-                            p_220014_5_, 0.0F);
-                } else if (i == 1) {
-                    shoot(world, livingentity, hand, weapon, itemstack, afloat[i], flag, p_220014_4_,
-                            p_220014_5_, -10.0F);
-                } else if (i == 2) {
-                    shoot(world, livingentity, hand, weapon, itemstack, afloat[i], flag, p_220014_4_,
-                            p_220014_5_, 10.0F);
+                if(i==0)
+                {
+                    shoot(world, livingentity, hand, weapon, itemstack, afloat[i], flag, p_220014_4_,p_220014_5_, 0.0F);
                 }
+                else
+                {
+                    spread = random.nextFloat()*5.0f;
+                    if(random.nextFloat() > 0.5f)
+                        spread = spread *-1.0f;
+                    shoot(world, livingentity, hand, weapon, itemstack, afloat[i], flag, p_220014_4_,p_220014_5_, spread);
+                }               
             }
         }
-        SoundCategory soundcategory = livingentity instanceof PlayerEntity ? SoundCategory.PLAYERS
-                : SoundCategory.HOSTILE;
+        SoundCategory soundcategory = livingentity instanceof PlayerEntity ? SoundCategory.PLAYERS : SoundCategory.HOSTILE;
         world.playSound((PlayerEntity) null, livingentity.posX, livingentity.posY, livingentity.posZ, SoundEvents.ENTITY_LIGHTNING_BOLT_IMPACT, soundcategory, 5.0F,
                 1.0F / (random.nextFloat() * 0.5F + 1.0F) + 0.2F);
         world.playSound((PlayerEntity) null, livingentity.posX, livingentity.posY, livingentity.posZ, SoundEvents.ENTITY_LIGHTNING_BOLT_THUNDER, soundcategory, 5.0F,
                 1.0F / (random.nextFloat() * 0.5F + 1.0F) + 0.2F);
-        // func_220015_a(p_220014_0_, p_220014_1_, p_220014_3_);
     }
 
     private static float[] func_220028_a(Random p_220028_0_) {
@@ -250,36 +248,28 @@ public class ItemCustomFireArm extends ShootableItem {
         return 1.0F / (random.nextFloat() * 0.5F + 1.8F) + f;
     }
 
-    private static void shoot(World p_220016_0_, LivingEntity p_220016_1_, Hand p_220016_2_, ItemStack p_220016_3_,ItemStack p_220016_4_, float p_220016_5_, boolean p_220016_6_, float p_220016_7_, float p_220016_8_, float p_220016_9_) {
+    private static void shoot(World p_220016_0_, LivingEntity p_220016_1_, Hand p_220016_2_, ItemStack p_220016_3_, ItemStack p_220016_4_, float p_220016_5_, boolean p_220016_6_, float Velocity, float p_220016_8_, float p_220016_9_) {
         if (!p_220016_0_.isRemote) {
-            
-            
-            
+
             IProjectile iprojectile;
             iprojectile = createArrow(p_220016_0_, p_220016_1_, p_220016_3_, p_220016_4_);
             if (p_220016_6_ || p_220016_9_ != 0.0F) {
                 ((AbstractArrowEntity) iprojectile).pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
             }
 
-//            if (p_220016_1_ instanceof ICrossbowUser) {
-//                ICrossbowUser icrossbowuser = (ICrossbowUser) p_220016_1_;
-//                icrossbowuser.shoot(icrossbowuser.getAttackTarget(), p_220016_3_, iprojectile, p_220016_9_);
-//            } else {
-                
-                        float velocityMod = 1.0f;
-        if (p_220016_3_.getItem() instanceof ItemCustomFireArm) {
-            ItemCustomFireArm firearm = (ItemCustomFireArm) p_220016_3_.getItem();
-            velocityMod = firearm.specs.projectileVelocity;
-        }
-                
-                Vec3d vec3d1 = p_220016_1_.func_213286_i(1.0F);
-                Quaternion quaternion = new Quaternion(new Vector3f(vec3d1), p_220016_9_, true);
-                Vec3d vec3d = p_220016_1_.getLook(1.0F);
-                Vector3f vector3f = new Vector3f(vec3d);
-                vector3f.func_214905_a(quaternion);
-                iprojectile.shoot((double) vector3f.getX(), (double) vector3f.getY(), (double) vector3f.getZ(), p_220016_7_ + velocityMod,
-                        p_220016_8_);
-//            }
+            float velocityMod = 1.0f;
+            if (p_220016_3_.getItem() instanceof ItemCustomFireArm) {
+                ItemCustomFireArm firearm = (ItemCustomFireArm) p_220016_3_.getItem();
+                velocityMod = firearm.specs.projectileVelocity;
+            }
+
+            Vec3d vec3d1 = p_220016_1_.func_213286_i(1.0F);
+            Quaternion quaternion = new Quaternion(new Vector3f(vec3d1), p_220016_9_, true);
+            Vec3d vec3d = p_220016_1_.getLook(1.0F);
+            Vector3f vector3f = new Vector3f(vec3d);
+            vector3f.func_214905_a(quaternion);
+            iprojectile.shoot((double) vector3f.getX(), (double) vector3f.getY(), (double) vector3f.getZ(), Velocity + velocityMod,p_220016_8_);
+
 
             p_220016_3_.damageItem(1, p_220016_1_, (p_220017_1_) -> {
                 p_220017_1_.sendBreakAnimation(p_220016_2_);

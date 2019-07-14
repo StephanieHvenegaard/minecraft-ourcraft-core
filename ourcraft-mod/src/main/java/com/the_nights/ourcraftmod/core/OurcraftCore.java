@@ -69,16 +69,16 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
 
 // The value here should match an entry in the META-INF/mods.toml file
-@Mod(Main.MODID)
-public class Main {
+@Mod(OurcraftCore.MODID)
+public class OurcraftCore {
 
-    public static Main INSTANCE;                                                    // public instance of the main mod class
+    public static OurcraftCore INSTANCE;                                                    // public instance of the main mod class
     public static final String MODID = "ourcraftmod";                               // Mod id 
     public static final ItemGroup OURCRAFT_GROUP = new OurcraftItemGroup();         // creative tap  
     // Directly reference a log4j logger.
     public static final Logger LOGGER = LogManager.getLogger(MODID);                // Logger
 
-    public Main() {
+    public OurcraftCore() {
         INSTANCE = this;
         // Register the setup method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
@@ -125,7 +125,10 @@ public class Main {
                     DiamondItem.katana = new ItemCustomKatana(ToolMaterial.Diamond, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("diamond_katana")),
                     GoldenItems.katana = new ItemCustomKatana(ToolMaterial.Golden, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("gold_katana")),
                     IronItems.katana = new ItemCustomKatana(ToolMaterial.Iron, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("iron_katana")),
-                    IronItems.musket = new ItemCustomFireArm(RangedMaterial.FLINTLOCK_MUSKET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("iron_musket")),
+                    IronItems.musket = new ItemCustomFireArm(RangedMaterial.FLINTLOCK_MUSKET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_musket")),
+                    IronItems.blunderbuss = new ItemCustomFireArm(RangedMaterial.FLINTLOCK_BLUNDERBUSS, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_blunderbuss")),
+                    IronItems.pistol = new ItemCustomFireArm(RangedMaterial.FLINTLOCK_PISTOL, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_pistol")),
+                    
                     StoneItems.katana = new ItemCustomKatana(ToolMaterial.Stone, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("stone_katana")),
                     WoodenItem.katana = new ItemCustomKatana(ToolMaterial.Wood, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_katana")),
                     // Armor 

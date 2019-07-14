@@ -13,10 +13,9 @@ import net.minecraft.item.Item;
  * @author Stephanie
  */
 public enum RangedMaterial {
-    //BLOWGUN("weaponmod:dart", "blowgun", 250, 1),
-    //CROSSBOW("weaponmod:bolt", "crossbow", 250, 1),
+    
     FLINTLOCK_MUSKET(ProjectileMaterial.FLINT_LOCK_AMMO, 1, 1, 10.0f, 80, 720000),
-    //BLUNDERBUSS("weaponmod:shot", "blunderbuss", 80, 1),
+    FLINTLOCK_BLUNDERBUSS(ProjectileMaterial.FLINT_LOCK_AMMO, 1, 8, 8.0f, 80, 720000),
     FLINTLOCK_PISTOL(ProjectileMaterial.FLINT_LOCK_AMMO, 1, 1, 5.0f, 80, 2000);
 
     RangedMaterial(ProjectileMaterial ammo, int magazinCapasity, int projectiles, float projectileVelocity, int durability, int reloadtime) {
