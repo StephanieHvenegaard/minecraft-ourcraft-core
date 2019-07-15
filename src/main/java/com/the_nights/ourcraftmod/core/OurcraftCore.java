@@ -163,6 +163,10 @@ public class OurcraftCore {
                     EmaraldItems.spade = new ItemCustomShovel(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("emarald_spade")),
                     // Misc Items 
                     MiscItems.flintlockAmmo = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_ammo")),
+                    MiscItems.blunderBarrelAssembly = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_blunderbuss_barrelassembly")),
+                    MiscItems.musketBarrelAssembly = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_musket_barrelassembly")),
+                    MiscItems.gunstock  = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("gunstock")),
+                    
                     // Coins
                     CoinItems.wooden_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("wooden_coin")),
                     CoinItems.iron_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("iron_coin")),

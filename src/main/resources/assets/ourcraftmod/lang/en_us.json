@@ -59,7 +59,10 @@
     "item.ourcraftmod.stone_katana": "Stone Katana",
     "item.ourcraftmod.wood_katana": "Wooden Katana",
     
-    "item.ourcraftmod.flintlock_ammo": "Flintlock Ammunition"
+    "item.ourcraftmod.flintlock_ammo": "Flintlock Ammunition",
+    "item.ourcraftmod.flintlock_blunderbuss_barrelassembly": "Flintlock blunderbuss Barrel",
+    "item.ourcraftmod.flintlock_musket_barrelassembly": "Flintlock Musket Barrel",
+    "item.ourcraftmod.gunstock": "Gunstock"
     
     
 }
