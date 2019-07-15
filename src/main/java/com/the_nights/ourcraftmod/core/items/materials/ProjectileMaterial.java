@@ -15,15 +15,19 @@ import net.minecraft.item.Item;
 public enum ProjectileMaterial {
             // BLOWGUN("weaponmod:dart", "blowgun", 250, 1),
             // CROSSBOW("weaponmod:bolt", "crossbow", 250, 1),
-            FLINT_LOCK_AMMO(MiscItems.flintlockAmmo, 1),
+            FLINT_LOCK_MUSKET_AMMO(MiscItems.flintlockAmmo,10,1),
+            FLINT_LOCK_BLUNDERBUSS_AMMO(MiscItems.flintlockAmmo,10,5),
+            FLINT_LOCK_PISTOL_AMMO(MiscItems.flintlockAmmo,5,1),
             // BLUNDERBUSS("weaponmod:shot", "blunderbuss", 80, 1),
-            Rifle_AMMO(MiscItems.flintlockAmmo, 2);
+            Rifle_AMMO(MiscItems.flintlockAmmo,10, 1);
 
-            ProjectileMaterial(Item ammoitem, int id) {
-        this.ammoItem = ammoitem;;
-        this.id = id;
+            ProjectileMaterial(Item ammoitem,int dmg,int projectilesPerBullet) {
+        this.ammoItem = ammoitem;
+        this.dmg = dmg;
+        //this.id = id;
+        this.projectilesPerBullet = projectilesPerBullet;
     }
 
-    public Item ammoItem;
-    public final int id;
+    public final Item ammoItem;
+    public final int projectilesPerBullet,dmg;
 }
