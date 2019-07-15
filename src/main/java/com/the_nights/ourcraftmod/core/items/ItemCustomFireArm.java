@@ -71,9 +71,6 @@ public class ItemCustomFireArm extends ShootableItem {
     private static String isLoadedTag = "charged";
     private RangedMaterial specs;
 
-    private boolean field_220034_c = false;
-    private boolean field_220035_d = false;
-
     public ItemCustomFireArm(RangedMaterial rangedspecs, Properties props) {
         super(props);
         this.specs = rangedspecs;
@@ -107,8 +104,6 @@ public class ItemCustomFireArm extends ShootableItem {
             return new ActionResult<>(ActionResultType.SUCCESS, itemstack);
         } else if (!playerIn.findAmmo(itemstack).isEmpty()) {
             if (!isLoaded(itemstack)) {
-                this.field_220034_c = false;
-                this.field_220035_d = false;
                 playerIn.setActiveHand(handIn);
             }
 
