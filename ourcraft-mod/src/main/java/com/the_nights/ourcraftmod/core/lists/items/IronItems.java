@@ -13,6 +13,7 @@ import net.minecraft.item.Item;
  */
 public class IronItems {
     public static Item katana;
+    
     public static Item musket;
     public static Item pistol;
     public static Item blunderbuss;
