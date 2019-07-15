@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.the_nights.ourcraftmod.core.Materials;
+package com.the_nights.ourcraftmod.core.items.materials;
 
-import com.the_nights.ourcraftmod.core.Main;
+import com.the_nights.ourcraftmod.core.OurcraftCore;
 import com.the_nights.ourcraftmod.core.lists.items.ObsidianItems;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
@@ -70,7 +70,7 @@ public enum ArmorMaterial implements IArmorMaterial {
 
     @Override
     public String getName() {
-        return Main.MODID + ":" + this.name;
+        return OurcraftCore.MODID + ":" + this.name;
     }
 
     @Override

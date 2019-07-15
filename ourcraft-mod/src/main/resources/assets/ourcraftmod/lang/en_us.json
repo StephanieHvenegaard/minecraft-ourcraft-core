@@ -40,6 +40,14 @@
     "item.ourcraftmod.diamond_katana": "Diamond Katana",
     "item.ourcraftmod.gold_katana": "Gold Katana",    
     "item.ourcraftmod.iron_katana": "Iron Katana",
+    "item.ourcraftmod.flintlock_musket": "Flintlock Musket",
+    "item.ourcraftmod.flintlock_pistol": "Flintlock Pistol",
+    "item.ourcraftmod.flintlock_blunderbuss": "Flintlock Blunderbuss",
+
     "item.ourcraftmod.stone_katana": "Stone Katana",
-    "item.ourcraftmod.wood_katana": "Wooden Katana"
+    "item.ourcraftmod.wood_katana": "Wooden Katana",
+    
+    "item.ourcraftmod.flintlock_ammo": "Flintlock Ammunition"
+    
+    
 }
