@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+            [
+                "II",            
+                "IS"
+            ],
+    "key": 
+            {
+                "S": {
+                    "item": "minecraft:emerald"
+                },
+                "I": {
+                    "item": "minecraft:iron_ingot"
+                }
+            },
+    "result": {
+        "item": "ourcraftmod:iron_coin"
+    },
+    "count" : 4
+}
