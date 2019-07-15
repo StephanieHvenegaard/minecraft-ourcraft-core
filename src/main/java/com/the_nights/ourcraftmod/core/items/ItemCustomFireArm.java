@@ -221,7 +221,7 @@ public class ItemCustomFireArm extends ShootableItem {
                 else
                 {
                     spread = random.nextFloat()*spread;
-                    if(random.nextFloat() > 0.5f)
+                    if(random.nextFloat() >= 0.5f)
                         spread = spread *-1.0f;
                     shoot(world, livingentity, hand, weapon, itemstack, afloat[i%afloat.length], flag, p_220014_4_,p_220014_5_, spread);
                 }               
