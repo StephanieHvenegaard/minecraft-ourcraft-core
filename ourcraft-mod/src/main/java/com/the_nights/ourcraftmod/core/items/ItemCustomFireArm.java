@@ -220,14 +220,14 @@ public class ItemCustomFireArm extends ShootableItem {
             if (!itemstack.isEmpty()) {
                 if(i==0)
                 {
-                    shoot(world, livingentity, hand, weapon, itemstack, afloat[i], flag, p_220014_4_,p_220014_5_, 0.0F);
+                    shoot(world, livingentity, hand, weapon, itemstack, afloat[i%afloat.length], flag, p_220014_4_,p_220014_5_, 0.0F);
                 }
                 else
                 {
                     spread = random.nextFloat()*5.0f;
                     if(random.nextFloat() > 0.5f)
                         spread = spread *-1.0f;
-                    shoot(world, livingentity, hand, weapon, itemstack, afloat[i], flag, p_220014_4_,p_220014_5_, spread);
+                    shoot(world, livingentity, hand, weapon, itemstack, afloat[i%afloat.length], flag, p_220014_4_,p_220014_5_, spread);
                 }               
             }
         }
