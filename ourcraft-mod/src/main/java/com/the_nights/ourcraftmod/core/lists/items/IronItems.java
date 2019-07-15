@@ -12,8 +12,8 @@ import net.minecraft.item.Item;
  * @author Stephanie
  */
 public class IronItems {
-
     public static Item katana;
+    
     public static Item musket;
     public static Item pistol;
     public static Item blunderbuss;
@@ -21,4 +21,6 @@ public class IronItems {
     public static Item revolver;
     public static Item leverActionRifle;
     public static Item leverActionShootgun;
+    
+    
 }
