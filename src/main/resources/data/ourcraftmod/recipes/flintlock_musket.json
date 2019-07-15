@@ -1,20 +1,12 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern":
+    "type": "minecraft:crafting_shapeless",
+    "ingredients":
             [             
-               
-                "SW"
-            ],
-    "key": 
-            {
-                "S": {
-                    "item": "ourcraftmod:flintlock_musket_barrelassembly"
-                },
-                "W":{
-                    "tag": "ourcraftmod:gunstock"
-                }
-            },
+               {"item": "ourcraftmod:flintlock_musket_barrelassembly"},
+               {"item": "ourcraftmod:gunstock"}
+            ],    
     "result": {
         "item": "ourcraftmod:flintlock_musket"
     }
 }
+

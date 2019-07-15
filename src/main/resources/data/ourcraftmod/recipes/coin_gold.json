@@ -16,5 +16,6 @@
             },
     "result": {
         "item": "ourcraftmod:gold_coin"
-    }
+    },
+    "count" : 4
 }

@@ -5,7 +5,7 @@
     "pattern":
             [   "I  ",           
                 " IF",
-                "I  I"
+                "I I"
             ],
     "key": 
             {
@@ -14,12 +14,6 @@
                 },
                 "F": {
                     "item": "minecraft:flint_and_steel"
-                },
-                "S": {
-                    "item": "minecraft:stick"
-                },
-                "W":{
-                    "tag": "minecraft:planks"
                 }
             },
     "result": {
