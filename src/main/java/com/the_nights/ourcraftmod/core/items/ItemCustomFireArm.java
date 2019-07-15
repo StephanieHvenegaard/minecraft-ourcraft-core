@@ -202,15 +202,16 @@ public class ItemCustomFireArm extends ShootableItem {
     }
 
     public static void fireProjectiles(World world, LivingEntity livingentity, Hand hand, ItemStack weapon, float p_220014_4_, float p_220014_5_) {       
-        int bullets = 1;
-        float spread =0;
+        int projectiles = 1;
+        float spread =0.0f;
         if (weapon.getItem() instanceof ItemCustomFireArm) {
             ItemCustomFireArm firearm = (ItemCustomFireArm) weapon.getItem();
-            bullets = firearm.specs.projectiles;
+            projectiles = firearm.specs.ammoType.projectilesPerBullet;
+            spread = firearm.specs.spread;
         }
         float[] afloat = func_220028_a(livingentity.getRNG());
         boolean flag = livingentity instanceof PlayerEntity && ((PlayerEntity) livingentity).abilities.isCreativeMode;
-        for (int i = 0; i < bullets; ++i) {
+        for (int i = 0; i < projectiles; ++i) {
             ItemStack itemstack = new ItemStack(Items.ARROW);            
             if (!itemstack.isEmpty()) {
                 if(i==0)
@@ -219,7 +220,7 @@ public class ItemCustomFireArm extends ShootableItem {
                 }
                 else
                 {
-                    spread = random.nextFloat()*5.0f;
+                    spread = random.nextFloat()*spread;
                     if(random.nextFloat() > 0.5f)
                         spread = spread *-1.0f;
                     shoot(world, livingentity, hand, weapon, itemstack, afloat[i%afloat.length], flag, p_220014_4_,p_220014_5_, spread);
@@ -263,7 +264,7 @@ public class ItemCustomFireArm extends ShootableItem {
             Vec3d vec3d = p_220016_1_.getLook(1.0F);
             Vector3f vector3f = new Vector3f(vec3d);
             vector3f.func_214905_a(quaternion);
-            iprojectile.shoot((double) vector3f.getX(), (double) vector3f.getY(), (double) vector3f.getZ(), Velocity + velocityMod,p_220016_8_);
+            iprojectile.shoot((double) vector3f.getX(), (double) vector3f.getY(), (double) vector3f.getZ(), velocityMod,p_220016_8_);
 
 
             p_220016_3_.damageItem(1, p_220016_1_, (p_220017_1_) -> {

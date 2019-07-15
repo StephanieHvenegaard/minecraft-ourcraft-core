@@ -13,22 +13,21 @@ import net.minecraft.item.Item;
  * @author Stephanie
  */
 public enum RangedMaterial {
-    
-    FLINTLOCK_MUSKET(ProjectileMaterial.FLINT_LOCK_AMMO, 1, 1, 8.0f, 80, 720000),
-    FLINTLOCK_BLUNDERBUSS(ProjectileMaterial.FLINT_LOCK_AMMO, 1, 5, 1.0f, 80, 720000),
-    FLINTLOCK_PISTOL(ProjectileMaterial.FLINT_LOCK_AMMO, 1, 1, 0.0f, 80, 2000);
 
-    RangedMaterial(ProjectileMaterial ammo, int magazinCapasity, int projectiles, float projectileVelocity, int durability, int reloadtime) {
+    FLINTLOCK_MUSKET(ProjectileMaterial.FLINT_LOCK_MUSKET_AMMO, 1, 8.0f, 1.0f, 80, 720000),
+    FLINTLOCK_BLUNDERBUSS(ProjectileMaterial.FLINT_LOCK_BLUNDERBUSS_AMMO, 1, 2.0f, 10.0f, 80, 720000),
+    FLINTLOCK_PISTOL(ProjectileMaterial.FLINT_LOCK_PISTOL_AMMO, 1, 1.5f, 2.0f, 80, 2000);
+
+    RangedMaterial(ProjectileMaterial ammo, int magazinCapasity, float projectileVelocity, float spread, int durability, int reloadtime) {
         this.ammoType = ammo;
         this.magazinCapasity = magazinCapasity;
         this.durability = durability;
-        this.stackSize = 1;
         this.reloadTime = reloadtime;
-        this.projectiles = projectiles;
         this.projectileVelocity = projectileVelocity;
+        this.spread = spread;
     }
 
     public final ProjectileMaterial ammoType;
-    public final int durability, stackSize, magazinCapasity, reloadTime, projectiles;
-    public final float projectileVelocity;
+    public final int durability, magazinCapasity, reloadTime;
+    public final float projectileVelocity, spread;
 }
