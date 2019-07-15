@@ -153,14 +153,14 @@ public class ItemCustomFireArm extends ShootableItem {
     @Override
     public Predicate<ItemStack> getInventoryAmmoPredicate() {
         // OurcraftCore.LOGGER.info("Ammo type: " +specs.ammoType);
-        switch (specs.ammoType) {
-            case FLINT_LOCK_AMMO:
-                OurcraftCore.LOGGER.info("found ammo");
-                return AMMUNITION_MUSKET;
-            default:
+        //switch (specs.ammoType) {
+        //    case FLINT_LOCK_AMMO:
+        //        OurcraftCore.LOGGER.info("found ammo");
+        //        return AMMUNITION_MUSKET;
+        //    default:
                 OurcraftCore.LOGGER.info("default ammo");
                 return ARROWS;
-        }
+        //}
     }
 
     /**
