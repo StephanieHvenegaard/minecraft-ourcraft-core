@@ -1,0 +1,27 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+            [              
+            
+                "SSW"
+            ],
+    "key": 
+            {
+                "I": {
+                    "item": "minecraft:iron_ingot"
+                },
+                "F": {
+                    "item": "minecraft:flint_and_steel"
+                },
+                "S": {
+                    "item": "minecraft:stick"
+                },
+                "W":{
+                    "tag": "minecraft:planks"
+                }
+            },
+    "result": {
+        "item": "ourcraftmod:flintlock_pistol"
+    }
+}
+
