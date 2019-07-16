@@ -2,7 +2,7 @@
 
 ## Version 0.2.1 for minecraft 1.14.3
 
-- adding
+- 
 
 ## Version 0.2.0 for minecraft 1.14.3
 
