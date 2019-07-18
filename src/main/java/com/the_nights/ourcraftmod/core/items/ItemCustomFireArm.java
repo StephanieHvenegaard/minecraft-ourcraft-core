@@ -198,7 +198,7 @@ public class ItemCustomFireArm extends ShootableItem {
                 }
                 else
                 {
-                    spread = random.nextFloat()*spread;
+                    spread = (0.1f*spread)+(random.nextFloat()*spread); // calculates Spread of shotgun type weapons
                     if(random.nextFloat() >= 0.5f)
                     {
                         spread = spread *-1.0f;
