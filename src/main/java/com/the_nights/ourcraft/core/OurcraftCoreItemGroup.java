@@ -36,7 +36,7 @@ import net.minecraft.item.ItemStack;
 public class OurcraftCoreItemGroup extends ItemGroup {
 
     public OurcraftCoreItemGroup() {
-        super("ourCraft-core");
+        super("ourcraft");
     }
 
     @Override
