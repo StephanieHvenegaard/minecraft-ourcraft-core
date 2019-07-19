@@ -1,7 +1,7 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0" : "ourcraftmod:item/obsidian_leggings"
+        "layer0" : "ourcraft-core:item/obsidian_leggings"
     }
 }
 

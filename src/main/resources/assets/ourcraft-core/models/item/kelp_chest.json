@@ -2,7 +2,7 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0" : "ourcraftmod:item/kelp_chest"
+        "layer0" : "ourcraft-core:item/kelp_chest"
     }
 }
 

@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "ourcraftmod:item/flintlock_pistol"
+        "layer0": "ourcraft-core:item/flintlock_pistol"
     },
     "display": {
         "thirdperson_righthand": {
@@ -31,13 +31,13 @@
                 "pulling": 1,
                 "pull": 1.0
             },
-            "model": "ourcraftmod:item/flintlock_pistol_loaded"
+            "model": "ourcraft-core:item/flintlock_pistol_loaded"
         },
         {
             "predicate": {
                 "charged": 1
             },
-            "model": "ourcraftmod:item/flintlock_pistol_loaded"
+            "model": "ourcraft-core:item/flintlock_pistol_loaded"
         }
     ]
 }

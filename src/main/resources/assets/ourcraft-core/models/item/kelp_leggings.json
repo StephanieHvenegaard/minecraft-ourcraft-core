@@ -1,7 +1,7 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0" : "ourcraftmod:item/kelp_leggings"
+        "layer0" : "ourcraft-core:item/kelp_leggings"
     }
 }
 

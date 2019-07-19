@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0" : "ourcraftmod:item/gold_coin"
+        "layer0" : "ourcraft-core:item/gold_coin"
     }
 }
 

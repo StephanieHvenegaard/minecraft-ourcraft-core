@@ -2,7 +2,7 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0" : "ourcraftmod:item/obsidian_chest"
+        "layer0" : "ourcraft-core:item/obsidian_chest"
     }
 }
 

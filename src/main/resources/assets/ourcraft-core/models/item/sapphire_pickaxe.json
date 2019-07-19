@@ -1,7 +1,7 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0" : "ourcraftmod:item/sapphire_pickaxe"
+        "layer0" : "oourcraft-core:item/sapphire_pickaxe"
     }
 }
 

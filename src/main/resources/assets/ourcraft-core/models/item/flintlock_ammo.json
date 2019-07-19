@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0": "ourcraftmod:item/flintlock_ammo"
+        "layer0": "ourcraft-core:item/flintlock_ammo"
     }
 }
 

@@ -74,7 +74,7 @@ import net.minecraft.util.ResourceLocation;
 public class OurcraftCore {
 
     public static OurcraftCore INSTANCE;                                                    // public instance of the main mod class
-    public static final String MODID = "ourcraftmod";                               // Mod id 
+    public static final String MODID = "ourcraft-core";                               // Mod id 
     public static final ItemGroup OURCRAFT_GROUP = new OurcraftCoreItemGroup();         // creative tap  
     // Directly reference a log4j logger.
     public static final Logger LOGGER = LogManager.getLogger(MODID);                // Logger

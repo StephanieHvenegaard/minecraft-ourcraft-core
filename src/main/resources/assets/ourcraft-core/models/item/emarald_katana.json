@@ -1,7 +1,7 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0" : "ourcraftmod:item/emarald_katana"
+        "layer0" : "ourcraft-core:item/emarald_katana"
     }
 }
 

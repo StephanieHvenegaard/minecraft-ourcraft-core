@@ -2,7 +2,7 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0" : "ourcraftmod:item/wood_chest"
+        "layer0" : "ourcraft-cored:item/wood_chest"
     }
 }
 

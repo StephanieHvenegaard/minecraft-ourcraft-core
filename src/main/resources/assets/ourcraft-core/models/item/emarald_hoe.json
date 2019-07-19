@@ -2,7 +2,7 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0" : "ourcraftmod:item/emarald_hoe"
+        "layer0" : "ourcraft-core:item/emarald_hoe"
     }
 }
 

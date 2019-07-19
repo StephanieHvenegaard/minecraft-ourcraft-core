@@ -2,7 +2,7 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0" : "ourcraftmod:item/emarald_pickaxe"
+        "layer0" : "ourcraft-core:item/emarald_pickaxe"
     }
 }
 

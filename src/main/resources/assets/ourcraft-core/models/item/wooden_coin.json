@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0" : "ourcraftmod:item/wooden_coin"
+        "layer0" : "ourcraft-core:item/wooden_coin"
     }
 }
 

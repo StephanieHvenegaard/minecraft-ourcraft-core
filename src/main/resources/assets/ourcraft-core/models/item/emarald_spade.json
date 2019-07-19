@@ -1,7 +1,7 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0" : "ourcraftmod:item/emarald_spade"
+        "layer0" : "ourcraft-core:item/emarald_spade"
     }
 }
 

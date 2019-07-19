@@ -1,7 +1,7 @@
 {
     "parent": "item/generated",
     "textures": {
-        "layer0" : "ourcraftmod:item/kelp_helmet"
+        "layer0" : "ourcraft-core:item/kelp_helmet"
     }
 }
 
