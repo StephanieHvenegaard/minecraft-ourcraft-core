@@ -5,14 +5,8 @@
  */
 package com.the_nights.ourcraftmod.core.items;
 
-import afu.org.checkerframework.checker.nullness.qual.Nullable;
-import com.google.common.collect.Lists;
 import com.the_nights.ourcraftmod.core.items.materials.RangedMaterial;
 import com.the_nights.ourcraftmod.core.OurcraftCore;
-import com.the_nights.ourcraftmod.core.lists.items.IronItems;
-import com.the_nights.ourcraftmod.core.lists.items.MiscItems;
-
-import java.util.List;
 import java.util.Random;
 
 import net.minecraft.item.Items;
@@ -22,42 +16,26 @@ import net.minecraft.tags.Tag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import java.util.function.Predicate;
-import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.renderer.Quaternion;
 import net.minecraft.client.renderer.Vector3f;
-import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.ICrossbowUser;
 import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.item.FireworkRocketEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ArrowItem;
-import net.minecraft.item.BowItem;
-import net.minecraft.item.CrossbowItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.UseAction;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.nbt.ListNBT;
-import net.minecraft.stats.Stats;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 
 /**
  *
@@ -196,7 +174,7 @@ public class ItemCustomFireArm extends ShootableItem {
     }
 
     public static void setLoaded(ItemStack weapon, boolean state) {
-        OurcraftCore.LOGGER.info("setting loaded state :" + state);
+        //OurcraftCore.LOGGER.info("setting loaded state :" + state);
         CompoundNBT compoundnbt = weapon.getOrCreateTag();
         compoundnbt.putBoolean(isLoadedTag, state);
     }
@@ -220,9 +198,11 @@ public class ItemCustomFireArm extends ShootableItem {
                 }
                 else
                 {
-                    spread = random.nextFloat()*spread;
+                    spread = (0.1f*spread)+(random.nextFloat()*spread); // calculates Spread of shotgun type weapons
                     if(random.nextFloat() >= 0.5f)
+                    {
                         spread = spread *-1.0f;
+                    }
                     shoot(world, livingentity, hand, weapon, itemstack, afloat[i%afloat.length], flag, p_220014_4_,p_220014_5_, spread);
                 }               
             }
@@ -274,8 +254,7 @@ public class ItemCustomFireArm extends ShootableItem {
         }
     }
 
-    private static AbstractArrowEntity createArrow(World p_220024_0_, LivingEntity p_220024_1_, ItemStack p_220024_2_,
-            ItemStack p_220024_3_) {
+    private static AbstractArrowEntity createArrow(World p_220024_0_, LivingEntity p_220024_1_, ItemStack p_220024_2_, ItemStack p_220024_3_) {
         ArrowItem arrowitem = (ArrowItem) (p_220024_3_.getItem() instanceof ArrowItem ? p_220024_3_.getItem()
                 : Items.ARROW);
         AbstractArrowEntity abstractarrowentity = arrowitem.createArrow(p_220024_0_, p_220024_3_, p_220024_1_);
@@ -285,10 +264,10 @@ public class ItemCustomFireArm extends ShootableItem {
 
         abstractarrowentity.setHitSound(SoundEvents.ITEM_CROSSBOW_HIT);
         abstractarrowentity.func_213865_o(true);
-        int i = EnchantmentHelper.getEnchantmentLevel(Enchantments.PIERCING, p_220024_2_);
-        if (i > 0) {
-            abstractarrowentity.func_213872_b((byte) i);
-        }
+//        int i = EnchantmentHelper.getEnchantmentLevel(Enchantments.PIERCING, p_220024_2_);
+//        if (i > 0) {
+//            abstractarrowentity.func_213872_b((byte) i);
+//        }
 
         return abstractarrowentity;
     }
