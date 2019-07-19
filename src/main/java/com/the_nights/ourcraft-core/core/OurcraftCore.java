@@ -75,7 +75,7 @@ public class OurcraftCore {
 
     public static OurcraftCore INSTANCE;                                                    // public instance of the main mod class
     public static final String MODID = "ourcraftmod";                               // Mod id 
-    public static final ItemGroup OURCRAFT_GROUP = new OurcraftItemGroup();         // creative tap  
+    public static final ItemGroup OURCRAFT_GROUP = new OurcraftCoreItemGroup();         // creative tap  
     // Directly reference a log4j logger.
     public static final Logger LOGGER = LogManager.getLogger(MODID);                // Logger
 

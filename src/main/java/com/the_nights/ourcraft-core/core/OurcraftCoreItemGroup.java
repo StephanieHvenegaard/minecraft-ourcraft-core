@@ -33,9 +33,9 @@ import net.minecraft.item.ItemStack;
  *
  * @author Stephanie
  */
-public class OurcraftItemGroup extends ItemGroup {
+public class OurcraftCoreItemGroup extends ItemGroup {
 
-    public OurcraftItemGroup() {
+    public OurcraftCoreItemGroup() {
         super("ourCraft-core");
     }
 
