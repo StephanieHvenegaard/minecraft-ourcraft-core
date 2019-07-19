@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.the_nights.ourcraftmod.core.items;
+package com.the_nights.ourcraft.core.items;
 
-import com.the_nights.ourcraftmod.core.items.materials.RangedMaterial;
-import com.the_nights.ourcraftmod.core.OurcraftCore;
+import com.the_nights.ourcraft.core.items.materials.RangedMaterial;
+import com.the_nights.ourcraft.core.OurcraftCore;
 import java.util.Random;
 
 import net.minecraft.item.Items;

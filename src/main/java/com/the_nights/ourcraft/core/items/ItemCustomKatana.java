@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.the_nights.ourcraftmod.core.items;
+package com.the_nights.ourcraft.core.items;
 
-import com.the_nights.ourcraftmod.core.items.materials.ToolMaterial;
+import com.the_nights.ourcraft.core.items.materials.ToolMaterial;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
 import net.minecraft.item.SwordItem;

@@ -23,31 +23,31 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
  */
-package com.the_nights.ourcraftmod.core;
+package com.the_nights.ourcraft.core;
 
-import com.the_nights.ourcraftmod.core.items.materials.ArmorMaterial;
-import com.the_nights.ourcraftmod.core.items.ItemCustomAxe;
-import com.the_nights.ourcraftmod.core.items.ItemCustomHoe;
-import com.the_nights.ourcraftmod.core.items.ItemCustomPickAxe;
-import com.the_nights.ourcraftmod.core.items.ItemCustomShovel;
-import com.the_nights.ourcraftmod.core.items.ItemCustomSword;
-import com.the_nights.ourcraftmod.core.lists.armor.CoinItems;
-import com.the_nights.ourcraftmod.core.lists.items.ObsidianItems;
-import com.the_nights.ourcraftmod.core.items.materials.ToolMaterial;
-import com.the_nights.ourcraftmod.core.items.ItemCustomFireArm;
-import com.the_nights.ourcraftmod.core.items.ItemCustomKatana;
-import com.the_nights.ourcraftmod.core.items.materials.RangedMaterial;
-import com.the_nights.ourcraftmod.core.lists.armor.KelpArmor;
-import com.the_nights.ourcraftmod.core.lists.armor.ObsidianArmor;
-import com.the_nights.ourcraftmod.core.lists.armor.SapphireArmor;
-import com.the_nights.ourcraftmod.core.lists.armor.WoodenArmor;
-import com.the_nights.ourcraftmod.core.lists.items.DiamondItem;
-import com.the_nights.ourcraftmod.core.lists.items.EmaraldItems;
-import com.the_nights.ourcraftmod.core.lists.items.GoldenItems;
-import com.the_nights.ourcraftmod.core.lists.items.IronItems;
-import com.the_nights.ourcraftmod.core.lists.items.MiscItems;
-import com.the_nights.ourcraftmod.core.lists.items.StoneItems;
-import com.the_nights.ourcraftmod.core.lists.items.WoodenItem;
+import com.the_nights.ourcraft.core.items.materials.ArmorMaterial;
+import com.the_nights.ourcraft.core.items.ItemCustomAxe;
+import com.the_nights.ourcraft.core.items.ItemCustomHoe;
+import com.the_nights.ourcraft.core.items.ItemCustomPickAxe;
+import com.the_nights.ourcraft.core.items.ItemCustomShovel;
+import com.the_nights.ourcraft.core.items.ItemCustomSword;
+import com.the_nights.ourcraft.core.lists.armor.CoinItems;
+import com.the_nights.ourcraft.core.lists.items.ObsidianItems;
+import com.the_nights.ourcraft.core.items.materials.ToolMaterial;
+import com.the_nights.ourcraft.core.items.ItemCustomFireArm;
+import com.the_nights.ourcraft.core.items.ItemCustomKatana;
+import com.the_nights.ourcraft.core.items.materials.RangedMaterial;
+import com.the_nights.ourcraft.core.lists.armor.KelpArmor;
+import com.the_nights.ourcraft.core.lists.armor.ObsidianArmor;
+import com.the_nights.ourcraft.core.lists.armor.SapphireArmor;
+import com.the_nights.ourcraft.core.lists.armor.WoodenArmor;
+import com.the_nights.ourcraft.core.lists.items.DiamondItem;
+import com.the_nights.ourcraft.core.lists.items.EmaraldItems;
+import com.the_nights.ourcraft.core.lists.items.GoldenItems;
+import com.the_nights.ourcraft.core.lists.items.IronItems;
+import com.the_nights.ourcraft.core.lists.items.MiscItems;
+import com.the_nights.ourcraft.core.lists.items.StoneItems;
+import com.the_nights.ourcraft.core.lists.items.WoodenItem;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

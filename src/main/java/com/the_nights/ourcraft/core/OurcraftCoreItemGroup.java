@@ -23,9 +23,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
  */
-package com.the_nights.ourcraftmod.core;
+package com.the_nights.ourcraft.core;
 
-import com.the_nights.ourcraftmod.core.lists.items.ObsidianItems;
+import com.the_nights.ourcraft.core.lists.items.ObsidianItems;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 

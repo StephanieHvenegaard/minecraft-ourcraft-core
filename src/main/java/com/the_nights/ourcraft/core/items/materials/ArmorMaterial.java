@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.the_nights.ourcraftmod.core.items.materials;
+package com.the_nights.ourcraft.core.items.materials;
 
-import com.the_nights.ourcraftmod.core.OurcraftCore;
-import com.the_nights.ourcraftmod.core.lists.items.ObsidianItems;
-import com.the_nights.ourcraftmod.core.lists.items.PinkSapphireItems;
+import com.the_nights.ourcraft.core.OurcraftCore;
+import com.the_nights.ourcraft.core.lists.items.ObsidianItems;
+import com.the_nights.ourcraft.core.lists.items.PinkSapphireItems;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.IArmorMaterial;
 import net.minecraft.item.Item;
