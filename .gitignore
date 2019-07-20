@@ -1,1 +1,8 @@
 /Ourcraft Stackable/.nb-gradle/
+\.settings/
+
+\.gradle/
+
+\.project
+
+\.classpath
