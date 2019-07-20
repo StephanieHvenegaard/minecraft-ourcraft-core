@@ -1,7 +1,6 @@
 package the_nights.ourcraft.stackable.message;
 
 import io.netty.buffer.ByteBuf;
-import mrriegel.stackable.Stackable;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.network.ByteBufUtils;

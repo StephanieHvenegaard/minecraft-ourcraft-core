@@ -1,10 +1,6 @@
 package the_nights.ourcraft.stackable.message;
 
 import io.netty.buffer.ByteBuf;
-import mrriegel.stackable.Stackable;
-import mrriegel.stackable.block.BlockPile;
-import mrriegel.stackable.tile.TileIngotPile;
-import mrriegel.stackable.tile.TilePile;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;

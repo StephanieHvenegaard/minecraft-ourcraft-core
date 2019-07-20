@@ -5,8 +5,6 @@ import java.util.UUID;
 import java.util.stream.IntStream;
 
 import it.unimi.dsi.fastutil.objects.ObjectOpenHashSet;
-import mrriegel.stackable.Stackable;
-import mrriegel.stackable.tile.TilePile;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;

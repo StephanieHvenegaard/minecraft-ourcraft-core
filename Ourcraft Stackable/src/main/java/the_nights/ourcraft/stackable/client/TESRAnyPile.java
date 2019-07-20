@@ -6,9 +6,6 @@ import java.util.Set;
 import org.lwjgl.opengl.GL11;
 
 import it.unimi.dsi.fastutil.objects.ObjectOpenCustomHashSet;
-import mrriegel.stackable.Stackable;
-import mrriegel.stackable.tile.TileAnyPile;
-import mrriegel.stackable.tile.TilePile;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.block.model.IBakedModel;

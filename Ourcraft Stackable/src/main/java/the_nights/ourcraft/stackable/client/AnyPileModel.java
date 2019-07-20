@@ -1,9 +1,6 @@
 package the_nights.ourcraft.stackable.client;
 
 import java.util.List;
-
-import mrriegel.stackable.Stackable;
-import mrriegel.stackable.tile.TilePile;
 import net.minecraft.client.renderer.block.model.BakedQuad;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.AxisAlignedBB;

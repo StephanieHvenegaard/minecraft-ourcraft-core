@@ -2,9 +2,6 @@ package the_nights.ourcraft.stackable.item;
 
 import java.util.List;
 
-import mrriegel.stackable.PileInventory;
-import mrriegel.stackable.Stackable;
-import mrriegel.stackable.tile.TilePile;
 import net.minecraft.block.Block;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;

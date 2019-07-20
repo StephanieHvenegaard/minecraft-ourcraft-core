@@ -1,6 +1,5 @@
 package the_nights.ourcraft.stackable.block;
 
-import mrriegel.stackable.tile.TileIngotPile;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;

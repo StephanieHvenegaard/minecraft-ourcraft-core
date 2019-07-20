@@ -1,8 +1,25 @@
-/Ourcraft Stackable/.nb-gradle/
-\.settings/
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
 
-\.gradle/
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
 
-\.project
+# gradle
+build
+.gradle
 
-\.classpath
+# other
+eclipse
+run
+
+# Files from Forge MDK
+forge*changelog.txt

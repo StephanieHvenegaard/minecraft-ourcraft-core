@@ -3,9 +3,6 @@ package the_nights.ourcraft.stackable.compat;
 import com.google.common.base.Function;
 
 import mcjty.theoneprobe.api.ITheOneProbe;
-import mrriegel.stackable.Stackable;
-import mrriegel.stackable.message.MessageTOPTime;
-import mrriegel.stackable.tile.TilePile;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;

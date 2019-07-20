@@ -11,17 +11,6 @@ import org.apache.commons.lang3.tuple.Pair;
 
 import com.google.common.collect.ImmutableBiMap;
 
-import mrriegel.stackable.block.BlockAnyPile;
-import mrriegel.stackable.block.BlockIngotPile;
-import mrriegel.stackable.client.ClientUtils;
-import mrriegel.stackable.compat.TOPPlugin;
-import mrriegel.stackable.compat.WailaPlugin;
-import mrriegel.stackable.item.ItemChanger;
-import mrriegel.stackable.message.MessageConfigSync;
-import mrriegel.stackable.message.MessageKey;
-import mrriegel.stackable.message.MessageTOPTime;
-import mrriegel.stackable.tile.TileAnyPile;
-import mrriegel.stackable.tile.TileIngotPile;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.Item;
