@@ -1,8 +1,7 @@
 package the_nights.ourcraft.stackable.block;
 
-import mrriegel.stackable.tile.TileAnyPile;
-import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.block.material.Material;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
 
