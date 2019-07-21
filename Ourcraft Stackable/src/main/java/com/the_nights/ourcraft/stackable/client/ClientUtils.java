@@ -1,62 +1,52 @@
-package the_nights.ourcraft.stackable.client;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.the_nights.ourcraft.stackable.client;
 
+import com.google.common.collect.Streams;
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.platform.TextureUtil;
+import com.the_nights.ourcraft.stackable.OurcraftStackable;
+import com.the_nights.ourcraft.stackable.tile.TilePile;
+import it.unimi.dsi.fastutil.objects.Object2IntMap;
+import it.unimi.dsi.fastutil.objects.Object2IntOpenCustomHashMap;
+import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
+import it.unimi.dsi.fastutil.objects.Object2ObjectOpenCustomHashMap;
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
 import javax.annotation.Nullable;
 import javax.vecmath.Point2f;
-
-import org.apache.commons.lang3.Validate;
-import org.apache.commons.lang3.tuple.Pair;
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.input.Mouse;
-import org.lwjgl.util.vector.Matrix4f;
-import org.lwjgl.util.vector.Vector3f;
-import org.lwjgl.util.vector.Vector4f;
-
-import com.google.common.collect.Streams;
-import com.google.common.hash.HashCode;
-
-import it.unimi.dsi.fastutil.objects.Object2IntMap;
-import it.unimi.dsi.fastutil.objects.Object2IntOpenCustomHashMap;
-import it.unimi.dsi.fastutil.objects.Object2ObjectMap;
-import it.unimi.dsi.fastutil.objects.Object2ObjectOpenCustomHashMap;
 import net.minecraft.block.Block;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.gui.ScaledResolution;
-import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.client.renderer.EntityRenderer;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.RenderGlobal;
+import net.minecraft.client.renderer.Matrix4f;
 import net.minecraft.client.renderer.RenderHelper;
-import net.minecraft.client.renderer.block.model.BakedQuad;
-import net.minecraft.client.renderer.block.model.IBakedModel;
-import net.minecraft.client.renderer.block.model.ItemCameraTransforms.TransformType;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.client.renderer.Vector3f;
+import net.minecraft.client.renderer.Vector4f;
+import net.minecraft.client.renderer.entity.EntityRenderer;
+import net.minecraft.client.renderer.model.BakedQuad;
+import net.minecraft.client.renderer.model.IBakedModel;
+import net.minecraft.client.renderer.model.ItemCameraTransforms.TransformType;
+import net.minecraft.client.renderer.model.ModelResourceLocation;
+import net.minecraft.client.renderer.texture.Stitcher.Slot;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
-import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.client.renderer.vertex.VertexFormat;
+import static net.minecraft.client.renderer.vertex.VertexFormatElement.Usage.COLOR;
+import static net.minecraft.client.renderer.vertex.VertexFormatElement.Usage.NORMAL;
+import static net.minecraft.client.renderer.vertex.VertexFormatElement.Usage.UV;
 import net.minecraft.client.settings.KeyBinding;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.Slot;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemBlockSpecial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumBlockRenderType;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -65,9 +55,11 @@ import net.minecraft.util.math.RayTraceResult.Type;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.text.TextFormatting;
+import net.minecraft.world.Explosion.Mode;
 import net.minecraftforge.client.ForgeHooksClient;
 import net.minecraftforge.client.event.DrawBlockHighlightEvent;
 import net.minecraftforge.client.event.GuiScreenEvent.MouseInputEvent;
+import net.minecraftforge.client.event.InputEvent.KeyInputEvent;
 import net.minecraftforge.client.event.ModelBakeEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
@@ -76,23 +68,24 @@ import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.client.model.pipeline.UnpackedBakedQuad;
 import net.minecraftforge.client.settings.KeyConflictContext;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.client.config.GuiUtils;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.InputEvent.KeyInputEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.oredict.OreDictionary;
+import org.apache.commons.lang3.Validate;
+import org.apache.commons.lang3.tuple.Pair;
 
-@EventBusSubscriber(modid = Stackable.MODID, value = Side.CLIENT)
+/**
+ *
+ * @author Stephanie
+ */
 public class ClientUtils {
-
+    
 	private static final Object2IntMap<ItemStack> cachedColors = new Object2IntOpenCustomHashMap<>(TilePile.strategyExact);
 	private static final Object2ObjectMap<ItemStack, TextureAtlasSprite> cachedSprites = new Object2ObjectOpenCustomHashMap<>(TilePile.strategyFuzzy);
 	private static final ResourceLocation BACKGROUND_TEX = new ResourceLocation("textures/gui/demo_background.png");
 	private static final ResourceLocation SLOT_TEX = new ResourceLocation("textures/gui/container/recipe_background.png");
-	public static final KeyBinding PLACE_KEY = new KeyBinding("key.stackable.place", KeyConflictContext.IN_GAME, Keyboard.KEY_P, Stackable.NAME);
-	public static final KeyBinding CYCLE_KEY = new KeyBinding("key.stackable.cycle", KeyConflictContext.IN_GAME, Keyboard.KEY_C, Stackable.NAME);
+	public static final KeyBinding PLACE_KEY = new KeyBinding("key.stackable.place", KeyConflictContext.IN_GAME, Keyboard.KEY_P, OurcraftStackable.NAME);
+	public static final KeyBinding CYCLE_KEY = new KeyBinding("key.stackable.cycle", KeyConflictContext.IN_GAME, Keyboard.KEY_C, OurcraftStackable.NAME);
 	private static Minecraft mc;
 	static TextureAtlasSprite defaultTas;
 	public static long wailaTime = 0, topTime = 0;
@@ -684,4 +677,5 @@ public class ClientUtils {
 		}
 	}
 
+}
 }
