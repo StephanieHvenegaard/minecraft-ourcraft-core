@@ -1,0 +1,22 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+            [
+                "II",
+                " S",
+                " S"
+            ],
+    "key": 
+            {
+                "I": {
+                    "item": "ourcraftmod:obsidian_ingot"
+                },
+                "S": {
+                    "item": "minecraft:stick"
+                }
+            },
+    "result": {
+        "item": "ourcraftmod:obsidian_hoe"
+    }
+}
+
