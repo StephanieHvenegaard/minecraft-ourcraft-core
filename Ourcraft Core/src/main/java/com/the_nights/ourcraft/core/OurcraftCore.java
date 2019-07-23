@@ -25,6 +25,7 @@ SOFTWARE.
  */
 package com.the_nights.ourcraft.core;
 
+import com.the_nights.ourcraft.core.tap.OurcraftCoreTap;
 import com.the_nights.ourcraft.core.items.materials.ArmorMaterial;
 import com.the_nights.ourcraft.core.items.ItemCustomAxe;
 import com.the_nights.ourcraft.core.items.ItemCustomHoe;
@@ -73,11 +74,11 @@ import net.minecraft.util.ResourceLocation;
 @Mod(OurcraftCore.MODID)
 public class OurcraftCore {
 
-    public static OurcraftCore INSTANCE;                                                    // public instance of the main mod class
-    public static final String MODID = "ourcraft-core";                               // Mod id 
-    public static final ItemGroup OURCRAFT_GROUP = new OurcraftCoreItemGroup();         // creative tap  
+    public static OurcraftCore INSTANCE;                                                // public instance of the main mod class
+    public static final String MODID = "ourcraft-core";                                 // Mod id 
+    public static final ItemGroup OURCRAFT_GROUP = new OurcraftCoreTap();               // creative tap  
     // Directly reference a log4j logger.
-    public static final Logger LOGGER = LogManager.getLogger(MODID);                // Logger
+    public static final Logger LOGGER = LogManager.getLogger(MODID);                    // Logger
 
     public OurcraftCore() {
         INSTANCE = this;

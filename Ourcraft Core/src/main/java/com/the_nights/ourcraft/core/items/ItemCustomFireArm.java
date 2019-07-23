@@ -7,6 +7,7 @@ package com.the_nights.ourcraft.core.items;
 
 import com.the_nights.ourcraft.core.items.materials.RangedMaterial;
 import com.the_nights.ourcraft.core.OurcraftCore;
+import java.util.List;
 import java.util.Random;
 
 import net.minecraft.item.Items;
@@ -18,8 +19,7 @@ import net.minecraft.util.ResourceLocation;
 import java.util.function.Predicate;
 import net.minecraft.client.renderer.Quaternion;
 import net.minecraft.client.renderer.Vector3f;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.Enchantments;
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.LivingEntity;
@@ -35,6 +35,10 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.NBTTextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 
 /**
@@ -67,6 +71,12 @@ public class ItemCustomFireArm extends ShootableItem {
         });
     }
 
+    @Override
+    public void addInformation(ItemStack is, World world, List<ITextComponent> list, ITooltipFlag itf) {
+       list.add(new StringTextComponent("Firearm Damage : "+ getDamage(is)));
+     
+    }
+
     /**
      * Called to trigger the item's "innate" right click behavior. To handle
      * when this item is used on a Block, see {@link #onItemUse}.
@@ -84,12 +94,25 @@ public class ItemCustomFireArm extends ShootableItem {
             if (!isLoaded(itemstack)) {
                 playerIn.setActiveHand(handIn);
             }
-
             return new ActionResult<>(ActionResultType.SUCCESS, itemstack);
         } else {
             return new ActionResult<>(ActionResultType.FAIL, itemstack);
         }
     }
+
+    @Override
+    public int getDamage(ItemStack stack) {    
+        if (stack.getItem() instanceof ItemCustomFireArm) {
+            ItemCustomFireArm firearm = (ItemCustomFireArm) stack.getItem();
+            int projectiles = firearm.specs.ammoType.projectilesPerBullet;
+            int dmg = firearm.specs.ammoType.dmg;
+            return projectiles * dmg;
+        }
+        else return super.getDamage(stack);
+    }
+    
+    
+    
 
     @Override
     public void onPlayerStoppedUsing(ItemStack stack, World worldIn, LivingEntity entityLiving, int timeLeft) {

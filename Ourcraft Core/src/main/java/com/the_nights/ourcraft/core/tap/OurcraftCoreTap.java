@@ -23,7 +23,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
  */
-package com.the_nights.ourcraft.core;
+package com.the_nights.ourcraft.core.tap;
 
 import com.the_nights.ourcraft.core.lists.items.ObsidianItems;
 import net.minecraft.item.ItemGroup;
@@ -33,9 +33,9 @@ import net.minecraft.item.ItemStack;
  *
  * @author Stephanie
  */
-public class OurcraftCoreItemGroup extends ItemGroup {
+public class OurcraftCoreTap extends ItemGroup {
 
-    public OurcraftCoreItemGroup() {
+    public OurcraftCoreTap() {
         super("ourcraft");
     }
 

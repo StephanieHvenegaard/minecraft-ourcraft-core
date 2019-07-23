@@ -15,9 +15,9 @@ import net.minecraft.item.Item;
 public enum ProjectileMaterial {
             // BLOWGUN("weaponmod:dart", "blowgun", 250, 1),
             // CROSSBOW("weaponmod:bolt", "crossbow", 250, 1),
-            FLINT_LOCK_MUSKET_AMMO(MiscItems.flintlockAmmo,10,1),
+            FLINT_LOCK_MUSKET_AMMO(MiscItems.flintlockAmmo,25,1),
             FLINT_LOCK_BLUNDERBUSS_AMMO(MiscItems.flintlockAmmo,10,5),
-            FLINT_LOCK_PISTOL_AMMO(MiscItems.flintlockAmmo,5,1),
+            FLINT_LOCK_PISTOL_AMMO(MiscItems.flintlockAmmo,15,1),
             // BLUNDERBUSS("weaponmod:shot", "blunderbuss", 80, 1),
             Rifle_AMMO(MiscItems.flintlockAmmo,10, 1);
 
