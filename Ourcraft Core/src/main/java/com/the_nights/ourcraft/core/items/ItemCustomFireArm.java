@@ -54,7 +54,7 @@ public class ItemCustomFireArm extends ShootableItem {
     private RangedMaterial specs;
 
     public ItemCustomFireArm(RangedMaterial rangedspecs, Properties props) {
-        super(props);
+        super(props.maxStackSize(1));
         this.specs = rangedspecs;
         this.addPropertyOverride(new ResourceLocation("pull"), (p_220022_1_, p_220022_2_, p_220022_3_) -> {
             if (p_220022_3_ != null && p_220022_1_.getItem() == this) {
@@ -73,9 +73,22 @@ public class ItemCustomFireArm extends ShootableItem {
 
     @Override
     public void addInformation(ItemStack is, World world, List<ITextComponent> list, ITooltipFlag itf) {
-       list.add(new StringTextComponent("Firearm Damage : "+ getDamage(is)));
-     
+        list.add(new StringTextComponent("Firearm Damage : " + getDamage(is)));
+
     }
+
+    @Override
+    public boolean isCrossbow(ItemStack is) {
+        return is.getItem() instanceof ItemCustomFireArm;
+    }
+
+    @Override
+    public void onUsingTick(ItemStack is, LivingEntity le, int i) {
+        super.onUsingTick(is, le, i); //To change body of generated methods, choose Tools | Templates.
+        
+    }
+    
+    
 
     /**
      * Called to trigger the item's "innate" right click behavior. To handle
@@ -84,7 +97,7 @@ public class ItemCustomFireArm extends ShootableItem {
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         ItemStack itemstack = playerIn.getHeldItem(handIn);
-
+        OurcraftCore.LOGGER.info("RigthClicking.");
         if (isLoaded(itemstack)) {
 
             fireProjectiles(worldIn, playerIn, handIn, itemstack, 1.6F, 1.0F);
@@ -101,18 +114,16 @@ public class ItemCustomFireArm extends ShootableItem {
     }
 
     @Override
-    public int getDamage(ItemStack stack) {    
+    public int getDamage(ItemStack stack) {
         if (stack.getItem() instanceof ItemCustomFireArm) {
             ItemCustomFireArm firearm = (ItemCustomFireArm) stack.getItem();
             int projectiles = firearm.specs.ammoType.projectilesPerBullet;
             int dmg = firearm.specs.ammoType.dmg;
             return projectiles * dmg;
+        } else {
+            return super.getDamage(stack);
         }
-        else return super.getDamage(stack);
     }
-    
-    
-    
 
     @Override
     public void onPlayerStoppedUsing(ItemStack stack, World worldIn, LivingEntity entityLiving, int timeLeft) {
@@ -154,8 +165,8 @@ public class ItemCustomFireArm extends ShootableItem {
         //        OurcraftCore.LOGGER.info("found ammo");
         //        return AMMUNITION_MUSKET;
         //    default:
-                OurcraftCore.LOGGER.info("default ammo");
-                return ARROWS;
+        OurcraftCore.LOGGER.info("default ammo");
+        return ARROWS;
         //}
     }
 
@@ -202,9 +213,9 @@ public class ItemCustomFireArm extends ShootableItem {
         compoundnbt.putBoolean(isLoadedTag, state);
     }
 
-    public static void fireProjectiles(World world, LivingEntity livingentity, Hand hand, ItemStack weapon, float p_220014_4_, float p_220014_5_) {       
+    public static void fireProjectiles(World world, LivingEntity livingentity, Hand hand, ItemStack weapon, float p_220014_4_, float p_220014_5_) {
         int projectiles = 1;
-        float spread =0.0f;
+        float spread = 0.0f;
         if (weapon.getItem() instanceof ItemCustomFireArm) {
             ItemCustomFireArm firearm = (ItemCustomFireArm) weapon.getItem();
             projectiles = firearm.specs.ammoType.projectilesPerBullet;
@@ -213,21 +224,17 @@ public class ItemCustomFireArm extends ShootableItem {
         float[] afloat = func_220028_a(livingentity.getRNG());
         boolean flag = livingentity instanceof PlayerEntity && ((PlayerEntity) livingentity).abilities.isCreativeMode;
         for (int i = 0; i < projectiles; ++i) {
-            ItemStack itemstack = new ItemStack(Items.ARROW);            
+            ItemStack itemstack = new ItemStack(Items.ARROW);
             if (!itemstack.isEmpty()) {
-                if(i==0)
-                {
-                    shoot(world, livingentity, hand, weapon, itemstack, afloat[i%afloat.length], flag, p_220014_4_,p_220014_5_, 0.0F);
-                }
-                else
-                {
-                    spread = (0.1f*spread)+(random.nextFloat()*spread); // calculates Spread of shotgun type weapons
-                    if(random.nextFloat() >= 0.5f)
-                    {
-                        spread = spread *-1.0f;
+                if (i == 0) {
+                    shoot(world, livingentity, hand, weapon, itemstack, afloat[i % afloat.length], flag, p_220014_4_, p_220014_5_, 0.0F);
+                } else {
+                    spread = (0.1f * spread) + (random.nextFloat() * spread); // calculates Spread of shotgun type weapons
+                    if (random.nextFloat() >= 0.5f) {
+                        spread = spread * -1.0f;
                     }
-                    shoot(world, livingentity, hand, weapon, itemstack, afloat[i%afloat.length], flag, p_220014_4_,p_220014_5_, spread);
-                }               
+                    shoot(world, livingentity, hand, weapon, itemstack, afloat[i % afloat.length], flag, p_220014_4_, p_220014_5_, spread);
+                }
             }
         }
         SoundCategory soundcategory = livingentity instanceof PlayerEntity ? SoundCategory.PLAYERS : SoundCategory.HOSTILE;
@@ -267,8 +274,7 @@ public class ItemCustomFireArm extends ShootableItem {
             Vec3d vec3d = p_220016_1_.getLook(1.0F);
             Vector3f vector3f = new Vector3f(vec3d);
             vector3f.func_214905_a(quaternion);
-            iprojectile.shoot((double) vector3f.getX(), (double) vector3f.getY(), (double) vector3f.getZ(), velocityMod,p_220016_8_);
-
+            iprojectile.shoot((double) vector3f.getX(), (double) vector3f.getY(), (double) vector3f.getZ(), velocityMod, p_220016_8_);
 
             p_220016_3_.damageItem(1, p_220016_1_, (p_220017_1_) -> {
                 p_220017_1_.sendBreakAnimation(p_220016_2_);
