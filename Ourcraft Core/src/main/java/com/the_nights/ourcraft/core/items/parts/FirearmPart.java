@@ -29,4 +29,12 @@ public class FirearmPart {
         return projectiles * dmg;
 
     }
+    public RangedMaterial getSpecs()
+    {
+        return this.specs;
+    }
+    public void setSpecs(RangedMaterial specs)
+    {
+        this.specs = specs;
+    }
 }
