@@ -5,8 +5,10 @@
  */
 package com.the_nights.ourcraft.core.items;
 
+import com.google.common.collect.Lists;
 import com.the_nights.ourcraft.core.items.materials.RangedMaterial;
 import com.the_nights.ourcraft.core.OurcraftCore;
+import com.the_nights.ourcraft.core.items.parts.FirearmPart;
 import java.util.List;
 import java.util.Random;
 
@@ -17,6 +19,7 @@ import net.minecraft.tags.Tag;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import java.util.function.Predicate;
+import javax.annotation.Nullable;
 import net.minecraft.client.renderer.Quaternion;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.client.util.ITooltipFlag;
@@ -38,8 +41,11 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.NBTTextComponent;
 import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
 /**
  *
@@ -50,31 +56,50 @@ public class ItemCustomFireArm extends ShootableItem {
     public static final Predicate<ItemStack> AMMUNITION_MUSKET = (stack) -> {
         return stack.getItem().isIn(makeWrapperTag("flintlock_ammo"));
     };
+    private FirearmPart firearmPart;
+
     private static String isLoadedTag = "charged";
     private RangedMaterial specs;
 
     public ItemCustomFireArm(RangedMaterial rangedspecs, Properties props) {
         super(props.maxStackSize(1));
         this.specs = rangedspecs;
-        this.addPropertyOverride(new ResourceLocation("pull"), (p_220022_1_, p_220022_2_, p_220022_3_) -> {
-            if (p_220022_3_ != null && p_220022_1_.getItem() == this) {
-                return isLoaded(p_220022_1_) ? 0.0F : (float) (p_220022_1_.getUseDuration() - p_220022_3_.getItemInUseCount()) / (float) 25;
+        this.addPropertyOverride(new ResourceLocation("pull"), (item, world, livingEntity) -> {
+            if (livingEntity != null && item.getItem() == this) {
+                return isLoaded(item) ? 0.0F : (float) (item.getUseDuration() - livingEntity.getItemInUseCount()) / (float) 25;
             } else {
                 return 0.0F;
             }
         });
-        this.addPropertyOverride(new ResourceLocation("pulling"), (p_220033_0_, p_220033_1_, p_220033_2_) -> {
-            return p_220033_2_ != null && p_220033_2_.isHandActive() && p_220033_2_.getActiveItemStack() == p_220033_0_ && !isLoaded(p_220033_0_) ? 1.0F : 0.0F;
+        this.addPropertyOverride(new ResourceLocation("pulling"), (item, world, livingEntity) -> {
+            return livingEntity != null && livingEntity.isHandActive() && livingEntity.getActiveItemStack() == item && !isLoaded(item) ? 1.0F : 0.0F;
         });
-        this.addPropertyOverride(new ResourceLocation("charged"), (p_220030_0_, p_220030_1_, p_220030_2_) -> {
-            return p_220030_2_ != null && isLoaded(p_220030_0_) ? 1.0F : 0.0F;
+        this.addPropertyOverride(new ResourceLocation("charged"), (item, world, livingEntity) -> {
+            return livingEntity != null && isLoaded(item) ? 1.0F : 0.0F;
         });
     }
 
+   @OnlyIn(Dist.CLIENT)
     @Override
-    public void addInformation(ItemStack is, World world, List<ITextComponent> list, ITooltipFlag itf) {
-        list.add(new StringTextComponent("Firearm Damage : " + getDamage(is)));
+   public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
+//              List<ItemStack> list = getChargedProjectiles(stack);
+//      if (isCharged(stack) && !list.isEmpty()) {
+//         ItemStack itemstack = list.get(0);
+//         tooltip.add((new TranslationTextComponent("item.minecraft.crossbow.projectile")).appendText(" ").appendSibling(itemstack.getTextComponent()));
+         if (flagIn.isAdvanced() && itemstack.getItem() == Items.FIREWORK_ROCKET) {
+            List<ITextComponent> list1 = Lists.newArrayList();
+            Items.FIREWORK_ROCKET.addInformation(itemstack, worldIn, list1, flagIn);
+            if (!list1.isEmpty()) {
+               for(int i = 0; i < list1.size(); ++i) {
+                  list1.set(i, (new StringTextComponent("  ")).appendSibling(list1.get(i)).applyTextStyle(TextFormatting.DARK_GREEN));
+               }
 
+               tooltip.addAll(list1);
+            }
+         }
+
+//      }
+//        list.add(new StringTextComponent("Firearm Damage : " + getDamage(is)));
     }
 
     @Override
@@ -85,10 +110,8 @@ public class ItemCustomFireArm extends ShootableItem {
     @Override
     public void onUsingTick(ItemStack is, LivingEntity le, int i) {
         super.onUsingTick(is, le, i); //To change body of generated methods, choose Tools | Templates.
-        
+
     }
-    
-    
 
     /**
      * Called to trigger the item's "innate" right click behavior. To handle
@@ -110,18 +133,6 @@ public class ItemCustomFireArm extends ShootableItem {
             return new ActionResult<>(ActionResultType.SUCCESS, itemstack);
         } else {
             return new ActionResult<>(ActionResultType.FAIL, itemstack);
-        }
-    }
-
-    @Override
-    public int getDamage(ItemStack stack) {
-        if (stack.getItem() instanceof ItemCustomFireArm) {
-            ItemCustomFireArm firearm = (ItemCustomFireArm) stack.getItem();
-            int projectiles = firearm.specs.ammoType.projectilesPerBullet;
-            int dmg = firearm.specs.ammoType.dmg;
-            return projectiles * dmg;
-        } else {
-            return super.getDamage(stack);
         }
     }
 
