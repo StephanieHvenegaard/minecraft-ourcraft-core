@@ -38,10 +38,12 @@ import com.the_nights.ourcraft.core.items.materials.ToolMaterial;
 import com.the_nights.ourcraft.core.items.ItemCustomFireArm;
 import com.the_nights.ourcraft.core.items.ItemCustomKatana;
 import com.the_nights.ourcraft.core.items.materials.RangedMaterial;
+import com.the_nights.ourcraft.core.lists.armor.BlueGlassArmor;
 import com.the_nights.ourcraft.core.lists.armor.KelpArmor;
 import com.the_nights.ourcraft.core.lists.armor.ObsidianArmor;
 import com.the_nights.ourcraft.core.lists.armor.SapphireArmor;
 import com.the_nights.ourcraft.core.lists.armor.WoodenArmor;
+import com.the_nights.ourcraft.core.lists.items.BlueGlassItems;
 import com.the_nights.ourcraft.core.lists.items.DiamondItem;
 import com.the_nights.ourcraft.core.lists.items.EmaraldItems;
 import com.the_nights.ourcraft.core.lists.items.GoldenItems;
@@ -119,6 +121,8 @@ public class OurcraftCore {
             event.getRegistry().registerAll(
                     // Ingots
                     ObsidianItems.ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("obsidian_ingot")),
+                    BlueGlassItems.ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("blue_glass_ingot")),
+                    BlueGlassItems.dust = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("blue_glass_dust")),
                     // Weapons                    
                     ObsidianItems.sword = new ItemCustomSword(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_sword")),
                     ObsidianItems.katana = new ItemCustomKatana(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_katana")),
@@ -153,6 +157,12 @@ public class OurcraftCore {
                     WoodenArmor.chestplate = new ArmorItem(ArmorMaterial.wood, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_chest")),
                     WoodenArmor.leggings = new ArmorItem(ArmorMaterial.wood, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_leggings")),
                     WoodenArmor.boots = new ArmorItem(ArmorMaterial.wood, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_boots")),
+                    
+                    BlueGlassArmor.helmet = new ArmorItem(ArmorMaterial.blue_glass, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("blue_glass_helmet")),
+                    BlueGlassArmor.chestplate = new ArmorItem(ArmorMaterial.blue_glass, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("blue_glass_chest")),
+                    BlueGlassArmor.leggings = new ArmorItem(ArmorMaterial.blue_glass, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("blue_glass_leggings")),
+                    BlueGlassArmor.boots = new ArmorItem(ArmorMaterial.blue_glass, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("blue_glass_boots")),
+                    
                     // Tools 
                     ObsidianItems.axe = new ItemCustomAxe(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_axe")),
                     ObsidianItems.hoe = new ItemCustomHoe(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_hoe")),

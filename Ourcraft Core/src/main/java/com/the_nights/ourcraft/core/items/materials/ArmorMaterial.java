@@ -6,6 +6,7 @@
 package com.the_nights.ourcraft.core.items.materials;
 
 import com.the_nights.ourcraft.core.OurcraftCore;
+import com.the_nights.ourcraft.core.lists.items.BlueGlassItems;
 import com.the_nights.ourcraft.core.lists.items.ObsidianItems;
 import com.the_nights.ourcraft.core.lists.items.PinkSapphireItems;
 import net.minecraft.inventory.EquipmentSlotType;
@@ -23,6 +24,7 @@ import net.minecraft.util.SoundEvent;
 public enum ArmorMaterial implements IArmorMaterial {
     obsidian("obsidian",  200, 25, 10, 12, 9, 7, 3.0f, ObsidianItems.ingot),
     Sapphire("sapphire",  200, 25, 10, 12, 9, 7, 3.0f, PinkSapphireItems.ingot),
+    blue_glass("blue_glass",  200, 25, 3, 7, 5, 3, 1.0f, BlueGlassItems.ingot),
     wood("wooden",  2, 2, 1, 1,1, 1, 1.0f, null),
     kelp("kelp", 1, 25,1, 1, 1, 1, 0.0f, Items.DRIED_KELP);
 
