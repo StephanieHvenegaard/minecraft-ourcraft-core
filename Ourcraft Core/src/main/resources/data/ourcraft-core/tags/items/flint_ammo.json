@@ -2,6 +2,6 @@
     "replace": false,
     "values": 
             [
-                "ourcraftmod:ourcraftmod:flintlock_ammo"
+                "ourcraft-core:flintlock_ammo"
             ]
 }

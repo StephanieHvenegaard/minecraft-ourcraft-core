@@ -57,6 +57,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
  * @author Stephanie
  */
 public class ItemCustomFireArm extends ShootableItem {
+
     public static final Predicate<ItemStack> AMMUNITION_MUSKET = PredicateWrapper.createPredicate("flintlock_ammo");
 
     private FirearmPart firearmPart;
@@ -89,14 +90,17 @@ public class ItemCustomFireArm extends ShootableItem {
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<ITextComponent> tooltip,
             ITooltipFlag flagIn) {
         List<ITextComponent> list1 = Lists.newArrayList();
-        RangedMaterial specs = firearmPart.getSpecs(); 
+        RangedMaterial specs = firearmPart.getSpecs();
         list1.add(new StringTextComponent(""));
-        list1.add(new StringTextComponent("When in hands:"  ).applyTextStyle(TextFormatting.GRAY));
-       if(isLoaded(stack)){ list1.add(new StringTextComponent(" Loaded state : Loaded").applyTextStyle(TextFormatting.DARK_GREEN));    }
-       else {list1.add(new StringTextComponent(" Loaded state : Unloaded").applyTextStyle(TextFormatting.DARK_GREEN));  }
-        list1.add(new StringTextComponent(" " +specs.magazinCapasity +"  Magazin Capasity").applyTextStyle(TextFormatting.DARK_GREEN));    
-        list1.add(new StringTextComponent(" " +specs.reloadTime +"  ReloadSpeed").applyTextStyle(TextFormatting.DARK_GREEN));
-        list1.add(new StringTextComponent(" "+ specs.ammoType.projectilesPerBullet +" X "+ specs.ammoType.dmg +"  Attack Damage").applyTextStyle(TextFormatting.DARK_GREEN));
+        list1.add(new StringTextComponent("When in hands:").applyTextStyle(TextFormatting.GRAY));
+        if (isLoaded(stack)) {
+            list1.add(new StringTextComponent(" Loaded state : Loaded").applyTextStyle(TextFormatting.DARK_GREEN));
+        } else {
+            list1.add(new StringTextComponent(" Loaded state : Unloaded").applyTextStyle(TextFormatting.DARK_GREEN));
+        }
+        list1.add(new StringTextComponent(" " + specs.magazinCapasity + "  Magazin Capasity").applyTextStyle(TextFormatting.DARK_GREEN));
+        list1.add(new StringTextComponent(" " + specs.reloadTime + "  ReloadSpeed").applyTextStyle(TextFormatting.DARK_GREEN));
+        list1.add(new StringTextComponent(" " + specs.ammoType.projectilesPerBullet + " X " + specs.ammoType.dmg + "  Attack Damage").applyTextStyle(TextFormatting.DARK_GREEN));
 
         tooltip.addAll(list1);
 
@@ -104,20 +108,9 @@ public class ItemCustomFireArm extends ShootableItem {
         // list.add(new StringTextComponent("Firearm Damage : " + getDamage(is)));
     }
 
-    @Override
-    public boolean isCrossbow(ItemStack is) {
-        return is.getItem() instanceof ItemCustomFireArm;
-    }
-
-    @Override
-    public void onUsingTick(ItemStack is, LivingEntity le, int i) {
-        super.onUsingTick(is, le, i); // To change body of generated methods, choose Tools | Templates.
-
-    }
-
     /**
-     * Called to trigger the item's "innate" right click behavior. To handle when
-     * this item is used on a Block, see {@link #onItemUse}.
+     * Called to trigger the item's "innate" right click behavior. To handle
+     * when this item is used on a Block, see {@link #onItemUse}.
      */
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
@@ -167,20 +160,20 @@ public class ItemCustomFireArm extends ShootableItem {
     }
 
     /**
-     * Get the predicate to match ammunition when searching the player's inventory,
-     * not their main/offhand THIS PART WORKS AS INTENTION.
+     * Get the predicate to match ammunition when searching the player's
+     * inventory, not their main/offhand THIS PART WORKS AS INTENTION.
      */
     @Override
     public Predicate<ItemStack> getInventoryAmmoPredicate() {
-        // OurcraftCore.LOGGER.info("Ammo type: " +specs.ammoType);
-        // switch (specs.ammoType) {
-        // case FLINT_LOCK_AMMO:
-        // OurcraftCore.LOGGER.info("found ammo");
-        // return AMMUNITION_MUSKET;
-        // default:
-        OurcraftCore.LOGGER.info("default ammo");
-        return ARROWS;
-        // }
+        OurcraftCore.LOGGER.info(firearmPart.getSpecs().ammoType);
+        switch (firearmPart.getSpecs().ammoType) {
+            case FLINT_LOCK_MUSKET_AMMO:
+                OurcraftCore.LOGGER.info("found ammo");
+                return AMMUNITION_MUSKET;
+            default:
+                OurcraftCore.LOGGER.info("cant find ammo, using default ammo");
+                return ARROWS;
+        }
     }
 
     /**
@@ -200,8 +193,8 @@ public class ItemCustomFireArm extends ShootableItem {
     }
 
     /**
-     * returns the action that specifies what animation to play when the items is
-     * being used
+     * returns the action that specifies what animation to play when the items
+     * is being used
      */
     @Override
     public UseAction getUseAction(ItemStack stack) {
@@ -227,7 +220,7 @@ public class ItemCustomFireArm extends ShootableItem {
     }
 
     public static void fireProjectiles(World world, LivingEntity livingentity, Hand hand, ItemStack weapon,
-         float p_220014_4_, float p_220014_5_) {
+            float p_220014_4_, float p_220014_5_) {
         // int projectiles = 1;
         // float spread = 0.0f;
         // if (weapon.getItem() instanceof ItemCustomFireArm) {
@@ -266,7 +259,7 @@ public class ItemCustomFireArm extends ShootableItem {
 
     private static float[] func_220028_a(Random p_220028_0_) {
         boolean flag = p_220028_0_.nextBoolean();
-        return new float[] { 1.0F, func_220032_a(flag), func_220032_a(!flag) };
+        return new float[]{1.0F, func_220032_a(flag), func_220032_a(!flag)};
     }
 
     private static float func_220032_a(boolean p_220032_0_) {
@@ -284,13 +277,11 @@ public class ItemCustomFireArm extends ShootableItem {
         //     if (p_220016_6_ || p_220016_9_ != 0.0F) {
         //         ((AbstractArrowEntity) iprojectile).pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
         //     }
-
         //     float velocityMod = 1.0f;
         //     if (p_220016_3_.getItem() instanceof ItemCustomFireArm) {
         //         ItemCustomFireArm firearm = (ItemCustomFireArm) p_220016_3_.getItem();
         //         velocityMod = firearm.specs.projectileVelocity;
         //     }
-
         //     Vec3d vec3d1 = p_220016_1_.func_213286_i(1.0F);
         //     Quaternion quaternion = new Quaternion(new Vector3f(vec3d1), p_220016_9_, true);
         //     Vec3d vec3d = p_220016_1_.getLook(1.0F);
@@ -298,7 +289,6 @@ public class ItemCustomFireArm extends ShootableItem {
         //     vector3f.func_214905_a(quaternion);
         //     iprojectile.shoot((double) vector3f.getX(), (double) vector3f.getY(), (double) vector3f.getZ(), velocityMod,
         //             p_220016_8_);
-
         //     p_220016_3_.damageItem(1, p_220016_1_, (p_220017_1_) -> {
         //         p_220017_1_.sendBreakAnimation(p_220016_2_);
         //     });
