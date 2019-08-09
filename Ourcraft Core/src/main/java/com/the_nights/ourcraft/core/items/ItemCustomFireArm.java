@@ -9,6 +9,7 @@ import com.google.common.collect.Lists;
 import com.the_nights.ourcraft.core.items.materials.RangedMaterial;
 import com.the_nights.ourcraft.core.OurcraftCore;
 import com.the_nights.ourcraft.core.items.parts.FirearmPart;
+import com.the_nights.ourcraft.core.util.PredicateWrapper;
 
 import it.unimi.dsi.fastutil.Stack;
 
@@ -56,10 +57,8 @@ import net.minecraftforge.api.distmarker.OnlyIn;
  * @author Stephanie
  */
 public class ItemCustomFireArm extends ShootableItem {
+    public static final Predicate<ItemStack> AMMUNITION_MUSKET = PredicateWrapper.createPredicate("flintlock_ammo");
 
-    public static final Predicate<ItemStack> AMMUNITION_MUSKET = (stack) -> {
-        return stack.getItem().isIn(makeWrapperTag("flintlock_ammo"));
-    };
     private FirearmPart firearmPart;
 
     private static String isLoadedTag = "charged";
@@ -325,9 +324,5 @@ public class ItemCustomFireArm extends ShootableItem {
         // }
 
         return abstractarrowentity;
-    }
-
-    private static Tag<Item> makeWrapperTag(String name) {
-        return new ItemTags.Wrapper(new ResourceLocation(name));
     }
 }
