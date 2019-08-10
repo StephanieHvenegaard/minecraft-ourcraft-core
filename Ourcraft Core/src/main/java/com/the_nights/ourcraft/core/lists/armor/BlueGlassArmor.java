@@ -12,7 +12,6 @@ import net.minecraft.item.Item;
  * @author emili
  */
 public class BlueGlassArmor {
-
     public static Item helmet;
     public static Item chestplate;
     public static Item leggings;

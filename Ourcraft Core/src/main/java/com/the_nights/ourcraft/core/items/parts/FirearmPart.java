@@ -35,4 +35,10 @@ public class FirearmPart {
     {
         this.specs = specs;
     }
+    
+    
+    
+    
+    
+    
 }
