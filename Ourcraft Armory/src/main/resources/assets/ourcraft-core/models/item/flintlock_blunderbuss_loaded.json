@@ -1,8 +1,0 @@
-{
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "ourcraft-core:item/flintlock_blunderbuss_loaded"
-    }
-}
-
-
