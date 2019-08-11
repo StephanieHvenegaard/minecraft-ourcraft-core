@@ -11,22 +11,22 @@ package com.the_nights.ourcraft.core.items.materials;
  */
 public enum RangedMaterial {
 
-    FLINTLOCK_MUSKET(ProjectileMaterial.FLINT_LOCK_MUSKET_AMMO, 1, 5.0f, 2.3f, 80, 30,true),
+    FLINTLOCK_MUSKET(ProjectileMaterial.FLINT_LOCK_MUSKET_AMMO, 1, 5.0f, 2.3f, 80, 30,false),
     FLINTLOCK_BLUNDERBUSS(ProjectileMaterial.FLINT_LOCK_BLUNDERBUSS_AMMO, 1, 2.0f, 15.0f, 80, 30,false),
-    FLINTLOCK_PISTOL(ProjectileMaterial.FLINT_LOCK_PISTOL_AMMO, 1, 1.5f, 3.0f, 80, 30,false);
+    FLINTLOCK_PISTOL(ProjectileMaterial.FLINT_LOCK_PISTOL_AMMO, 1, 1.5f, 3.0f, 80, 30,true);
 
-    RangedMaterial(ProjectileMaterial ammo, int magazinCapasity, float projectileVelocity, float spread, int durability, int reloadtime, boolean hasBayonetAttachment) {
+    RangedMaterial(ProjectileMaterial ammo, int magazinCapasity, float projectileVelocity, float spread, int durability, int reloadtime, boolean duelWield) {
         this.ammoType = ammo;
         this.magazinCapasity = magazinCapasity;
         this.durability = durability;
         this.reloadTime = reloadtime;
         this.projectileVelocity = projectileVelocity;
         this.spread = spread;
-        this.hasBayonetAttachment = hasBayonetAttachment;
+        this.oneHanded = duelWield;
     }
 
     public final ProjectileMaterial ammoType;
     public final int durability, magazinCapasity, reloadTime;
     public final float projectileVelocity, spread;
-    public final boolean hasBayonetAttachment;
+    public final boolean oneHanded;
 }
