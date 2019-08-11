@@ -5,6 +5,7 @@
  */
 package com.the_nights.ourcraft.core.items;
 
+import com.electronwill.nightconfig.core.conversion.SpecStringInArray;
 import com.google.common.collect.Lists;
 import com.the_nights.ourcraft.core.items.materials.RangedMaterial;
 import com.the_nights.ourcraft.core.OurcraftCore;
@@ -26,6 +27,8 @@ import javax.annotation.Nullable;
 import net.minecraft.client.renderer.Quaternion;
 import net.minecraft.client.renderer.Vector3f;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.LivingEntity;
@@ -34,6 +37,7 @@ import net.minecraft.entity.projectile.AbstractArrowEntity;
 import net.minecraft.item.ArrowItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.CrossbowItem;
+import static net.minecraft.item.CrossbowItem.getChargeTime;
 import net.minecraft.item.UseAction;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ActionResult;
@@ -61,9 +65,7 @@ public class ItemCustomFireArm extends ShootableItem {
         return stack.getItem().isIn(makeWrapperTag("flintlock_ammo"));
     };
     private RangedMaterial specs;
-
     private static String isLoadedTag = "charged";
-    // private RangedMaterial specs;
 
     public ItemCustomFireArm(RangedMaterial rangedspecs, Properties props) {
         super(props.maxStackSize(1));
@@ -99,7 +101,7 @@ public class ItemCustomFireArm extends ShootableItem {
             list1.add(new StringTextComponent(" Loaded state : Unloaded").applyTextStyle(TextFormatting.DARK_GREEN));
         }
         list1.add(new StringTextComponent(" " + specs.magazinCapasity + "  Magazin Capasity").applyTextStyle(TextFormatting.DARK_GREEN));
-        list1.add(new StringTextComponent(" " + specs.reloadTime + "  ReloadSpeed").applyTextStyle(TextFormatting.DARK_GREEN));
+        list1.add(new StringTextComponent(" " + this.getChargeTime(stack) + "  ReloadSpeed").applyTextStyle(TextFormatting.DARK_GREEN));
         list1.add(new StringTextComponent(" " + specs.ammoType.projectilesPerBullet + " X " + specs.ammoType.dmg + "  Attack Damage").applyTextStyle(TextFormatting.DARK_GREEN));
 
         tooltip.addAll(list1);
@@ -125,7 +127,6 @@ public class ItemCustomFireArm extends ShootableItem {
         ItemStack itemstack = playerIn.getHeldItem(handIn);
         OurcraftCore.LOGGER.info("RigthClicking.");
         if (isLoaded(itemstack)) {
-
             fireProjectiles(worldIn, playerIn, handIn, itemstack, 1.6F, 1.0F);
             setLoaded(itemstack, false);
             return new ActionResult<>(ActionResultType.SUCCESS, itemstack);
@@ -143,8 +144,8 @@ public class ItemCustomFireArm extends ShootableItem {
     public void onPlayerStoppedUsing(ItemStack stack, World worldIn, LivingEntity entityLiving, int timeLeft) {
         int i = this.getUseDuration(stack) - timeLeft;
         OurcraftCore.LOGGER.info("Time left is : " + timeLeft);
-        float f = func_220031_a(i, stack);
-        if (f >= 1.0F) {// && hasAmmo(entityLiving, stack)) {
+        float f = getCharge(i, stack);
+        if (f >= 1.0F && hasAmmo(entityLiving, stack)) {
             OurcraftCore.LOGGER.info("starting loading.");
             if (!isLoaded(stack)) {
                 OurcraftCore.LOGGER.info("loading weapon.");
@@ -158,13 +159,69 @@ public class ItemCustomFireArm extends ShootableItem {
         }
     }
 
-    private static float func_220031_a(int p_220031_0_, ItemStack p_220031_1_) {
-        float f = (float) p_220031_0_ / (float) 25; // enhancement level.
+    private static boolean hasAmmo(LivingEntity entityIn, ItemStack stack) {
+        // int i =0; // EnchantmentHelper.getEnchantmentLevel(Enchantments.MULTISHOT, stack);
+        int j = 1; // i == 0 ? 1 : 3;
+        boolean flag = entityIn instanceof PlayerEntity && ((PlayerEntity) entityIn).abilities.isCreativeMode;
+        ItemStack itemstack = entityIn.findAmmo(stack);
+        OurcraftCore.LOGGER.info("item stack : " + itemstack);
+        ItemStack itemstack1 = itemstack.copy();
+
+        for (int k = 0; k < j; ++k) {
+            if (k > 0) {
+                itemstack = itemstack1.copy();
+            }
+            if (itemstack.isEmpty() && flag) {
+                itemstack = new ItemStack(Items.ARROW);
+                itemstack1 = itemstack.copy();
+            }
+
+            if (!consumeAmmo(entityIn, stack, itemstack, k > 0, flag)) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    private static boolean consumeAmmo(LivingEntity livingEntity, ItemStack p_220023_1_, ItemStack p_220023_2_, boolean p_220023_3_, boolean p_220023_4_) {
+        if (p_220023_2_.isEmpty()) {
+            return false;
+        } else {
+            boolean flag = p_220023_4_ && p_220023_2_.getItem() instanceof ArrowItem;
+            ItemStack itemstack;
+            if (!flag && !p_220023_4_ && !p_220023_3_) {
+                itemstack = p_220023_2_.split(1);
+                if (p_220023_2_.isEmpty() && livingEntity instanceof PlayerEntity) {
+                    ((PlayerEntity) livingEntity).inventory.deleteStack(p_220023_2_);
+                }
+            } else {
+                itemstack = p_220023_2_.copy();
+            }
+            // addChargedProjectile(p_220023_1_, itemstack);
+            return true;
+        }
+    }
+
+    private static float getCharge(int useTime, ItemStack stack) {
+        float f = (float) useTime / (float) getChargeTime(stack);
         if (f > 1.0F) {
             f = 1.0F;
         }
-
         return f;
+    }
+
+    /**
+     * The time the crossbow must be used to reload it
+     */
+    public static int getChargeTime(ItemStack stack) {
+        int reloadtime = 25;
+        if (stack.getItem() instanceof ItemCustomFireArm) {
+            ItemCustomFireArm firearm = (ItemCustomFireArm) stack.getItem();
+            reloadtime = firearm.specs.reloadTime;
+        }
+        int i = EnchantmentHelper.getEnchantmentLevel(Enchantments.QUICK_CHARGE, stack);
+        return i == 0 ? reloadtime : reloadtime - (5 * i);
     }
 
     /**
@@ -173,15 +230,15 @@ public class ItemCustomFireArm extends ShootableItem {
      */
     @Override
     public Predicate<ItemStack> getInventoryAmmoPredicate() {
-        // OurcraftCore.LOGGER.info("Ammo type: " +specs.ammoType);
-        // switch (specs.ammoType) {
-        // case FLINT_LOCK_AMMO:
-        // OurcraftCore.LOGGER.info("found ammo");
-        // return AMMUNITION_MUSKET;
-        // default:
-        OurcraftCore.LOGGER.info("default ammo");
-        return ARROWS;
-        // }
+        OurcraftCore.LOGGER.info("Ammo type: " + specs.ammoType);
+        switch (specs.ammoType) {
+            case FLINT_LOCK_MUSKET_AMMO:
+                OurcraftCore.LOGGER.info("found ammo");
+                return AMMUNITION_MUSKET;
+            default:
+                OurcraftCore.LOGGER.info("default ammo");
+                return ARROWS;
+        }
     }
 
     /**
@@ -197,7 +254,7 @@ public class ItemCustomFireArm extends ShootableItem {
      */
     @Override
     public int getUseDuration(ItemStack stack) {
-        return this.specs.reloadTime;
+        return Math.abs(getChargeTime(stack)) + 3;
     }
 
     /**
