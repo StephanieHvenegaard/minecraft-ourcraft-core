@@ -2,11 +2,11 @@
     "type": "minecraft:crafting_shapeless",
     "ingredients":
             [             
-               {"item": "ourcraftmod:flintlock_musket_barrelassembly"},
-               {"item": "ourcraftmod:gunstock"}
+               {"item": "ourcraft-core:flintlock_musket_barrelassembly"},
+               {"item": "ourcraft-core:gunstock"}
             ],    
     "result": {
-        "item": "ourcraftmod:flintlock_musket"
+        "item": "ourcraft-core:flintlock_musket"
     }
 }
 

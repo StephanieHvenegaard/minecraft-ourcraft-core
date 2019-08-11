@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+            [
+                "B",
+                "P",
+                "C"
+            ],
+    "key": 
+            {
+                
+                "B": {
+                    "item": "minecraft:iron_ingot"
+                },
+                "P": {
+                    "item": "minecraft:gunpowder"
+                },
+                "C": {
+                    "item": "minecraft:paper"
+                }
+            },
+    "result": {
+        "item": "ourcraft-core:flintlock_ammo",
+        "count" : 9
+    }
+}

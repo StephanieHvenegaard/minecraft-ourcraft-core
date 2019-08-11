@@ -9,10 +9,10 @@
     "key": 
             {
                 "X": {
-                    "item": "ourcraftmod:obsidian_ingot"
+                    "item": "ourcraft-core:obsidian_ingot"
                 }
             },
     "result": {
-        "item": "ourcraftmod:obsidian_chest"
+        "item": "ourcraft-core:obsidian_chest"
     }
 }
