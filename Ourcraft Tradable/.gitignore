@@ -5,8 +5,6 @@ bin
 .metadata
 .classpath
 .project
-.nb-gradle
-.vscode
 
 # idea
 out
@@ -25,5 +23,6 @@ run
 
 # Files from Forge MDK
 forge*changelog.txt
-
-\.vscode/
+/ourcraft-mod/.nb-gradle/
+ourcraft-mod/\.vscode/settings\.json
+/.nb-gradle/
