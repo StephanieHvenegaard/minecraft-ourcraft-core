@@ -10,6 +10,8 @@ import com.google.common.collect.Lists;
 import com.the_nights.ourcraft.core.items.materials.RangedMaterial;
 import com.the_nights.ourcraft.core.OurcraftCore;
 import com.the_nights.ourcraft.core.items.parts.FirearmPart;
+import com.the_nights.ourcraft.core.lists.items.MiscItems;
+import com.the_nights.ourcraft.core.lists.items.tags.CoreItemTags;
 
 import it.unimi.dsi.fastutil.Stack;
 
@@ -62,8 +64,9 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 public class ItemCustomFireArm extends ShootableItem {
 
     public static final Predicate<ItemStack> AMMUNITION_MUSKET = (stack) -> {
-        return stack.getItem().isIn(makeWrapperTag("flintlock_ammo"));
+        return stack.getItem().isIn(CoreItemTags.FLINTLOCK_AMMO);
     };
+    
     private RangedMaterial specs;
     private static String isLoadedTag = "charged";
 
@@ -125,18 +128,53 @@ public class ItemCustomFireArm extends ShootableItem {
     @Override
     public ActionResult<ItemStack> onItemRightClick(World worldIn, PlayerEntity playerIn, Hand handIn) {
         ItemStack itemstack = playerIn.getHeldItem(handIn);
-        OurcraftCore.LOGGER.info("RigthClicking.");
+        // OurcraftCore.LOGGER.info("RigthClicking.");
         if (isLoaded(itemstack)) {
             fireProjectiles(worldIn, playerIn, handIn, itemstack, 1.6F, 1.0F);
             setLoaded(itemstack, false);
             return new ActionResult<>(ActionResultType.SUCCESS, itemstack);
-        } else if (!playerIn.findAmmo(itemstack).isEmpty()) {
-            if (!isLoaded(itemstack)) {
-                playerIn.setActiveHand(handIn);
-            }
-            return new ActionResult<>(ActionResultType.SUCCESS, itemstack);
         } else {
-            return new ActionResult<>(ActionResultType.FAIL, itemstack);
+            ItemStack ammo = this.findAmmo(playerIn, itemstack);
+           // OurcraftCore.LOGGER.info("looking for ammo. " + ammo + " is empty: " + ammo.isEmpty());
+           // OurcraftCore.LOGGER.info("for weapon. " + itemstack);
+            if (!ammo.isEmpty()) {
+                if (!isLoaded(itemstack)) {
+                    playerIn.setActiveHand(handIn);
+                }
+                return new ActionResult<>(ActionResultType.SUCCESS, itemstack);
+            } else {
+                return new ActionResult<>(ActionResultType.FAIL, itemstack);
+            }
+        }
+    }
+
+    public ItemStack findAmmo(PlayerEntity playerIn, ItemStack shootable) {
+        if (!(shootable.getItem() instanceof ShootableItem)) {
+            return ItemStack.EMPTY;
+        } else {
+            Predicate<ItemStack> predicate = getAmmoPredicate();
+            ItemStack itemstack = ShootableItem.getHeldAmmo(playerIn, predicate);
+            OurcraftCore.LOGGER.info("looking for ammo predicate. " + predicate + " is empty: " + itemstack);
+            if (!itemstack.isEmpty()) {
+                OurcraftCore.LOGGER.info("found ammo, " + itemstack);
+                return itemstack;
+            } else {
+                predicate = getInventoryAmmoPredicate();
+                // OurcraftCore.LOGGER.info("looking for ammo inventory predicate. " + predicate + " is empty: " + itemstack);
+                for (int i = 0; i < playerIn.inventory.getSizeInventory(); ++i) {
+                    ItemStack itemstack1 = playerIn.inventory.getStackInSlot(i);                    
+                    if (predicate.test(itemstack1)) {
+                        // OurcraftCore.LOGGER.info("found ammo, " + itemstack1);
+                        return itemstack1;
+                    }
+                    if (itemstack1.getItem() == MiscItems.flintlockAmmo) {
+                        // OurcraftCore.LOGGER.info("found ammo, " + itemstack1);
+                        return itemstack1;
+                    }
+                }
+
+                return playerIn.abilities.isCreativeMode ? new ItemStack(Items.ARROW) : ItemStack.EMPTY;
+            }
         }
     }
 
@@ -159,11 +197,11 @@ public class ItemCustomFireArm extends ShootableItem {
         }
     }
 
-    private static boolean hasAmmo(LivingEntity entityIn, ItemStack stack) {
+    private boolean hasAmmo(LivingEntity entityIn, ItemStack stack) {
         // int i =0; // EnchantmentHelper.getEnchantmentLevel(Enchantments.MULTISHOT, stack);
         int j = 1; // i == 0 ? 1 : 3;
         boolean flag = entityIn instanceof PlayerEntity && ((PlayerEntity) entityIn).abilities.isCreativeMode;
-        ItemStack itemstack = entityIn.findAmmo(stack);
+        ItemStack itemstack = entityIn instanceof PlayerEntity ? this.findAmmo((PlayerEntity)entityIn, stack) : entityIn.findAmmo(stack);
         OurcraftCore.LOGGER.info("item stack : " + itemstack);
         ItemStack itemstack1 = itemstack.copy();
 
@@ -230,13 +268,13 @@ public class ItemCustomFireArm extends ShootableItem {
      */
     @Override
     public Predicate<ItemStack> getInventoryAmmoPredicate() {
-        OurcraftCore.LOGGER.info("Ammo type: " + specs.ammoType);
+       // OurcraftCore.LOGGER.info("Ammo type: " + specs.ammoType);
         switch (specs.ammoType) {
             case FLINT_LOCK_MUSKET_AMMO:
-                OurcraftCore.LOGGER.info("found ammo");
+         //       OurcraftCore.LOGGER.info("found ammo");
                 return AMMUNITION_MUSKET;
             default:
-                OurcraftCore.LOGGER.info("default ammo");
+           //     OurcraftCore.LOGGER.info("default ammo");
                 return ARROWS;
         }
     }
@@ -382,9 +420,5 @@ public class ItemCustomFireArm extends ShootableItem {
         // }
 
         return abstractarrowentity;
-    }
-
-    private static Tag<Item> makeWrapperTag(String name) {
-        return new ItemTags.Wrapper(new ResourceLocation(name));
     }
 }
