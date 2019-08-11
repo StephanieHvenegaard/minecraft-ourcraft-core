@@ -25,20 +25,20 @@ SOFTWARE.
  */
 package com.the_nights.ourcraft.core;
 
-import com.the_nights.ourcraft.core.tap.OurcraftCoreTap;
-import com.the_nights.ourcraft.core.items.materials.ArmorMaterial;
+import java.util.stream.Collectors;
+
 import com.the_nights.ourcraft.core.items.ItemCustomAxe;
+import com.the_nights.ourcraft.core.items.ItemCustomFireArm;
 import com.the_nights.ourcraft.core.items.ItemCustomHoe;
+import com.the_nights.ourcraft.core.items.ItemCustomKatana;
 import com.the_nights.ourcraft.core.items.ItemCustomPickAxe;
 import com.the_nights.ourcraft.core.items.ItemCustomShovel;
 import com.the_nights.ourcraft.core.items.ItemCustomSword;
-import com.the_nights.ourcraft.core.lists.armor.CoinItems;
-import com.the_nights.ourcraft.core.lists.items.ObsidianItems;
-import com.the_nights.ourcraft.core.items.materials.ToolMaterial;
-import com.the_nights.ourcraft.core.items.ItemCustomFireArm;
-import com.the_nights.ourcraft.core.items.ItemCustomKatana;
+import com.the_nights.ourcraft.core.items.materials.ArmorMaterial;
 import com.the_nights.ourcraft.core.items.materials.RangedMaterial;
+import com.the_nights.ourcraft.core.items.materials.ToolMaterial;
 import com.the_nights.ourcraft.core.lists.armor.BlueGlassArmor;
+import com.the_nights.ourcraft.core.lists.armor.CoinItems;
 import com.the_nights.ourcraft.core.lists.armor.KelpArmor;
 import com.the_nights.ourcraft.core.lists.armor.ObsidianArmor;
 import com.the_nights.ourcraft.core.lists.armor.SapphireArmor;
@@ -49,8 +49,19 @@ import com.the_nights.ourcraft.core.lists.items.EmaraldItems;
 import com.the_nights.ourcraft.core.lists.items.GoldenItems;
 import com.the_nights.ourcraft.core.lists.items.IronItems;
 import com.the_nights.ourcraft.core.lists.items.MiscItems;
+import com.the_nights.ourcraft.core.lists.items.ObsidianItems;
 import com.the_nights.ourcraft.core.lists.items.StoneItems;
 import com.the_nights.ourcraft.core.lists.items.WoodenItem;
+import com.the_nights.ourcraft.core.tap.OurcraftCoreTap;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import net.minecraft.inventory.EquipmentSlotType;
+import net.minecraft.item.ArmorItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -62,15 +73,6 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-import java.util.stream.Collectors;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.util.ResourceLocation;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(OurcraftCore.MODID)

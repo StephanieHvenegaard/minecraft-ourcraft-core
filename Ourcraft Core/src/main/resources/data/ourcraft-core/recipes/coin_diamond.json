@@ -15,7 +15,7 @@
                 }
             },
     "result": {
-        "item": "ourcraftmod:diamond_coin"
+        "item": "ourcraft-core:diamond_coin"
     },
     "count" : 4
 }

@@ -15,7 +15,7 @@
                 }
             },
     "result": {
-        "item": "ourcraftmod:iron_coin"
+        "item": "ourcraft-core:iron_coin"
     },
     "count" : 4
 }

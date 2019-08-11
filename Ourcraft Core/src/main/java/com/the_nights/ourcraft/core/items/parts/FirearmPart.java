@@ -24,9 +24,7 @@ public class FirearmPart {
     }
 
     public int getDamage() {
-        int projectiles = specs.ammoType.projectilesPerBullet;
-        int dmg = specs.ammoType.dmg;
-        return projectiles * dmg;
+        return specs.durability;
 
     }
     public RangedMaterial getSpecs()
@@ -37,4 +35,10 @@ public class FirearmPart {
     {
         this.specs = specs;
     }
+    
+    
+    
+    
+    
+    
 }

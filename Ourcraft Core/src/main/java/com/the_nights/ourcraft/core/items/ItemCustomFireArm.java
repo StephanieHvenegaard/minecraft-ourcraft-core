@@ -42,6 +42,7 @@ import net.minecraft.item.CrossbowItem;
 import static net.minecraft.item.CrossbowItem.getChargeTime;
 import net.minecraft.item.UseAction;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -61,7 +62,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
  *
  * @author Stephanie
  */
-public class ItemCustomFireArm extends ShootableItem {
+public class ItemCustomFireArm extends CrossbowItem {
 
     public static final Predicate<ItemStack> AMMUNITION_MUSKET = (stack) -> {
         return stack.getItem().isIn(CoreItemTags.FLINTLOCK_AMMO);
