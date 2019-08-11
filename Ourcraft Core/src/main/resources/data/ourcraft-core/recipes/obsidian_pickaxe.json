@@ -9,14 +9,14 @@
     "key": 
             {
                 "I": {
-                    "item": "ourcraftmod:obsidian_ingot"
+                    "item": "ourcraft-core:obsidian_ingot"
                 },
                 "S": {
                     "item": "minecraft:stick"
                 }
             },
     "result": {
-        "item": "ourcraftmod:obsidian_pickaxe"
+        "item": "ourcraft-core:obsidian_pickaxe"
     }
 }
 
