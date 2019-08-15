@@ -64,6 +64,23 @@ minecraft {
                 }
             }
         }
+         data {
+            workingDirectory project.file('run')
+
+            // Recommended logging data for a userdev environment
+            property 'forge.logging.markers', 'SCAN,REGISTRIES,REGISTRYDUMP'
+
+            // Recommended logging level for the console
+            property 'forge.logging.console.level', 'debug'
+
+            args '--mod', 'examplemod', '--all', '--output', file('src/generated/resources/')
+
+            mods {
+                examplemod {
+                    source sourceSets.main
+                }
+            }
+        }
     }
 }
 
@@ -78,7 +95,7 @@ dependencies {
     // compile "some.group:artifact:version"
 
     // Real examples
-    // compile 'com.thenights:ourcraft-core:0.2.1'  // adds buildcraft to the dev env
+    // compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
     // compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
 
     // The 'provided' configuration is for optional dependencies that exist at compile-time but might not at runtime.
