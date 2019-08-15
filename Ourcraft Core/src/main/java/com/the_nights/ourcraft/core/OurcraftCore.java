@@ -25,6 +25,9 @@ SOFTWARE.
  */
 package com.the_nights.ourcraft.core;
 
+import com.the_nights.ourcraft.armory.Configs;
+import com.the_nights.ourcraft.armory.proxy.ClientProxy;
+import com.the_nights.ourcraft.armory.proxy.CommonProxy;
 import java.util.stream.Collectors;
 
 import com.the_nights.ourcraft.core.items.ItemCustomAxe;
@@ -65,8 +68,11 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.InterModComms;
+import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
@@ -83,7 +89,9 @@ public class OurcraftCore {
     public static final ItemGroup OURCRAFT_GROUP = new OurcraftCoreTap();               // creative tap  
     // Directly reference a log4j logger.
     public static final Logger LOGGER = LogManager.getLogger(MODID);                    // Logger
-
+    public static CommonProxy proxy = DistExecutor.runForDist(() -> ClientProxy::new, () -> CommonProxy::new);
+    
+    
     public OurcraftCore() {
         INSTANCE = this;
         // Register the setup method for modloading
@@ -94,7 +102,8 @@ public class OurcraftCore {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
         // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientRegistry);
-
+        // Register the bakeConfigs method for modloading
+        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::bakeConfigs);
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -102,6 +111,7 @@ public class OurcraftCore {
     // Setup of the mod. 
     private void setup(final FMLCommonSetupEvent event) {
         // some preinit code
+        proxy.postInit(event);
         LOGGER.info("Setup registred");
     }
 
@@ -204,6 +214,24 @@ public class OurcraftCore {
     /* ========================================================
     Other Crap
     ======================================================== */
+      @SubscribeEvent
+  public void bakeConfigs(ModConfig.ModConfigEvent event)
+  {
+    if (event.getConfig().getSpec() == Configs.CLIENT_SPEC)
+      Configs.bake();
+  }
+
+
+  public static class ConfigChange {
+    @SubscribeEvent
+    public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
+      //Only process events for this mod
+      if (event.getModID().equals(MODID))
+        proxy.onConfigChanged(event);
+    }
+  }
+    
+    
     private void enqueueIMC(final InterModEnqueueEvent event) {
         // some example code to dispatch IMC to another mod
         InterModComms.sendTo("examplemod", "helloworld", () -> {
