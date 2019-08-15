@@ -62,7 +62,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
  *
  * @author Stephanie
  */
-public class ItemCustomFireArm extends CrossbowItem {
+public class ItemCustomFireArm extends ShootableItem {
 
     public static final Predicate<ItemStack> AMMUNITION_MUSKET = (stack) -> {
         return stack.getItem().isIn(CoreItemTags.FLINTLOCK_AMMO);
