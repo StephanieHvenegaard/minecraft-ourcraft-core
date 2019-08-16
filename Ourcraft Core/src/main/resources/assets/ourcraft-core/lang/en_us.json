@@ -52,17 +52,22 @@
     "item.ourcraft-core.diamond_katana": "Diamond Katana",
     "item.ourcraft-core.gold_katana": "Gold Katana",    
     "item.ourcraft-core.iron_katana": "Iron Katana",
+    "item.ourcraft-core.stone_katana": "Stone Katana",
+    "item.ourcraft-core.wood_katana": "Wooden Katana",
+
     "item.ourcraft-core.flintlock_musket": "Flintlock Musket",
     "item.ourcraft-core.flintlock_pistol": "Flintlock Pistol",
     "item.ourcraft-core.flintlock_blunderbuss": "Flintlock Blunderbuss",
-
-    "item.ourcraft-core.stone_katana": "Stone Katana",
-    "item.ourcraft-core.wood_katana": "Wooden Katana",
-    
     "item.ourcraft-core.flintlock_ammo": "Flintlock Ammunition",
     "item.ourcraft-core.flintlock_blunderbuss_barrelassembly": "Flintlock blunderbuss Barrel",
     "item.ourcraft-core.flintlock_musket_barrelassembly": "Flintlock Musket Barrel",
-    "item.ourcraft-core.gunstock": "Gunstock"
+    "item.ourcraft-core.gunstock": "Gunstock",
+
+    "block.ourcraft-core.lead_ore": "Lead Ore",
+    "block.ourcraft-core.uran_ore": "Uranium Ore",
+    "block.ourcraft-core.thorium_ore": "Thorium Ore",
+    
+    "block.ourcraft-core.obsidian_ingot_block": "Stacked Obsidian Ingots"
     
     
 }

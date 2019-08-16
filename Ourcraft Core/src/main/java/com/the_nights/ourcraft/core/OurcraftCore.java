@@ -26,8 +26,8 @@ SOFTWARE.
 package com.the_nights.ourcraft.core;
 
 import com.the_nights.ourcraft.armory.Configs;
-import com.the_nights.ourcraft.armory.proxy.ClientProxy;
-import com.the_nights.ourcraft.armory.proxy.CommonProxy;
+import com.the_nights.ourcraft.armory.proxy.ArmoryClientProxy;
+import com.the_nights.ourcraft.armory.proxy.ArmoryCommonProxy;
 import java.util.stream.Collectors;
 
 import com.the_nights.ourcraft.core.items.ItemCustomAxe;
@@ -94,7 +94,7 @@ public class OurcraftCore {
     public static final ItemGroup OURCRAFT_GROUP = new OurcraftCoreTap();               // creative tap  
     // Directly reference a log4j logger.
     public static final Logger LOGGER = LogManager.getLogger(MODID);                    // Logger
-    public static CommonProxy proxy = DistExecutor.runForDist(() -> ClientProxy::new, () -> CommonProxy::new);
+    public static ArmoryCommonProxy proxy = DistExecutor.runForDist(() -> ArmoryClientProxy::new, () -> ArmoryCommonProxy::new);
 
     public OurcraftCore() {
         INSTANCE = this;
@@ -133,10 +133,12 @@ public class OurcraftCore {
         @SubscribeEvent
         public static void registerItems(final RegistryEvent.Register<Item> event) {
             // register a new item here           
-            event.getRegistry().registerAll(
+            event.getRegistry().registerAll(                    
                     // Blocks 
                     MiscItems.LeadOreItem = new BlockItem(Blocks.LeadOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("lead_ore_item")),                            
-                            
+                    MiscItems.ObsidianIngotBlockItem = new BlockItem(Blocks.ObsidianIngotBlock,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_ingot_block_item")),    
+                    MiscItems.ThoriumOreItem = new BlockItem(Blocks.ThoriumOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("thorium_ore_item")),    
+                    MiscItems.UraniumOreItem = new BlockItem(Blocks.UraniumOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("uran_ore_item")),                        
                     // Ingots
                     ObsidianItems.ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("obsidian_ingot")),
                     BlueGlassItems.ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("blue_glass_ingot")),
@@ -154,6 +156,11 @@ public class OurcraftCore {
                     IronItems.pistol = new ItemCustomFireArm(RangedMaterial.FLINTLOCK_PISTOL, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_pistol")),
                     StoneItems.katana = new ItemCustomKatana(ToolMaterial.Stone, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("stone_katana")),
                     WoodenItem.katana = new ItemCustomKatana(ToolMaterial.Wood, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_katana")),
+                    // Firearms
+                    MiscItems.flintlockAmmo = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_ammo")),
+                    MiscItems.blunderBarrelAssembly = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_blunderbuss_barrelassembly")),
+                    MiscItems.musketBarrelAssembly = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_musket_barrelassembly")),
+                    MiscItems.gunstock = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("gunstock")),
                     // Armor 
                     ObsidianArmor.helmet = new ArmorItem(ArmorMaterial.obsidian, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_helmet")),
                     ObsidianArmor.chestplate = new ArmorItem(ArmorMaterial.obsidian, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_chest")),
@@ -185,15 +192,11 @@ public class OurcraftCore {
                     EmaraldItems.pickaxe = new ItemCustomPickAxe(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("emarald_pickaxe")),
                     EmaraldItems.spade = new ItemCustomShovel(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("emarald_spade")),
                     // Misc Items 
-                    MiscItems.flintlockAmmo = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_ammo")),
-                    MiscItems.blunderBarrelAssembly = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_blunderbuss_barrelassembly")),
-                    MiscItems.musketBarrelAssembly = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_musket_barrelassembly")),
-                    MiscItems.gunstock = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("gunstock")),
+
                     // Coins
                     CoinItems.wooden_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("wooden_coin")),
                     CoinItems.iron_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("iron_coin")),
                     CoinItems.gold_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("gold_coin")),
-                    //CoinItems.golden_diamond_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("golden_diamond_coin")),
                     CoinItems.diamond_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("diamond_coin")),
                     CoinItems.emarald_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_coin"))
             );

@@ -67,7 +67,7 @@ public class ItemCustomFireArm extends ShootableItem {
     public static final Predicate<ItemStack> AMMUNITION_MUSKET = (stack) -> {
         return stack.getItem().isIn(CoreItemTags.FLINTLOCK_AMMO);
     };
-    
+
     private RangedMaterial specs;
     private static String isLoadedTag = "charged";
 
@@ -136,8 +136,8 @@ public class ItemCustomFireArm extends ShootableItem {
             return new ActionResult<>(ActionResultType.SUCCESS, itemstack);
         } else {
             ItemStack ammo = this.findAmmo(playerIn, itemstack);
-           // OurcraftCore.LOGGER.info("looking for ammo. " + ammo + " is empty: " + ammo.isEmpty());
-           // OurcraftCore.LOGGER.info("for weapon. " + itemstack);
+            // OurcraftCore.LOGGER.info("looking for ammo. " + ammo + " is empty: " + ammo.isEmpty());
+            // OurcraftCore.LOGGER.info("for weapon. " + itemstack);
             if (!ammo.isEmpty()) {
                 if (!isLoaded(itemstack)) {
                     playerIn.setActiveHand(handIn);
@@ -163,7 +163,7 @@ public class ItemCustomFireArm extends ShootableItem {
                 predicate = getInventoryAmmoPredicate();
                 // OurcraftCore.LOGGER.info("looking for ammo inventory predicate. " + predicate + " is empty: " + itemstack);
                 for (int i = 0; i < playerIn.inventory.getSizeInventory(); ++i) {
-                    ItemStack itemstack1 = playerIn.inventory.getStackInSlot(i);                    
+                    ItemStack itemstack1 = playerIn.inventory.getStackInSlot(i);
                     if (predicate.test(itemstack1)) {
                         // OurcraftCore.LOGGER.info("found ammo, " + itemstack1);
                         return itemstack1;
@@ -202,7 +202,7 @@ public class ItemCustomFireArm extends ShootableItem {
         // int i =0; // EnchantmentHelper.getEnchantmentLevel(Enchantments.MULTISHOT, stack);
         int j = 1; // i == 0 ? 1 : 3;
         boolean flag = entityIn instanceof PlayerEntity && ((PlayerEntity) entityIn).abilities.isCreativeMode;
-        ItemStack itemstack = entityIn instanceof PlayerEntity ? this.findAmmo((PlayerEntity)entityIn, stack) : entityIn.findAmmo(stack);
+        ItemStack itemstack = entityIn instanceof PlayerEntity ? this.findAmmo((PlayerEntity) entityIn, stack) : entityIn.findAmmo(stack);
         OurcraftCore.LOGGER.info("item stack : " + itemstack);
         ItemStack itemstack1 = itemstack.copy();
 
@@ -269,13 +269,16 @@ public class ItemCustomFireArm extends ShootableItem {
      */
     @Override
     public Predicate<ItemStack> getInventoryAmmoPredicate() {
-       // OurcraftCore.LOGGER.info("Ammo type: " + specs.ammoType);
+        // OurcraftCore.LOGGER.info("Ammo type: " + specs.ammoType);
         switch (specs.ammoType) {
+
             case FLINT_LOCK_MUSKET_AMMO:
-         //       OurcraftCore.LOGGER.info("found ammo");
+            case FLINT_LOCK_BLUNDERBUSS_AMMO:
+            case FLINT_LOCK_PISTOL_AMMO:
+                //       OurcraftCore.LOGGER.info("found ammo");
                 return AMMUNITION_MUSKET;
             default:
-           //     OurcraftCore.LOGGER.info("default ammo");
+                //     OurcraftCore.LOGGER.info("default ammo");
                 return ARROWS;
         }
     }
@@ -333,12 +336,12 @@ public class ItemCustomFireArm extends ShootableItem {
             spread = firearm.specs.spread;
         }
         float[] afloat = func_220028_a(livingentity.getRNG());
-        boolean flag = livingentity instanceof PlayerEntity && ((PlayerEntity) livingentity).abilities.isCreativeMode;
+        boolean flag = false;//livingentity instanceof PlayerEntity && ((PlayerEntity) livingentity).abilities.isCreativeMode;
         for (int i = 0; i < projectiles; ++i) {
             ItemStack itemstack = new ItemStack(Items.ARROW);
             if (!itemstack.isEmpty()) {
                 if (i == 0) {
-                    shoot(world, livingentity, hand, weapon, itemstack, afloat[i % afloat.length], flag, p_220014_4_,
+                    shoot(world, livingentity, hand, weapon, itemstack, afloat[i % afloat.length], p_220014_4_,
                             p_220014_5_, 0.0F);
                 } else {
                     spread = (0.1f * spread) + (random.nextFloat() * spread); // calculates Spread of shotgun type
@@ -346,7 +349,7 @@ public class ItemCustomFireArm extends ShootableItem {
                     if (random.nextFloat() >= 0.5f) {
                         spread = spread * -1.0f;
                     }
-                    shoot(world, livingentity, hand, weapon, itemstack, afloat[i % afloat.length], flag, p_220014_4_,
+                    shoot(world, livingentity, hand, weapon, itemstack, afloat[i % afloat.length], p_220014_4_,
                             p_220014_5_, spread);
                 }
             }
@@ -372,15 +375,14 @@ public class ItemCustomFireArm extends ShootableItem {
     }
 
     private static void shoot(World p_220016_0_, LivingEntity p_220016_1_, Hand p_220016_2_, ItemStack p_220016_3_,
-            ItemStack p_220016_4_, float p_220016_5_, boolean p_220016_6_, float Velocity, float p_220016_8_,
+            ItemStack p_220016_4_, float p_220016_5_, float Velocity, float p_220016_8_,
             float p_220016_9_) {
         if (!p_220016_0_.isRemote) {
 
             IProjectile iprojectile;
             iprojectile = createArrow(p_220016_0_, p_220016_1_, p_220016_3_, p_220016_4_);
-            if (p_220016_6_ || p_220016_9_ != 0.0F) {
-                ((AbstractArrowEntity) iprojectile).pickupStatus = AbstractArrowEntity.PickupStatus.CREATIVE_ONLY;
-            }
+
+            ((AbstractArrowEntity) iprojectile).pickupStatus = AbstractArrowEntity.PickupStatus.DISALLOWED;
 
             float velocityMod = 1.0f;
             if (p_220016_3_.getItem() instanceof ItemCustomFireArm) {

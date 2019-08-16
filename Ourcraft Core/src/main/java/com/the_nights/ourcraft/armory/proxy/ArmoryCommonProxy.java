@@ -6,7 +6,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 
 @Mod.EventBusSubscriber
-public class CommonProxy
+public class ArmoryCommonProxy
 {
     public void postInit(FMLCommonSetupEvent event)
     {

@@ -10,7 +10,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import static net.minecraftforge.api.distmarker.Dist.CLIENT;
 
 @Mod.EventBusSubscriber(CLIENT)
-public class ClientProxy extends CommonProxy
+public class ArmoryClientProxy extends ArmoryCommonProxy
 {
   public static OverlayEventHandler handler = new OverlayEventHandler();
 

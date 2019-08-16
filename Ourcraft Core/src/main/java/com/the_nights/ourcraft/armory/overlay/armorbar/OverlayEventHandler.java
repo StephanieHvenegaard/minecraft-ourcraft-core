@@ -10,7 +10,7 @@ import net.minecraftforge.client.event.RenderGameOverlayEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 
 import static com.the_nights.ourcraft.armory.Configs.*;
-import static com.the_nights.ourcraft.armory.proxy.ClientProxy.*;
+import static com.the_nights.ourcraft.armory.proxy.ArmoryClientProxy.*;
 import com.the_nights.ourcraft.core.OurcraftCore;
 
 /*
