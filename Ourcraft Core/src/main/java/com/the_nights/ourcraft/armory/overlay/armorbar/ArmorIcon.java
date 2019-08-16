@@ -1,4 +1,4 @@
-package com.the_nights.ourcraft.armory.overlay;
+package com.the_nights.ourcraft.armory.overlay.armorbar;
 
 /*
     Class wraps the information required to draw an individual armor icon

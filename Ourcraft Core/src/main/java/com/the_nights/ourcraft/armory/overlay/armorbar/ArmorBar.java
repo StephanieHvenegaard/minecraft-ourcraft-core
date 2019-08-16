@@ -1,4 +1,4 @@
-package com.the_nights.ourcraft.armory.overlay;
+package com.the_nights.ourcraft.armory.overlay.armorbar;
 
 import com.google.common.collect.Lists;
 import com.the_nights.ourcraft.armory.Configs;

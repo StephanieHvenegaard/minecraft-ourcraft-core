@@ -1,4 +1,4 @@
-package com.the_nights.ourcraft.armory.overlay;
+package com.the_nights.ourcraft.armory.overlay.armorbar;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

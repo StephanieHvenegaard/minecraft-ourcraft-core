@@ -1,6 +1,6 @@
 package com.the_nights.ourcraft.armory.proxy;
 
-import com.the_nights.ourcraft.armory.overlay.OverlayEventHandler;
+import com.the_nights.ourcraft.armory.overlay.armorbar.OverlayEventHandler;
 import com.the_nights.ourcraft.core.OurcraftCore;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent;

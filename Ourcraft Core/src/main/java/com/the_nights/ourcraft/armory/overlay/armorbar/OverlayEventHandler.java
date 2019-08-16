@@ -1,4 +1,4 @@
-package com.the_nights.ourcraft.armory.overlay;
+package com.the_nights.ourcraft.armory.overlay.armorbar;
 
 import com.mojang.blaze3d.platform.GlStateManager;
 import net.minecraft.client.Minecraft;
