@@ -168,10 +168,10 @@ public class ItemCustomFireArm extends ShootableItem {
                         // OurcraftCore.LOGGER.info("found ammo, " + itemstack1);
                         return itemstack1;
                     }
-                    if (itemstack1.getItem() == MiscItems.flintlockAmmo) {
-                        // OurcraftCore.LOGGER.info("found ammo, " + itemstack1);
-                        return itemstack1;
-                    }
+//                    if (itemstack1.getItem() == MiscItems.flintlockAmmo) {
+//                        // OurcraftCore.LOGGER.info("found ammo, " + itemstack1);
+//                        return itemstack1;
+//                    }
                 }
 
                 return playerIn.abilities.isCreativeMode ? new ItemStack(Items.ARROW) : ItemStack.EMPTY;

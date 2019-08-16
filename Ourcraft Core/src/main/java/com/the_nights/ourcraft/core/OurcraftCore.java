@@ -46,6 +46,7 @@ import com.the_nights.ourcraft.core.lists.armor.KelpArmor;
 import com.the_nights.ourcraft.core.lists.armor.ObsidianArmor;
 import com.the_nights.ourcraft.core.lists.armor.SapphireArmor;
 import com.the_nights.ourcraft.core.lists.armor.WoodenArmor;
+import com.the_nights.ourcraft.core.lists.blocks.Blocks;
 import com.the_nights.ourcraft.core.lists.items.BlueGlassItems;
 import com.the_nights.ourcraft.core.lists.items.DiamondItem;
 import com.the_nights.ourcraft.core.lists.items.EmaraldItems;
@@ -56,12 +57,16 @@ import com.the_nights.ourcraft.core.lists.items.ObsidianItems;
 import com.the_nights.ourcraft.core.lists.items.StoneItems;
 import com.the_nights.ourcraft.core.lists.items.WoodenItem;
 import com.the_nights.ourcraft.core.tap.OurcraftCoreTap;
+import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
@@ -90,8 +95,7 @@ public class OurcraftCore {
     // Directly reference a log4j logger.
     public static final Logger LOGGER = LogManager.getLogger(MODID);                    // Logger
     public static CommonProxy proxy = DistExecutor.runForDist(() -> ClientProxy::new, () -> CommonProxy::new);
-    
-    
+
     public OurcraftCore() {
         INSTANCE = this;
         // Register the setup method for modloading
@@ -128,9 +132,11 @@ public class OurcraftCore {
 
         @SubscribeEvent
         public static void registerItems(final RegistryEvent.Register<Item> event) {
-            // register a new item here
-            LOGGER.info("HELLO from Register Item");
+            // register a new item here           
             event.getRegistry().registerAll(
+                    // Blocks 
+                    MiscItems.LeadOreItem = new BlockItem(Blocks.LeadOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("lead_ore_item")),                            
+                            
                     // Ingots
                     ObsidianItems.ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("obsidian_ingot")),
                     BlueGlassItems.ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("blue_glass_ingot")),
@@ -146,7 +152,6 @@ public class OurcraftCore {
                     IronItems.musket = new ItemCustomFireArm(RangedMaterial.FLINTLOCK_MUSKET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_musket")),
                     IronItems.blunderbuss = new ItemCustomFireArm(RangedMaterial.FLINTLOCK_BLUNDERBUSS, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_blunderbuss")),
                     IronItems.pistol = new ItemCustomFireArm(RangedMaterial.FLINTLOCK_PISTOL, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_pistol")),
-                    
                     StoneItems.katana = new ItemCustomKatana(ToolMaterial.Stone, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("stone_katana")),
                     WoodenItem.katana = new ItemCustomKatana(ToolMaterial.Wood, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_katana")),
                     // Armor 
@@ -154,27 +159,22 @@ public class OurcraftCore {
                     ObsidianArmor.chestplate = new ArmorItem(ArmorMaterial.obsidian, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_chest")),
                     ObsidianArmor.leggings = new ArmorItem(ArmorMaterial.obsidian, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_leggings")),
                     ObsidianArmor.boots = new ArmorItem(ArmorMaterial.obsidian, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_boots")),
-                    
                     SapphireArmor.helmet = new ArmorItem(ArmorMaterial.Sapphire, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("sapphire_helmet")),
                     SapphireArmor.chestplate = new ArmorItem(ArmorMaterial.Sapphire, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("sapphire_chest")),
                     SapphireArmor.leggings = new ArmorItem(ArmorMaterial.Sapphire, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("sapphire_leggings")),
                     SapphireArmor.boots = new ArmorItem(ArmorMaterial.Sapphire, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("sapphire_boots")),
-                    
                     KelpArmor.helmet = new ArmorItem(ArmorMaterial.kelp, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("kelp_helmet")),
                     KelpArmor.chestplate = new ArmorItem(ArmorMaterial.kelp, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("kelp_chest")),
                     KelpArmor.leggings = new ArmorItem(ArmorMaterial.kelp, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("kelp_leggings")),
                     KelpArmor.boots = new ArmorItem(ArmorMaterial.kelp, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("kelp_boots")),
-                    
                     WoodenArmor.helmet = new ArmorItem(ArmorMaterial.wood, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_helmet")),
                     WoodenArmor.chestplate = new ArmorItem(ArmorMaterial.wood, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_chest")),
                     WoodenArmor.leggings = new ArmorItem(ArmorMaterial.wood, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_leggings")),
                     WoodenArmor.boots = new ArmorItem(ArmorMaterial.wood, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_boots")),
-                    
                     BlueGlassArmor.helmet = new ArmorItem(ArmorMaterial.blue_glass, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("blue_glass_helmet")),
                     BlueGlassArmor.chestplate = new ArmorItem(ArmorMaterial.blue_glass, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("blue_glass_chest")),
                     BlueGlassArmor.leggings = new ArmorItem(ArmorMaterial.blue_glass, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("blue_glass_leggings")),
                     BlueGlassArmor.boots = new ArmorItem(ArmorMaterial.blue_glass, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("blue_glass_boots")),
-                    
                     // Tools 
                     ObsidianItems.axe = new ItemCustomAxe(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_axe")),
                     ObsidianItems.hoe = new ItemCustomHoe(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_hoe")),
@@ -188,8 +188,7 @@ public class OurcraftCore {
                     MiscItems.flintlockAmmo = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_ammo")),
                     MiscItems.blunderBarrelAssembly = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_blunderbuss_barrelassembly")),
                     MiscItems.musketBarrelAssembly = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_musket_barrelassembly")),
-                    MiscItems.gunstock  = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("gunstock")),
-                    
+                    MiscItems.gunstock = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("gunstock")),
                     // Coins
                     CoinItems.wooden_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("wooden_coin")),
                     CoinItems.iron_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("iron_coin")),
@@ -198,6 +197,19 @@ public class OurcraftCore {
                     CoinItems.diamond_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("diamond_coin")),
                     CoinItems.emarald_coin = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_coin"))
             );
+            LOGGER.info("All Items Registered.");
+        }
+
+        @SubscribeEvent
+        public static void registerBlocks(final RegistryEvent.Register<Block> event) {
+            // register a new item here
+            event.getRegistry().registerAll(
+                    Blocks.UraniumOre = new Block(Block.Properties.create(Material.GOURD).hardnessAndResistance(0.0f, 0.0f).harvestLevel(2).sound(SoundType.STONE)).setRegistryName(getLocation("uran_ore")),
+                    Blocks.LeadOre = new Block(Block.Properties.create(Material.GOURD).hardnessAndResistance(0.0f, 0.0f).harvestLevel(0).sound(SoundType.STONE)).setRegistryName(getLocation("lead_ore")),
+                    Blocks.ThoriumOre = new Block(Block.Properties.create(Material.GOURD).hardnessAndResistance(0.0f, 0.0f).harvestLevel(0).sound(SoundType.STONE)).setRegistryName(getLocation("thorium_ore")),
+                    Blocks.ObsidianIngotBlock = new Block(Block.Properties.create(Material.GOURD).hardnessAndResistance(0.0f, 0.0f).harvestLevel(0).sound(SoundType.STONE)).setRegistryName(getLocation("obsidian_ingot_block"))
+            );
+            LOGGER.info("All Blocks Registered.");
         }
 
 //        @SubscribeEvent
@@ -208,30 +220,29 @@ public class OurcraftCore {
         private static ResourceLocation getLocation(String name) {
             return new ResourceLocation(MODID, name);
         }
-
     }
 
     /* ========================================================
     Other Crap
     ======================================================== */
-      @SubscribeEvent
-  public void bakeConfigs(ModConfig.ModConfigEvent event)
-  {
-    if (event.getConfig().getSpec() == Configs.CLIENT_SPEC)
-      Configs.bake();
-  }
-
-
-  public static class ConfigChange {
     @SubscribeEvent
-    public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
-      //Only process events for this mod
-      if (event.getModID().equals(MODID))
-        proxy.onConfigChanged(event);
+    public void bakeConfigs(ModConfig.ModConfigEvent event) {
+        if (event.getConfig().getSpec() == Configs.CLIENT_SPEC) {
+            Configs.bake();
+        }
     }
-  }
-    
-    
+
+    public static class ConfigChange {
+
+        @SubscribeEvent
+        public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
+            //Only process events for this mod
+            if (event.getModID().equals(MODID)) {
+                proxy.onConfigChanged(event);
+            }
+        }
+    }
+
     private void enqueueIMC(final InterModEnqueueEvent event) {
         // some example code to dispatch IMC to another mod
         InterModComms.sendTo("examplemod", "helloworld", () -> {

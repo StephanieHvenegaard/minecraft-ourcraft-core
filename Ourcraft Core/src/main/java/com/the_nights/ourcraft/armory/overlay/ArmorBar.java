@@ -1,5 +1,6 @@
 package com.the_nights.ourcraft.armory.overlay;
 
+import com.google.common.collect.Lists;
 import com.the_nights.ourcraft.armory.Configs;
 import com.the_nights.ourcraft.core.OurcraftCore;
 
@@ -73,7 +74,8 @@ public class ArmorBar
         for (int i = 0; i < 10; i++)
         {
             armorIcons[i] = new ArmorIcon();
-            setArmorIconColor(armorIcons[i], Configs.colorValues, scale, counter);
+            //setArmorIconColor(armorIcons[i], Configs.colorValues, scale, counter);
+            setArmorIconColor(armorIcons[i], Lists.newArrayList("#FFFFFF", "#FF5500", "#FFC747", "#27FFE3", "#00FF00", "#7F00FF"), scale, counter);
             if (counter >= 2)
             {
                 //We have at least a full icon to show

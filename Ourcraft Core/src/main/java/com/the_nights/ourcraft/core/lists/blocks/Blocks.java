@@ -4,11 +4,15 @@
  * and open the template in the editor.
  */
 package com.the_nights.ourcraft.core.lists.blocks;
-
+import net.minecraft.block.Block;
 /**
  *
  * @author Stephanie
  */
 public class Blocks {
+    public static Block UraniumOre;
+    public static Block LeadOre;
+    public static Block ThoriumOre;
+    public static Block ObsidianIngotBlock;
     
 }
