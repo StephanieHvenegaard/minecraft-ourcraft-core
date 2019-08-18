@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+            [
+                "  I",
+                " I ",
+                "S  "
+            ],
+    "key": 
+            {
+                "I": {
+                    "item": "ourcraft-core:obsidian_ingot"
+                },
+                "S": {
+                    "item": "minecraft:stick"
+                }
+            },
+    "result": {
+        "item": "ourcraft-core:obsidian_katana"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "ourcraft-core:block/uran_ore"
+    }
+}

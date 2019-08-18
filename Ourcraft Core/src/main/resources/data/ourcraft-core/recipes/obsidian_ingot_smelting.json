@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "item": "minecraft:obsidian"
+    },
+    "result": "ourcraft-core:obsidian_ingot",
+    "experience": 1.0
+}
+

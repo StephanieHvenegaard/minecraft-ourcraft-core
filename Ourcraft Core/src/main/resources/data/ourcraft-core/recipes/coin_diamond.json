@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+            [
+                "II",            
+                "IS"
+            ],
+    "key": 
+            {
+                "S": {
+                    "item": "minecraft:emerald"
+                },
+                "I": {
+                    "item": "minecraft:diamond"
+                }
+            },
+    "result": {
+        "item": "ourcraft-core:diamond_coin"
+    },
+    "count" : 4
+}
