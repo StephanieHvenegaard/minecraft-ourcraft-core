@@ -23,8 +23,6 @@ public class MiscItems {
       public static Item UraniumOreItem;
       public static Item LeadOreItem;
       public static Item ThoriumOreItem;
-      
-      
-
-      
+      // Ingots
+            
 }

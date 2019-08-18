@@ -46,7 +46,7 @@ import com.the_nights.ourcraft.core.lists.armor.KelpArmor;
 import com.the_nights.ourcraft.core.lists.armor.ObsidianArmor;
 import com.the_nights.ourcraft.core.lists.armor.SapphireArmor;
 import com.the_nights.ourcraft.core.lists.armor.WoodenArmor;
-import com.the_nights.ourcraft.core.lists.blocks.Blocks;
+import com.the_nights.ourcraft.core.lists.blocks.OurcraftBlocks;
 import com.the_nights.ourcraft.core.lists.items.BlueGlassItems;
 import com.the_nights.ourcraft.core.lists.items.DiamondItem;
 import com.the_nights.ourcraft.core.lists.items.EmaraldItems;
@@ -57,6 +57,7 @@ import com.the_nights.ourcraft.core.lists.items.ObsidianItems;
 import com.the_nights.ourcraft.core.lists.items.StoneItems;
 import com.the_nights.ourcraft.core.lists.items.WoodenItem;
 import com.the_nights.ourcraft.core.tap.OurcraftCoreTap;
+import com.the_nights.ourcraft.core.world.OreGeneration;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -116,6 +117,7 @@ public class OurcraftCore {
     private void setup(final FMLCommonSetupEvent event) {
         // some preinit code
         proxy.postInit(event);
+        OreGeneration.setupOregeneration();
         LOGGER.info("Setup registred");
     }
 
@@ -133,12 +135,11 @@ public class OurcraftCore {
         @SubscribeEvent
         public static void registerItems(final RegistryEvent.Register<Item> event) {
             // register a new item here           
-            event.getRegistry().registerAll(                    
-                    // Blocks 
-                    MiscItems.LeadOreItem = new BlockItem(Blocks.LeadOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("lead_ore_item")),                            
-                    MiscItems.ObsidianIngotBlockItem = new BlockItem(Blocks.ObsidianIngotBlock,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_ingot_block_item")),    
-                    MiscItems.ThoriumOreItem = new BlockItem(Blocks.ThoriumOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("thorium_ore_item")),    
-                    MiscItems.UraniumOreItem = new BlockItem(Blocks.UraniumOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("uran_ore_item")),                        
+            event.getRegistry().registerAll(// OurcraftBlocks 
+                    MiscItems.LeadOreItem = new BlockItem(OurcraftBlocks.LeadOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("lead_ore_item")),                            
+                    MiscItems.ObsidianIngotBlockItem = new BlockItem(OurcraftBlocks.ObsidianIngotBlock,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_ingot_block_item")),    
+                    MiscItems.ThoriumOreItem = new BlockItem(OurcraftBlocks.ThoriumOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("thorium_ore_item")),    
+                    MiscItems.UraniumOreItem = new BlockItem(OurcraftBlocks.UraniumOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("uran_ore_item")),                        
                     // Ingots
                     ObsidianItems.ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("obsidian_ingot")),
                     BlueGlassItems.ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("blue_glass_ingot")),
@@ -207,10 +208,10 @@ public class OurcraftCore {
         public static void registerBlocks(final RegistryEvent.Register<Block> event) {
             // register a new item here
             event.getRegistry().registerAll(
-                    Blocks.UraniumOre = new Block(Block.Properties.create(Material.GOURD).hardnessAndResistance(0.0f, 0.0f).harvestLevel(2).sound(SoundType.STONE)).setRegistryName(getLocation("uran_ore")),
-                    Blocks.LeadOre = new Block(Block.Properties.create(Material.GOURD).hardnessAndResistance(0.0f, 0.0f).harvestLevel(0).sound(SoundType.STONE)).setRegistryName(getLocation("lead_ore")),
-                    Blocks.ThoriumOre = new Block(Block.Properties.create(Material.GOURD).hardnessAndResistance(0.0f, 0.0f).harvestLevel(0).sound(SoundType.STONE)).setRegistryName(getLocation("thorium_ore")),
-                    Blocks.ObsidianIngotBlock = new Block(Block.Properties.create(Material.GOURD).hardnessAndResistance(0.0f, 0.0f).harvestLevel(0).sound(SoundType.STONE)).setRegistryName(getLocation("obsidian_ingot_block"))
+                    OurcraftBlocks.UraniumOre = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 15.0f).harvestLevel(2).sound(SoundType.STONE)).setRegistryName(getLocation("uran_ore")),                    
+                    OurcraftBlocks.LeadOre = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 15.0f).harvestLevel(1).sound(SoundType.STONE)).setRegistryName(getLocation("lead_ore")),
+                    OurcraftBlocks.ThoriumOre = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 15.0f).harvestLevel(2).sound(SoundType.STONE)).setRegistryName(getLocation("thorium_ore")),
+                    OurcraftBlocks.ObsidianIngotBlock = new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(3.0f, 15.0f).harvestLevel(1).sound(SoundType.STONE)).setRegistryName(getLocation("obsidian_ingot_block"))
             );
             LOGGER.info("All Blocks Registered.");
         }

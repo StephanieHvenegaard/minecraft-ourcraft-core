@@ -42,7 +42,7 @@ public enum ArmorMaterial implements IArmorMaterial {
         this.equipSound = "";
         this.durability = durability;
         this.enchantability = enchantability;
-        this.dmgReduction = new int[]{dmgRedux_head,dmgRedux_chest,dmgRedux_legs, dmgRedux_feet};
+        this.dmgReduction = new int[]{dmgRedux_feet,dmgRedux_legs, dmgRedux_chest, dmgRedux_head };
         this.toughness = toughness;
         this.repairItem = repItem;
     }

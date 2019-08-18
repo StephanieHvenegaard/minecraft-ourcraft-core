@@ -9,7 +9,7 @@ import net.minecraft.block.Block;
  *
  * @author Stephanie
  */
-public class Blocks {
+public class OurcraftBlocks {
     public static Block UraniumOre;
     public static Block LeadOre;
     public static Block ThoriumOre;

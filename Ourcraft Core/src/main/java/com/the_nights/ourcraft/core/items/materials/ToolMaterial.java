@@ -30,6 +30,7 @@ import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.tags.Tag;
 
 /**
  *
@@ -50,7 +51,7 @@ public enum ToolMaterial implements IItemTier {
     // Iron 9	
     // turtle 9
     // Diamond 10
-    Obsidian(15.0f, 5.0f, 25.0f, 1562 * 10, 3, 25, ObsidianItems.ingot),
+    Obsidian(15.0f, 5.0f, 25.0f, 1562 * 10, 3, 9, ObsidianItems.ingot),
     Emarald(10.0f, 3.0f, 15.0f, 1562 * 2, 3, 12, Items.EMERALD),
     Diamond(5.0f, 1.0f, 1.0f, 1562, 3, 10, Items.DIAMOND),
     Iron(4.0f, 1.0f, 1.0f, 251, 2, 9, Items.IRON_INGOT),

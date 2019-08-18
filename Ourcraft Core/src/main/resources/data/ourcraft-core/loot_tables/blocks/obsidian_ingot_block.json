@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:block",
+    "pools": 
+            [
+                {
+                    "rolls": 1,
+                    "entries":
+                            [
+                                {
+                                    "type": "minecraft:item",
+                                    "name": "ourcraft-core:obsidian_ingot_block_item"                    
+                                }
+                            ]
+                }
+            ]
+}
+
