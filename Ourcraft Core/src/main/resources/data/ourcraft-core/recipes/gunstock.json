@@ -1,0 +1,21 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+            [              
+            
+                "SSW"
+            ],
+    "key": 
+            {
+                "S": {
+                    "item": "minecraft:stick"
+                },
+                "W":{
+                    "tag": "minecraft:planks"
+                }
+            },
+    "result": {
+        "item": "ourcraft-core:gunstock"
+    }
+}
+

@@ -1,0 +1,11 @@
+
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0" : "ourcraft-core:item/wood_chest"
+    }
+}
+
+
+
+

@@ -1,0 +1,10 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0" : "ourcraft-core:item/kelp_boots"
+    }
+}
+
+
+
+
