@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.the_nights.ourcraft.core.items.parts;
+package com.the_nights.ourcraft.core.item.parts;
 
-import com.the_nights.ourcraft.core.items.ItemCustomFireArm;
-import com.the_nights.ourcraft.core.items.materials.RangedMaterial;
+import com.the_nights.ourcraft.core.item.ItemCustomFireArm;
+import com.the_nights.ourcraft.core.item.materials.RangedMaterial;
 import net.minecraft.item.ItemStack;
 
 /**
