@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.the_nights.ourcraft.core.items;
+package com.the_nights.ourcraft.core.item;
 
 import com.electronwill.nightconfig.core.conversion.SpecStringInArray;
 import com.google.common.collect.Lists;
-import com.the_nights.ourcraft.core.items.materials.RangedMaterial;
+import com.the_nights.ourcraft.core.item.materials.RangedMaterial;
 import com.the_nights.ourcraft.core.OurcraftCore;
-import com.the_nights.ourcraft.core.items.parts.FirearmPart;
+import com.the_nights.ourcraft.core.item.parts.FirearmPart;
 import com.the_nights.ourcraft.core.lists.items.MiscItems;
 import com.the_nights.ourcraft.core.lists.items.tags.CoreItemTags;
 

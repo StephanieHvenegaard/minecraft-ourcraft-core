@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.the_nights.ourcraft.core.items.materials;
+package com.the_nights.ourcraft.core.item.materials;
 
 import com.the_nights.ourcraft.core.OurcraftCore;
 import com.the_nights.ourcraft.core.lists.items.BlueGlassItems;

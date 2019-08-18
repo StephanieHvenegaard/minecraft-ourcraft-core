@@ -30,16 +30,16 @@ import com.the_nights.ourcraft.armory.proxy.ArmoryClientProxy;
 import com.the_nights.ourcraft.armory.proxy.ArmoryCommonProxy;
 import java.util.stream.Collectors;
 
-import com.the_nights.ourcraft.core.items.ItemCustomAxe;
-import com.the_nights.ourcraft.core.items.ItemCustomFireArm;
-import com.the_nights.ourcraft.core.items.ItemCustomHoe;
-import com.the_nights.ourcraft.core.items.ItemCustomKatana;
-import com.the_nights.ourcraft.core.items.ItemCustomPickAxe;
-import com.the_nights.ourcraft.core.items.ItemCustomShovel;
-import com.the_nights.ourcraft.core.items.ItemCustomSword;
-import com.the_nights.ourcraft.core.items.materials.ArmorMaterial;
-import com.the_nights.ourcraft.core.items.materials.RangedMaterial;
-import com.the_nights.ourcraft.core.items.materials.ToolMaterial;
+import com.the_nights.ourcraft.core.item.ItemCustomAxe;
+import com.the_nights.ourcraft.core.item.ItemCustomFireArm;
+import com.the_nights.ourcraft.core.item.ItemCustomHoe;
+import com.the_nights.ourcraft.core.item.ItemCustomKatana;
+import com.the_nights.ourcraft.core.item.ItemCustomPickAxe;
+import com.the_nights.ourcraft.core.item.ItemCustomShovel;
+import com.the_nights.ourcraft.core.item.ItemCustomSword;
+import com.the_nights.ourcraft.core.item.materials.ArmorMaterial;
+import com.the_nights.ourcraft.core.item.materials.RangedMaterial;
+import com.the_nights.ourcraft.core.item.materials.ToolMaterial;
 import com.the_nights.ourcraft.core.lists.armor.BlueGlassArmor;
 import com.the_nights.ourcraft.core.lists.armor.CoinItems;
 import com.the_nights.ourcraft.core.lists.armor.KelpArmor;
@@ -145,53 +145,53 @@ public class OurcraftCore {
                     BlueGlassItems.ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("blue_glass_ingot")),
                     BlueGlassItems.dust = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("blue_glass_dust")),
                     // Weapons                    
-                    ObsidianItems.sword = new ItemCustomSword(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_sword")),
-                    ObsidianItems.katana = new ItemCustomKatana(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_katana")),
-                    EmaraldItems.katana = new ItemCustomKatana(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("emarald_katana")),
-                    EmaraldItems.sword = new ItemCustomSword(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("emarald_sword")),
-                    DiamondItem.katana = new ItemCustomKatana(ToolMaterial.Diamond, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("diamond_katana")),
-                    GoldenItems.katana = new ItemCustomKatana(ToolMaterial.Golden, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("gold_katana")),
-                    IronItems.katana = new ItemCustomKatana(ToolMaterial.Iron, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("iron_katana")),
-                    IronItems.musket = new ItemCustomFireArm(RangedMaterial.FLINTLOCK_MUSKET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_musket")),
-                    IronItems.blunderbuss = new ItemCustomFireArm(RangedMaterial.FLINTLOCK_BLUNDERBUSS, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_blunderbuss")),
-                    IronItems.pistol = new ItemCustomFireArm(RangedMaterial.FLINTLOCK_PISTOL, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_pistol")),
-                    StoneItems.katana = new ItemCustomKatana(ToolMaterial.Stone, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("stone_katana")),
-                    WoodenItem.katana = new ItemCustomKatana(ToolMaterial.Wood, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_katana")),
+                    ObsidianItems.sword = new ItemCustomSword(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_sword")),
+                    ObsidianItems.katana = new ItemCustomKatana(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_katana")),
+                    EmaraldItems.katana = new ItemCustomKatana(ToolMaterial.Emarald, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_katana")),
+                    EmaraldItems.sword = new ItemCustomSword(ToolMaterial.Emarald, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_sword")),
+                    DiamondItem.katana = new ItemCustomKatana(ToolMaterial.Diamond, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("diamond_katana")),
+                    GoldenItems.katana = new ItemCustomKatana(ToolMaterial.Golden, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("gold_katana")),
+                    IronItems.katana = new ItemCustomKatana(ToolMaterial.Iron, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("iron_katana")),
+                    IronItems.musket = new ItemCustomFireArm(RangedMaterial.FLINTLOCK_MUSKET, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("flintlock_musket")),
+                    IronItems.blunderbuss = new ItemCustomFireArm(RangedMaterial.FLINTLOCK_BLUNDERBUSS, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("flintlock_blunderbuss")),
+                    IronItems.pistol = new ItemCustomFireArm(RangedMaterial.FLINTLOCK_PISTOL, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("flintlock_pistol")),
+                    StoneItems.katana = new ItemCustomKatana(ToolMaterial.Stone, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("stone_katana")),
+                    WoodenItem.katana = new ItemCustomKatana(ToolMaterial.Wood, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("wood_katana")),
                     // Firearms
-                    MiscItems.flintlockAmmo = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_ammo")),
-                    MiscItems.blunderBarrelAssembly = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_blunderbuss_barrelassembly")),
-                    MiscItems.musketBarrelAssembly = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("flintlock_musket_barrelassembly")),
-                    MiscItems.gunstock = new Item(new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("gunstock")),
+                    MiscItems.flintlockAmmo = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("flintlock_ammo")),
+                    MiscItems.blunderBarrelAssembly = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("flintlock_blunderbuss_barrelassembly")),
+                    MiscItems.musketBarrelAssembly = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("flintlock_musket_barrelassembly")),
+                    MiscItems.gunstock = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("gunstock")),
                     // Armor 
-                    ObsidianArmor.helmet = new ArmorItem(ArmorMaterial.obsidian, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_helmet")),
-                    ObsidianArmor.chestplate = new ArmorItem(ArmorMaterial.obsidian, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_chest")),
-                    ObsidianArmor.leggings = new ArmorItem(ArmorMaterial.obsidian, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_leggings")),
-                    ObsidianArmor.boots = new ArmorItem(ArmorMaterial.obsidian, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("obsidian_boots")),
-                    SapphireArmor.helmet = new ArmorItem(ArmorMaterial.Sapphire, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("sapphire_helmet")),
-                    SapphireArmor.chestplate = new ArmorItem(ArmorMaterial.Sapphire, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("sapphire_chest")),
-                    SapphireArmor.leggings = new ArmorItem(ArmorMaterial.Sapphire, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("sapphire_leggings")),
-                    SapphireArmor.boots = new ArmorItem(ArmorMaterial.Sapphire, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("sapphire_boots")),
-                    KelpArmor.helmet = new ArmorItem(ArmorMaterial.kelp, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("kelp_helmet")),
-                    KelpArmor.chestplate = new ArmorItem(ArmorMaterial.kelp, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("kelp_chest")),
-                    KelpArmor.leggings = new ArmorItem(ArmorMaterial.kelp, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("kelp_leggings")),
-                    KelpArmor.boots = new ArmorItem(ArmorMaterial.kelp, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("kelp_boots")),
-                    WoodenArmor.helmet = new ArmorItem(ArmorMaterial.wood, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_helmet")),
-                    WoodenArmor.chestplate = new ArmorItem(ArmorMaterial.wood, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_chest")),
-                    WoodenArmor.leggings = new ArmorItem(ArmorMaterial.wood, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_leggings")),
-                    WoodenArmor.boots = new ArmorItem(ArmorMaterial.wood, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("wood_boots")),
-                    BlueGlassArmor.helmet = new ArmorItem(ArmorMaterial.blue_glass, EquipmentSlotType.HEAD, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("blue_glass_helmet")),
-                    BlueGlassArmor.chestplate = new ArmorItem(ArmorMaterial.blue_glass, EquipmentSlotType.CHEST, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("blue_glass_chest")),
-                    BlueGlassArmor.leggings = new ArmorItem(ArmorMaterial.blue_glass, EquipmentSlotType.LEGS, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("blue_glass_leggings")),
-                    BlueGlassArmor.boots = new ArmorItem(ArmorMaterial.blue_glass, EquipmentSlotType.FEET, new Item.Properties().group(ItemGroup.COMBAT)).setRegistryName(getLocation("blue_glass_boots")),
+                    ObsidianArmor.helmet = new ArmorItem(ArmorMaterial.obsidian, EquipmentSlotType.HEAD, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_helmet")),
+                    ObsidianArmor.chestplate = new ArmorItem(ArmorMaterial.obsidian, EquipmentSlotType.CHEST, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_chest")),
+                    ObsidianArmor.leggings = new ArmorItem(ArmorMaterial.obsidian, EquipmentSlotType.LEGS, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_leggings")),
+                    ObsidianArmor.boots = new ArmorItem(ArmorMaterial.obsidian, EquipmentSlotType.FEET, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_boots")),
+                    SapphireArmor.helmet = new ArmorItem(ArmorMaterial.Sapphire, EquipmentSlotType.HEAD, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("sapphire_helmet")),
+                    SapphireArmor.chestplate = new ArmorItem(ArmorMaterial.Sapphire, EquipmentSlotType.CHEST, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("sapphire_chest")),
+                    SapphireArmor.leggings = new ArmorItem(ArmorMaterial.Sapphire, EquipmentSlotType.LEGS, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("sapphire_leggings")),
+                    SapphireArmor.boots = new ArmorItem(ArmorMaterial.Sapphire, EquipmentSlotType.FEET, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("sapphire_boots")),
+                    KelpArmor.helmet = new ArmorItem(ArmorMaterial.kelp, EquipmentSlotType.HEAD, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("kelp_helmet")),
+                    KelpArmor.chestplate = new ArmorItem(ArmorMaterial.kelp, EquipmentSlotType.CHEST, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("kelp_chest")),
+                    KelpArmor.leggings = new ArmorItem(ArmorMaterial.kelp, EquipmentSlotType.LEGS, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("kelp_leggings")),
+                    KelpArmor.boots = new ArmorItem(ArmorMaterial.kelp, EquipmentSlotType.FEET, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("kelp_boots")),
+                    WoodenArmor.helmet = new ArmorItem(ArmorMaterial.wood, EquipmentSlotType.HEAD, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("wood_helmet")),
+                    WoodenArmor.chestplate = new ArmorItem(ArmorMaterial.wood, EquipmentSlotType.CHEST, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("wood_chest")),
+                    WoodenArmor.leggings = new ArmorItem(ArmorMaterial.wood, EquipmentSlotType.LEGS, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("wood_leggings")),
+                    WoodenArmor.boots = new ArmorItem(ArmorMaterial.wood, EquipmentSlotType.FEET, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("wood_boots")),
+                    BlueGlassArmor.helmet = new ArmorItem(ArmorMaterial.blue_glass, EquipmentSlotType.HEAD, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("blue_glass_helmet")),
+                    BlueGlassArmor.chestplate = new ArmorItem(ArmorMaterial.blue_glass, EquipmentSlotType.CHEST, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("blue_glass_chest")),
+                    BlueGlassArmor.leggings = new ArmorItem(ArmorMaterial.blue_glass, EquipmentSlotType.LEGS, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("blue_glass_leggings")),
+                    BlueGlassArmor.boots = new ArmorItem(ArmorMaterial.blue_glass, EquipmentSlotType.FEET, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("blue_glass_boots")),
                     // Tools 
-                    ObsidianItems.axe = new ItemCustomAxe(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_axe")),
-                    ObsidianItems.hoe = new ItemCustomHoe(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_hoe")),
-                    ObsidianItems.pickaxe = new ItemCustomPickAxe(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_pickaxe")),
-                    ObsidianItems.spade = new ItemCustomShovel(ToolMaterial.Obsidian, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("obsidian_spade")),
-                    EmaraldItems.axe = new ItemCustomAxe(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("emarald_axe")),
-                    EmaraldItems.hoe = new ItemCustomHoe(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("emarald_hoe")),
-                    EmaraldItems.pickaxe = new ItemCustomPickAxe(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("emarald_pickaxe")),
-                    EmaraldItems.spade = new ItemCustomShovel(ToolMaterial.Emarald, new Item.Properties().group(ItemGroup.TOOLS)).setRegistryName(getLocation("emarald_spade")),
+                    ObsidianItems.axe = new ItemCustomAxe(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_axe")),
+                    ObsidianItems.hoe = new ItemCustomHoe(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_hoe")),
+                    ObsidianItems.pickaxe = new ItemCustomPickAxe(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_pickaxe")),
+                    ObsidianItems.spade = new ItemCustomShovel(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_spade")),
+                    EmaraldItems.axe = new ItemCustomAxe(ToolMaterial.Emarald, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_axe")),
+                    EmaraldItems.hoe = new ItemCustomHoe(ToolMaterial.Emarald, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_hoe")),
+                    EmaraldItems.pickaxe = new ItemCustomPickAxe(ToolMaterial.Emarald, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_pickaxe")),
+                    EmaraldItems.spade = new ItemCustomShovel(ToolMaterial.Emarald, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_spade")),
                     // Misc Items 
 
                     // Coins
