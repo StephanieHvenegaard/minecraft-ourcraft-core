@@ -8,7 +8,7 @@
                             [
                                 {
                                     "type": "minecraft:item",
-                                    "name": "ourcraft-core:lead_ore_item"                    
+                                    "name": "ourcraft-core:lead_ore"                    
                                 }
                             ]
                 }

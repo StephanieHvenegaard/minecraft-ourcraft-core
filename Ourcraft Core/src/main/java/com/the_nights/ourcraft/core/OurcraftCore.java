@@ -136,10 +136,10 @@ public class OurcraftCore {
         public static void registerItems(final RegistryEvent.Register<Item> event) {
             // register a new item here           
             event.getRegistry().registerAll(// OurcraftBlocks 
-                    MiscItems.LeadOreItem = new BlockItem(OurcraftBlocks.LeadOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("lead_ore_item")),                            
-                    MiscItems.ObsidianIngotBlockItem = new BlockItem(OurcraftBlocks.ObsidianIngotBlock,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_ingot_block_item")),    
-                    MiscItems.ThoriumOreItem = new BlockItem(OurcraftBlocks.ThoriumOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("thorium_ore_item")),    
-                    MiscItems.UraniumOreItem = new BlockItem(OurcraftBlocks.UraniumOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("uran_ore_item")),                        
+                    MiscItems.LeadOreItem = new BlockItem(OurcraftBlocks.LeadOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("lead_ore")),                            
+                    MiscItems.ObsidianIngotBlockItem = new BlockItem(OurcraftBlocks.ObsidianIngotBlock,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_ingot_block")),    
+                    MiscItems.ThoriumOreItem = new BlockItem(OurcraftBlocks.ThoriumOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("thorium_ore")),    
+                    MiscItems.UraniumOreItem = new BlockItem(OurcraftBlocks.UraniumOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("uran_ore")),                        
                     // Ingots
                     ObsidianItems.ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("obsidian_ingot")),
                     BlueGlassItems.ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("blue_glass_ingot")),

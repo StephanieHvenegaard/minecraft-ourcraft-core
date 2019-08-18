@@ -8,7 +8,7 @@
                             [
                                 {
                                     "type": "minecraft:item",
-                                    "name": "ourcraft-core:obsidian_ingot_block_item"                    
+                                    "name": "ourcraft-core:obsidian_ingot_block"                    
                                 }
                             ]
                 }

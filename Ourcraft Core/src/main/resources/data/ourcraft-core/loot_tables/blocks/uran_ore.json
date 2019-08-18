@@ -8,7 +8,7 @@
                             [
                                 {
                                     "type": "minecraft:item",
-                                    "name": "ourcraft-core:uran_ore_item"                    
+                                    "name": "ourcraft-core:uran_ore"                    
                                 }
                             ]
                 }
