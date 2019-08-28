@@ -16,7 +16,13 @@ public class MiscItems {
       //public static Item flintlock;
       public static Item gunstock;
       public static Item musketBarrelAssembly;
-      public static Item blunderBarrelAssembly;
-
-      
+      public static Item blunderBarrelAssembly;      
+      //Blocks
+      public static Item ObsidianIngotBlockItem;
+      // Ores 
+      public static Item UraniumOreItem;
+      public static Item LeadOreItem;
+      public static Item ThoriumOreItem;
+      // Ingots
+            
 }

@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern":
+            [
+                "III",
+                "III",
+                "III"
+            ],
+    "key": 
+            {
+                "I": {
+                    "item": "ourcraft-core:obsidian_ingot"
+                }
+            },
+    "result": {
+        "item": "ourcraft-core:obsidian_ingot_block"
+    }
+}
+
+
