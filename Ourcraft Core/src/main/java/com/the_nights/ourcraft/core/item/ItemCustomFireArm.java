@@ -18,11 +18,9 @@ import it.unimi.dsi.fastutil.Stack;
 import java.util.List;
 import java.util.Random;
 
-import net.minecraft.item.Items;
-import net.minecraft.item.ShootableItem;
+import net.minecraft.item.*;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.Tag;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
@@ -36,11 +34,9 @@ import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
-import net.minecraft.item.ArrowItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.CrossbowItem;
+
 import static net.minecraft.item.CrossbowItem.getChargeTime;
-import net.minecraft.item.UseAction;
+
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.ActionResult;
@@ -119,9 +115,7 @@ public class ItemCustomFireArm extends ShootableItem {
     @Override
     public void onUsingTick(ItemStack is, LivingEntity le, int i) {
         super.onUsingTick(is, le, i); // To change body of generated methods, choose Tools | Templates.
-
     }
-
     /**
      * Called to trigger the item's "innate" right click behavior. To handle
      * when this item is used on a Block, see {@link #onItemUse}.
