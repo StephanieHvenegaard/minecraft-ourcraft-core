@@ -5,7 +5,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
 
-public class ItemScythe extends BaseWeapon {
+public class ItemScythe extends BaseMeleeWeapon {
     public ItemScythe(IItemTier itemTier, Item.Properties props) {
         super(itemTier, -2, -3.6f, props);
     }
