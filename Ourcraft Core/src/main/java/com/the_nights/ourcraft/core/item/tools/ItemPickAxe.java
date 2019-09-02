@@ -26,17 +26,18 @@ SOFTWARE.
 package com.the_nights.ourcraft.core.item.tools;
 
 import com.the_nights.ourcraft.core.item.materials.ToolMaterial;
-import net.minecraft.item.AxeItem;
 import net.minecraft.item.IItemTier;
+import net.minecraft.item.Item;
+import net.minecraft.item.PickaxeItem;
 
 /**
  *
  * @author Stephanie
  */
-public class ItemCustomAxe extends AxeItem{
+public class ItemPickAxe extends PickaxeItem{
 
-    public ItemCustomAxe(IItemTier itemTier, Properties props) {       
-        super(itemTier, -0.5f,((ToolMaterial)itemTier).getSpeed(), props);
+    public ItemPickAxe(IItemTier itemTier, Item.Properties props) {
+        super(itemTier, -1, ((ToolMaterial)itemTier).getSpeed(), props);
     }
     
     
