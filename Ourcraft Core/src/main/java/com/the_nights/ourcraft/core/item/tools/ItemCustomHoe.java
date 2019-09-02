@@ -23,20 +23,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
  */
-package com.the_nights.ourcraft.core.item;
+package com.the_nights.ourcraft.core.item.tools;
 
 import com.the_nights.ourcraft.core.item.materials.ToolMaterial;
-import net.minecraft.item.AxeItem;
+import net.minecraft.item.HoeItem;
 import net.minecraft.item.IItemTier;
+import net.minecraft.item.Item;
 
 /**
  *
  * @author Stephanie
  */
-public class ItemCustomAxe extends AxeItem{
+public class ItemCustomHoe extends HoeItem{
 
-    public ItemCustomAxe(IItemTier itemTier, Properties props) {       
-        super(itemTier, -0.5f,((ToolMaterial)itemTier).getSpeed(), props);
+    public ItemCustomHoe(IItemTier itemTier, Item.Properties props) {
+        super(itemTier, ((ToolMaterial)itemTier).getSpeed(), props);
     }
     
     

@@ -23,21 +23,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
  */
-package com.the_nights.ourcraft.core.item;
+package com.the_nights.ourcraft.core.item.weapons;
 
 import com.the_nights.ourcraft.core.item.materials.ToolMaterial;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
-import net.minecraft.item.ShovelItem;
+import net.minecraft.item.PickaxeItem;
 
 /**
  *
  * @author Stephanie
  */
-public class ItemCustomShovel extends ShovelItem{
+public class ItemCustomPickAxe extends PickaxeItem{
 
-    public ItemCustomShovel(IItemTier itemTier, Item.Properties props) {
-        super(itemTier, -0.5f, ((ToolMaterial)itemTier).getSpeed()-2.0f, props);
+    public ItemCustomPickAxe(IItemTier itemTier, Item.Properties props) {
+        super(itemTier, -1, ((ToolMaterial)itemTier).getSpeed(), props);
     }
     
     

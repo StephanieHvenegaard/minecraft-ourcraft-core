@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.the_nights.ourcraft.core.item;
+package com.the_nights.ourcraft.core.item.weapons;
 
 import com.google.common.collect.Multimap;
 import net.minecraft.entity.SharedMonsterAttributes;
