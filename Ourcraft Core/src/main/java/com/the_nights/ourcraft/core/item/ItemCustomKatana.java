@@ -30,18 +30,4 @@ public class ItemCustomKatana extends SwordItem {
         this.attackReach =-2;
         this.attackKnockBack =-2;
     }
-       /**
-    * Gets a map of item attribute modifiers, used by ItemSword to increase hit damage.
-    */
-       /*
-   public Multimap<String, AttributeModifier> getAttributeModifiers(EquipmentSlotType equipmentSlot) {
-        Multimap<String, AttributeModifier> multimap = super.getAttributeModifiers(equipmentSlot);
-        if (equipmentSlot == EquipmentSlotType.MAINHAND) {
-            multimap.put(SharedMonsterAttributes.ATTACK_KNOCKBACK.getName(), new AttributeModifier(ATTACK_KNOCKBACK_MODIFIER, "Weapon modifier", (double)this.attackKnockBack, AttributeModifier.Operation.ADDITION));
-            //multimap.put(GenericAttributes.ATTACK_SPEED.getName(), new AttributeModifier(ATTACK_SPEED_MODIFIER, "Weapon modifier", (double)this.attackSpeed, AttributeModifier.Operation.ADDITION));
-        }
-
-        return multimap;
-    }
-*/
 }
