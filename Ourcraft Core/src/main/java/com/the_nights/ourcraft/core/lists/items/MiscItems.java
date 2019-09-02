@@ -13,6 +13,7 @@ import net.minecraft.item.Item;
  */
 public class MiscItems {
       public static Item flintlockAmmo;
+      public static Item blunderAmmo;
       //public static Item flintlock;
       public static Item gunstock;
       public static Item musketBarrelAssembly;

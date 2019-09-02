@@ -160,6 +160,8 @@ public class OurcraftCore {
                     StoneItems.katana = new ItemCustomKatana(ToolMaterial.Stone, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("stone_katana")),
                     WoodenItem.katana = new ItemCustomKatana(ToolMaterial.Wood, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("wood_katana")),
                     // Firearms
+
+                    MiscItems.blunderAmmo = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("blunderbuss_ammo")),
                     MiscItems.flintlockAmmo = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("flintlock_ammo")),
                     MiscItems.blunderBarrelAssembly = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("flintlock_blunderbuss_barrelassembly")),
                     MiscItems.musketBarrelAssembly = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("flintlock_musket_barrelassembly")),

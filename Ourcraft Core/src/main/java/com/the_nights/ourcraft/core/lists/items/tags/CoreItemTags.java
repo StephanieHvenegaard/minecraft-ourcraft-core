@@ -16,6 +16,7 @@ import net.minecraft.util.ResourceLocation;
  */
 public class CoreItemTags {
       public static final Tag<Item> FLINTLOCK_AMMO = makeWrapperTag("flintlock_ammo");
+    public static final Tag<Item> BLUNDERBUSS_AMMO = makeWrapperTag("flintlock_ammo");
       
          private static Tag<Item> makeWrapperTag(String stack) {
             return new net.minecraft.tags.ItemTags.Wrapper(new ResourceLocation(OurcraftCore.MODID,stack));

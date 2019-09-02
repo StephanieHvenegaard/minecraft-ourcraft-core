@@ -5,22 +5,15 @@
  */
 package com.the_nights.ourcraft.core.item;
 
-import com.electronwill.nightconfig.core.conversion.SpecStringInArray;
 import com.google.common.collect.Lists;
 import com.the_nights.ourcraft.core.item.materials.RangedMaterial;
 import com.the_nights.ourcraft.core.OurcraftCore;
-import com.the_nights.ourcraft.core.item.parts.FirearmPart;
-import com.the_nights.ourcraft.core.lists.items.MiscItems;
 import com.the_nights.ourcraft.core.lists.items.tags.CoreItemTags;
-
-import it.unimi.dsi.fastutil.Stack;
 
 import java.util.List;
 import java.util.Random;
 
 import net.minecraft.item.*;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.Tag;
 import net.minecraft.util.ResourceLocation;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
@@ -35,10 +28,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 
-import static net.minecraft.item.CrossbowItem.getChargeTime;
-
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -46,10 +36,8 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.NBTTextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -62,6 +50,9 @@ public class ItemCustomFireArm extends ShootableItem {
 
     public static final Predicate<ItemStack> AMMUNITION_MUSKET = (stack) -> {
         return stack.getItem().isIn(CoreItemTags.FLINTLOCK_AMMO);
+    };
+    public static final Predicate<ItemStack> AMMUNITION_BLUNDERBUSS = (stack) -> {
+        return stack.getItem().isIn(CoreItemTags.BLUNDERBUSS_AMMO);
     };
 
     private RangedMaterial specs;
@@ -265,9 +256,10 @@ public class ItemCustomFireArm extends ShootableItem {
     public Predicate<ItemStack> getInventoryAmmoPredicate() {
         // OurcraftCore.LOGGER.info("Ammo type: " + specs.ammoType);
         switch (specs.ammoType) {
-
-            case FLINT_LOCK_MUSKET_AMMO:
             case FLINT_LOCK_BLUNDERBUSS_AMMO:
+                OurcraftCore.LOGGER.info("found blunderbuss ammo");
+                return AMMUNITION_BLUNDERBUSS;
+            case FLINT_LOCK_MUSKET_AMMO:
             case FLINT_LOCK_PISTOL_AMMO:
                 //       OurcraftCore.LOGGER.info("found ammo");
                 return AMMUNITION_MUSKET;
