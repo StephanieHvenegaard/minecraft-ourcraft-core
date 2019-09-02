@@ -1,5 +1,5 @@
 {
-    "itemGroup.ourcraft": "Ourcraft",
+    "itemGroup.ourcraft_core": "Ourcraft Core",
 
     "item.ourcraft-core.wooden_coin": "Wooden Coin",
     "item.ourcraft-core.iron_coin": "Iron Coin",
@@ -9,6 +9,9 @@
     "item.ourcraft-core.emarald_coin": "Emarald Coin",
 
     "item.ourcraft-core.obsidian_ingot": "Obsidian Ingot",
+    "item.ourcraft-core.lead_ingot": "Lead Ingot",
+    "item.ourcraft-core.lead_nugget": "Lead Nugget",
+
     "item.ourcraft-core.obsidian_sword": "Obsidian Sword",
     "item.ourcraft-core.obsidian_katana": "Obsidian Katana",
     "item.ourcraft-core.obsidian_axe": "Obsidian Axe",
@@ -68,6 +71,4 @@
     "block.ourcraft-core.thorium_ore": "Thorium Ore",
     
     "block.ourcraft-core.obsidian_ingot_block": "Stacked Obsidian Ingots"
-    
-    
 }

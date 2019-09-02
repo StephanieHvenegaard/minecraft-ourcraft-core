@@ -36,7 +36,7 @@ import net.minecraft.item.ItemStack;
 public class OurcraftCoreTap extends ItemGroup {
 
     public OurcraftCoreTap() {
-        super("ourcraft");
+        super("ourcraft_core");
     }
 
     @Override

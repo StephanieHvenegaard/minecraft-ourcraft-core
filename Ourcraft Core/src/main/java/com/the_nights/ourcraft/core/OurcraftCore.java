@@ -136,14 +136,16 @@ public class OurcraftCore {
         public static void registerItems(final RegistryEvent.Register<Item> event) {
             // register a new item here           
             event.getRegistry().registerAll(// OurcraftBlocks 
-                    MiscItems.LeadOreItem = new BlockItem(OurcraftBlocks.LeadOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("lead_ore")),                            
-                    MiscItems.ObsidianIngotBlockItem = new BlockItem(OurcraftBlocks.ObsidianIngotBlock,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_ingot_block")),    
-                    MiscItems.ThoriumOreItem = new BlockItem(OurcraftBlocks.ThoriumOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("thorium_ore")),    
-                    MiscItems.UraniumOreItem = new BlockItem(OurcraftBlocks.UraniumOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("uran_ore")),                        
+                    MiscItems.leadOreItem = new BlockItem(OurcraftBlocks.LeadOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("lead_ore")),
+                    MiscItems.obsidianIngotBlockItem = new BlockItem(OurcraftBlocks.ObsidianIngotBlock,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_ingot_block")),
+                    MiscItems.thoriumOreItem = new BlockItem(OurcraftBlocks.ThoriumOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("thorium_ore")),
+                    MiscItems.uraniumOreItem = new BlockItem(OurcraftBlocks.UraniumOre,new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("uran_ore")),
                     // Ingots
-                    ObsidianItems.ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("obsidian_ingot")),
-                    BlueGlassItems.ingot = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("blue_glass_ingot")),
-                    BlueGlassItems.dust = new Item(new Item.Properties().group(ItemGroup.MATERIALS)).setRegistryName(getLocation("blue_glass_dust")),
+                    MiscItems.leadNugget = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("lead_nugget")),
+                    MiscItems.leadIngot = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("lead_ingot")),
+                    ObsidianItems.ingot = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_ingot")),
+                    BlueGlassItems.ingot = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("blue_glass_ingot")),
+                    BlueGlassItems.dust = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("blue_glass_dust")),
                     // Weapons                    
                     ObsidianItems.sword = new ItemCustomSword(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_sword")),
                     ObsidianItems.katana = new ItemCustomKatana(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_katana")),

@@ -18,11 +18,15 @@ public class MiscItems {
       public static Item musketBarrelAssembly;
       public static Item blunderBarrelAssembly;      
       //Blocks
-      public static Item ObsidianIngotBlockItem;
+      public static Item obsidianIngotBlockItem;
       // Ores 
-      public static Item UraniumOreItem;
-      public static Item LeadOreItem;
-      public static Item ThoriumOreItem;
+      public static Item uraniumOreItem;
+      public static Item leadOreItem;
+      public static Item thoriumOreItem;
       // Ingots
+      public static Item leadIngot;
+
+      // nuggets
+      public static Item leadNugget;
             
 }
