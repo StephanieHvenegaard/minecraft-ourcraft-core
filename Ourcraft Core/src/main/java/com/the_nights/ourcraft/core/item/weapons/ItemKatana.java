@@ -19,13 +19,13 @@ import java.util.UUID;
  *
  * @author Stephanie
  */
-public class ItemCustomKatana extends SwordItem {
+public class ItemKatana extends SwordItem {
 
     protected static final UUID ATTACK_REACH_MODIFIER = UUID.fromString("26cb07a3-209d-4110-8e10-1010243614c8");
     protected static final UUID ATTACK_KNOCKBACK_MODIFIER = UUID.fromString("26cb07a3-209d-4110-8e10-1010243614c8");
     private final float attackReach;
     private final float attackKnockBack;
-    public ItemCustomKatana(IItemTier itemTier, Item.Properties props) {
+    public ItemKatana(IItemTier itemTier, Item.Properties props) {
         super(itemTier, 1, -1.6f, props);
         this.attackReach =-2;
         this.attackKnockBack =-2;

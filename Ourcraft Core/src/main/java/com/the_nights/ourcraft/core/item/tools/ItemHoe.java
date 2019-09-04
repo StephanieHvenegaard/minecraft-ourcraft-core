@@ -26,18 +26,18 @@ SOFTWARE.
 package com.the_nights.ourcraft.core.item.tools;
 
 import com.the_nights.ourcraft.core.item.materials.ToolMaterial;
+import net.minecraft.item.HoeItem;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
-import net.minecraft.item.ShovelItem;
 
 /**
  *
  * @author Stephanie
  */
-public class ItemCustomShovel extends ShovelItem{
+public class ItemHoe extends HoeItem{
 
-    public ItemCustomShovel(IItemTier itemTier, Item.Properties props) {
-        super(itemTier, -0.5f, ((ToolMaterial)itemTier).getSpeed()-2.0f, props);
+    public ItemHoe(IItemTier itemTier, Item.Properties props) {
+        super(itemTier, ((ToolMaterial)itemTier).getSpeed(), props);
     }
     
     
