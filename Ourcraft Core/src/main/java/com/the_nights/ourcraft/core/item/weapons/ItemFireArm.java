@@ -100,7 +100,7 @@ public class ItemFireArm extends ShootableItem {
 
     @Override
     public boolean isCrossbow(ItemStack is) {
-        return is.getItem() instanceof ItemFireArm;
+        return true;
     }
 
     @Override

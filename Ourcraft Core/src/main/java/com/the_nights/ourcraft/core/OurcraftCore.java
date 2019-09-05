@@ -63,14 +63,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
+import net.minecraft.item.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -147,7 +144,7 @@ public class OurcraftCore {
                     ObsidianItems.ingot = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_ingot")),
                     BlueGlassItems.ingot = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("blue_glass_ingot")),
                     BlueGlassItems.dust = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("blue_glass_dust")),
-                    // Weapons                    
+                    // Weapons
                     ObsidianItems.sword = new ItemSword(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_sword")),
                     ObsidianItems.katana = new ItemKatana(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_katana")),
                     EmaraldItems.katana = new ItemKatana(ToolMaterial.Emarald, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_katana")),
