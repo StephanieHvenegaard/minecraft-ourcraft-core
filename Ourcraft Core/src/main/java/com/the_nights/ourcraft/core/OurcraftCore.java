@@ -30,13 +30,14 @@ import com.the_nights.ourcraft.armory.proxy.ArmoryClientProxy;
 import com.the_nights.ourcraft.armory.proxy.ArmoryCommonProxy;
 import java.util.stream.Collectors;
 
-import com.the_nights.ourcraft.core.item.ItemCustomAxe;
-import com.the_nights.ourcraft.core.item.ItemCustomFireArm;
-import com.the_nights.ourcraft.core.item.ItemCustomHoe;
-import com.the_nights.ourcraft.core.item.ItemCustomKatana;
-import com.the_nights.ourcraft.core.item.ItemCustomPickAxe;
-import com.the_nights.ourcraft.core.item.ItemCustomShovel;
-import com.the_nights.ourcraft.core.item.ItemCustomSword;
+import com.the_nights.ourcraft.core.item.tools.ItemAxe;
+import com.the_nights.ourcraft.core.item.weapons.ItemFireArm;
+import com.the_nights.ourcraft.core.item.tools.ItemHoe;
+import com.the_nights.ourcraft.core.item.weapons.ItemKatana;
+import com.the_nights.ourcraft.core.item.tools.ItemPickAxe;
+import com.the_nights.ourcraft.core.item.tools.ItemShovel;
+import com.the_nights.ourcraft.core.item.weapons.ItemScythe;
+import com.the_nights.ourcraft.core.item.weapons.ItemSword;
 import com.the_nights.ourcraft.core.item.materials.ArmorMaterial;
 import com.the_nights.ourcraft.core.item.materials.RangedMaterial;
 import com.the_nights.ourcraft.core.item.materials.ToolMaterial;
@@ -62,14 +63,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
+import net.minecraft.item.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
@@ -146,19 +144,19 @@ public class OurcraftCore {
                     ObsidianItems.ingot = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_ingot")),
                     BlueGlassItems.ingot = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("blue_glass_ingot")),
                     BlueGlassItems.dust = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("blue_glass_dust")),
-                    // Weapons                    
-                    ObsidianItems.sword = new ItemCustomSword(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_sword")),
-                    ObsidianItems.katana = new ItemCustomKatana(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_katana")),
-                    EmaraldItems.katana = new ItemCustomKatana(ToolMaterial.Emarald, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_katana")),
-                    EmaraldItems.sword = new ItemCustomSword(ToolMaterial.Emarald, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_sword")),
-                    DiamondItem.katana = new ItemCustomKatana(ToolMaterial.Diamond, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("diamond_katana")),
-                    GoldenItems.katana = new ItemCustomKatana(ToolMaterial.Golden, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("gold_katana")),
-                    IronItems.katana = new ItemCustomKatana(ToolMaterial.Iron, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("iron_katana")),
-                    IronItems.musket = new ItemCustomFireArm(RangedMaterial.FLINTLOCK_MUSKET, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("flintlock_musket")),
-                    IronItems.blunderbuss = new ItemCustomFireArm(RangedMaterial.FLINTLOCK_BLUNDERBUSS, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("flintlock_blunderbuss")),
-                    IronItems.pistol = new ItemCustomFireArm(RangedMaterial.FLINTLOCK_PISTOL, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("flintlock_pistol")),
-                    StoneItems.katana = new ItemCustomKatana(ToolMaterial.Stone, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("stone_katana")),
-                    WoodenItem.katana = new ItemCustomKatana(ToolMaterial.Wood, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("wood_katana")),
+                    // Weapons
+                    ObsidianItems.sword = new ItemSword(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_sword")),
+                    ObsidianItems.katana = new ItemKatana(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_katana")),
+                    EmaraldItems.katana = new ItemKatana(ToolMaterial.Emarald, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_katana")),
+                    EmaraldItems.sword = new ItemSword(ToolMaterial.Emarald, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_sword")),
+                    DiamondItem.katana = new ItemKatana(ToolMaterial.Diamond, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("diamond_katana")),
+                    GoldenItems.katana = new ItemKatana(ToolMaterial.Golden, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("gold_katana")),
+                    IronItems.katana = new ItemKatana(ToolMaterial.Iron, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("iron_katana")),
+                    IronItems.musket = new ItemFireArm(RangedMaterial.FLINTLOCK_MUSKET, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("flintlock_musket")),
+                    IronItems.blunderbuss = new ItemFireArm(RangedMaterial.FLINTLOCK_BLUNDERBUSS, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("flintlock_blunderbuss")),
+                    IronItems.pistol = new ItemFireArm(RangedMaterial.FLINTLOCK_PISTOL, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("flintlock_pistol")),
+                    StoneItems.katana = new ItemKatana(ToolMaterial.Stone, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("stone_katana")),
+                    WoodenItem.katana = new ItemKatana(ToolMaterial.Wood, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("wood_katana")),
                     // Firearms
 
                     MiscItems.blunderAmmo = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("blunderbuss_ammo")),
@@ -188,14 +186,14 @@ public class OurcraftCore {
                     BlueGlassArmor.leggings = new ArmorItem(ArmorMaterial.blue_glass, EquipmentSlotType.LEGS, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("blue_glass_leggings")),
                     BlueGlassArmor.boots = new ArmorItem(ArmorMaterial.blue_glass, EquipmentSlotType.FEET, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("blue_glass_boots")),
                     // Tools 
-                    ObsidianItems.axe = new ItemCustomAxe(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_axe")),
-                    ObsidianItems.hoe = new ItemCustomHoe(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_hoe")),
-                    ObsidianItems.pickaxe = new ItemCustomPickAxe(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_pickaxe")),
-                    ObsidianItems.spade = new ItemCustomShovel(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_spade")),
-                    EmaraldItems.axe = new ItemCustomAxe(ToolMaterial.Emarald, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_axe")),
-                    EmaraldItems.hoe = new ItemCustomHoe(ToolMaterial.Emarald, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_hoe")),
-                    EmaraldItems.pickaxe = new ItemCustomPickAxe(ToolMaterial.Emarald, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_pickaxe")),
-                    EmaraldItems.spade = new ItemCustomShovel(ToolMaterial.Emarald, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_spade")),
+                    ObsidianItems.axe = new ItemAxe(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_axe")),
+                    ObsidianItems.hoe = new ItemScythe(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_hoe")),
+                    ObsidianItems.pickaxe = new ItemPickAxe(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_pickaxe")),
+                    ObsidianItems.spade = new ItemShovel(ToolMaterial.Obsidian, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_spade")),
+                    EmaraldItems.axe = new ItemAxe(ToolMaterial.Emarald, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_axe")),
+                    EmaraldItems.hoe = new ItemHoe(ToolMaterial.Emarald, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_hoe")),
+                    EmaraldItems.pickaxe = new ItemPickAxe(ToolMaterial.Emarald, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_pickaxe")),
+                    EmaraldItems.spade = new ItemShovel(ToolMaterial.Emarald, new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("emarald_spade")),
                     // Misc Items 
 
                     // Coins
