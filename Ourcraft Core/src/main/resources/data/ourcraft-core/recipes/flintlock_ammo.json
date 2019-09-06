@@ -10,7 +10,7 @@
             {
                 
                 "B": {
-                    "item": "minecraft:iron_ingot"
+                    "item": "ourcraft-core:lead_ingot"
                 },
                 "P": {
                     "item": "minecraft:gunpowder"

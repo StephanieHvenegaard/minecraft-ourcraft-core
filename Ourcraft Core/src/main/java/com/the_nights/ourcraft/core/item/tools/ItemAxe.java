@@ -23,25 +23,21 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
  */
-package com.the_nights.ourcraft.core.tap;
+package com.the_nights.ourcraft.core.item.tools;
 
-import com.the_nights.ourcraft.core.lists.items.ObsidianItems;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import com.the_nights.ourcraft.core.item.materials.ToolMaterial;
+import net.minecraft.item.AxeItem;
+import net.minecraft.item.IItemTier;
 
 /**
  *
  * @author Stephanie
  */
-public class OurcraftCoreTap extends ItemGroup {
+public class ItemAxe extends AxeItem{
 
-    public OurcraftCoreTap() {
-        super("ourcraft_core");
+    public ItemAxe(IItemTier itemTier, Properties props) {
+        super(itemTier, -0.5f,((ToolMaterial)itemTier).getSpeed(), props);
     }
-
-    @Override
-    public ItemStack createIcon() {
-        return new ItemStack(ObsidianItems.ingot);
-    }
-
+    
+    
 }

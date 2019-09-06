@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "ourcraft-core:lead_ore"
+  },
+  "result": "ourcraft-core:lead_ingot",
+  "experience": 0.1
+}
+
