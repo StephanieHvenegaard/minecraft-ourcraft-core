@@ -23,21 +23,22 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
  */
-package com.the_nights.ourcraft.core.item;
+package com.the_nights.ourcraft.core.item.weapons;
 
 import com.the_nights.ourcraft.core.item.materials.ToolMaterial;
-import net.minecraft.item.AxeItem;
 import net.minecraft.item.IItemTier;
+import net.minecraft.item.Item;
+import net.minecraft.item.SwordItem;
 
 /**
  *
  * @author Stephanie
  */
-public class ItemCustomAxe extends AxeItem{
+public class ItemSword extends SwordItem{
 
-    public ItemCustomAxe(IItemTier itemTier, Properties props) {       
-        super(itemTier, -0.5f,((ToolMaterial)itemTier).getSpeed(), props);
+    public ItemSword(IItemTier itemTier, Item.Properties props) {
+        super(itemTier, 0, -2.6f, props);
     }
-    
+
     
 }

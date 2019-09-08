@@ -1,5 +1,5 @@
 {
-    "parent": "item/generated",
+    "parent": "ourcraft-core:item/flintlock_pistol",
     "textures": {
         "layer0": "ourcraft-core:item/flintlock_pistol_loaded"
     }

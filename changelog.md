@@ -1,5 +1,11 @@
 # Change log
 
+## Version 0.2.3 for minecraft 1.14.4
+
+- added blunderbuss ammo, a seperate ammo type for shootgun type weapons
+- added lead ingot / nuggets
+- change flintlock ammo to use lead.
+
 ## Version 0.2.2 for minecraft 1.14.4
 
 - added 3 new ores, Uran - Thorium - lead (Stephanie)

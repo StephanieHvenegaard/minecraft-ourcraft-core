@@ -5,9 +5,7 @@
  */
 package com.the_nights.ourcraft.core.item.parts;
 
-import com.the_nights.ourcraft.core.item.ItemCustomFireArm;
 import com.the_nights.ourcraft.core.item.materials.RangedMaterial;
-import net.minecraft.item.ItemStack;
 
 /**
  *

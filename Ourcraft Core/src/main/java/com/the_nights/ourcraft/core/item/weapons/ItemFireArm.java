@@ -3,26 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.the_nights.ourcraft.core.item;
+package com.the_nights.ourcraft.core.item.weapons;
 
-import com.electronwill.nightconfig.core.conversion.SpecStringInArray;
 import com.google.common.collect.Lists;
 import com.the_nights.ourcraft.core.item.materials.RangedMaterial;
 import com.the_nights.ourcraft.core.OurcraftCore;
-import com.the_nights.ourcraft.core.item.parts.FirearmPart;
-import com.the_nights.ourcraft.core.lists.items.MiscItems;
 import com.the_nights.ourcraft.core.lists.items.tags.CoreItemTags;
-
-import it.unimi.dsi.fastutil.Stack;
 
 import java.util.List;
 import java.util.Random;
 
-import net.minecraft.item.Items;
-import net.minecraft.item.ShootableItem;
-import net.minecraft.tags.ItemTags;
-import net.minecraft.tags.Tag;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.util.ResourceLocation;
 import java.util.function.Predicate;
 import javax.annotation.Nullable;
@@ -36,13 +27,8 @@ import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
-import net.minecraft.item.ArrowItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.CrossbowItem;
-import static net.minecraft.item.CrossbowItem.getChargeTime;
-import net.minecraft.item.UseAction;
+
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.nbt.ListNBT;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
@@ -50,10 +36,8 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.NBTTextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -62,16 +46,19 @@ import net.minecraftforge.api.distmarker.OnlyIn;
  *
  * @author Stephanie
  */
-public class ItemCustomFireArm extends ShootableItem {
+public class ItemFireArm extends ShootableItem {
 
     public static final Predicate<ItemStack> AMMUNITION_MUSKET = (stack) -> {
         return stack.getItem().isIn(CoreItemTags.FLINTLOCK_AMMO);
+    };
+    public static final Predicate<ItemStack> AMMUNITION_BLUNDERBUSS = (stack) -> {
+        return stack.getItem().isIn(CoreItemTags.BLUNDERBUSS_AMMO);
     };
 
     private RangedMaterial specs;
     private static String isLoadedTag = "charged";
 
-    public ItemCustomFireArm(RangedMaterial rangedspecs, Properties props) {
+    public ItemFireArm(RangedMaterial rangedspecs, Properties props) {
         super(props.maxStackSize(1));
         //firearmPart = new FirearmPart(rangedspecs);
         this.specs = rangedspecs;
@@ -113,15 +100,13 @@ public class ItemCustomFireArm extends ShootableItem {
 
     @Override
     public boolean isCrossbow(ItemStack is) {
-        return is.getItem() instanceof ItemCustomFireArm;
+        return true;
     }
 
     @Override
     public void onUsingTick(ItemStack is, LivingEntity le, int i) {
         super.onUsingTick(is, le, i); // To change body of generated methods, choose Tools | Templates.
-
     }
-
     /**
      * Called to trigger the item's "innate" right click behavior. To handle
      * when this item is used on a Block, see {@link #onItemUse}.
@@ -255,8 +240,8 @@ public class ItemCustomFireArm extends ShootableItem {
      */
     public static int getChargeTime(ItemStack stack) {
         int reloadtime = 25;
-        if (stack.getItem() instanceof ItemCustomFireArm) {
-            ItemCustomFireArm firearm = (ItemCustomFireArm) stack.getItem();
+        if (stack.getItem() instanceof ItemFireArm) {
+            ItemFireArm firearm = (ItemFireArm) stack.getItem();
             reloadtime = firearm.specs.reloadTime;
         }
         int i = EnchantmentHelper.getEnchantmentLevel(Enchantments.QUICK_CHARGE, stack);
@@ -271,9 +256,10 @@ public class ItemCustomFireArm extends ShootableItem {
     public Predicate<ItemStack> getInventoryAmmoPredicate() {
         // OurcraftCore.LOGGER.info("Ammo type: " + specs.ammoType);
         switch (specs.ammoType) {
-
-            case FLINT_LOCK_MUSKET_AMMO:
             case FLINT_LOCK_BLUNDERBUSS_AMMO:
+                OurcraftCore.LOGGER.info("found blunderbuss ammo");
+                return AMMUNITION_BLUNDERBUSS;
+            case FLINT_LOCK_MUSKET_AMMO:
             case FLINT_LOCK_PISTOL_AMMO:
                 //       OurcraftCore.LOGGER.info("found ammo");
                 return AMMUNITION_MUSKET;
@@ -330,8 +316,8 @@ public class ItemCustomFireArm extends ShootableItem {
             float p_220014_4_, float p_220014_5_) {
         int projectiles = 1;
         float spread = 0.0f;
-        if (weapon.getItem() instanceof ItemCustomFireArm) {
-            ItemCustomFireArm firearm = (ItemCustomFireArm) weapon.getItem();
+        if (weapon.getItem() instanceof ItemFireArm) {
+            ItemFireArm firearm = (ItemFireArm) weapon.getItem();
             projectiles = firearm.specs.ammoType.projectilesPerBullet;
             spread = firearm.specs.spread;
         }
@@ -385,8 +371,8 @@ public class ItemCustomFireArm extends ShootableItem {
             ((AbstractArrowEntity) iprojectile).pickupStatus = AbstractArrowEntity.PickupStatus.DISALLOWED;
 
             float velocityMod = 1.0f;
-            if (p_220016_3_.getItem() instanceof ItemCustomFireArm) {
-                ItemCustomFireArm firearm = (ItemCustomFireArm) p_220016_3_.getItem();
+            if (p_220016_3_.getItem() instanceof ItemFireArm) {
+                ItemFireArm firearm = (ItemFireArm) p_220016_3_.getItem();
                 velocityMod = firearm.specs.projectileVelocity;
             }
 

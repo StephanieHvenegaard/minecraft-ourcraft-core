@@ -23,7 +23,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
  */
-package com.the_nights.ourcraft.core.item;
+package com.the_nights.ourcraft.core.item.tools;
 
 import com.the_nights.ourcraft.core.item.materials.ToolMaterial;
 import net.minecraft.item.HoeItem;
@@ -34,9 +34,9 @@ import net.minecraft.item.Item;
  *
  * @author Stephanie
  */
-public class ItemCustomHoe extends HoeItem{
+public class ItemHoe extends HoeItem{
 
-    public ItemCustomHoe(IItemTier itemTier, Item.Properties props) {
+    public ItemHoe(IItemTier itemTier, Item.Properties props) {
         super(itemTier, ((ToolMaterial)itemTier).getSpeed(), props);
     }
     

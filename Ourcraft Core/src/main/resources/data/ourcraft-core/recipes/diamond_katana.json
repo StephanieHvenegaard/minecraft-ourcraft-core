@@ -3,8 +3,8 @@
     "pattern":
             [
                 "  I",
-                " I ",
-                "S  "
+                "NI ",
+                "SN "
             ],
     "key": 
             {
@@ -13,7 +13,11 @@
                 },
                 "S": {
                     "item": "minecraft:stick"
-                }
+                },
+              "N": {
+                "item": "minecraft:gold_nugget"
+              }
+
             },
     "result": {
         "item": "ourcraft-core:diamond_katana"
