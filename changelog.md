@@ -3,8 +3,11 @@
 ## Version 0.2.3 for minecraft 1.14.4
 
 - added blunderbuss ammo, a seperate ammo type for shootgun type weapons
+- fixed models for firearms to look rigth now. 
+- added gold nuggets to katana recies for balance purposes.
 - added lead ingot / nuggets
 - change flintlock ammo to use lead.
+- coin yeald is now up from 1 to 16.
 
 ## Version 0.2.2 for minecraft 1.14.4
 

@@ -86,14 +86,15 @@ public class ItemFireArm extends ShootableItem {
         List<ITextComponent> list1 = Lists.newArrayList();
         list1.add(new StringTextComponent(""));
         list1.add(new StringTextComponent("When in hands:").applyTextStyle(TextFormatting.GRAY));
-        if (isLoaded(stack)) {
-            list1.add(new StringTextComponent(" Loaded state : Loaded").applyTextStyle(TextFormatting.DARK_GREEN));
-        } else {
-            list1.add(new StringTextComponent(" Loaded state : Unloaded").applyTextStyle(TextFormatting.DARK_GREEN));
-        }
+        // if (isLoaded(stack)) {
+        //    list1.add(new StringTextComponent(" Loaded state : Loaded").applyTextStyle(TextFormatting.DARK_GREEN));
+        // } else {
+        //    list1.add(new StringTextComponent(" Loaded state : Unloaded").applyTextStyle(TextFormatting.DARK_GREEN));
+        // }
+        list1.add(new StringTextComponent(" " + specs.spread + "  Spread.").applyTextStyle(TextFormatting.DARK_GREEN));
         list1.add(new StringTextComponent(" " + specs.magazinCapasity + "  Magazin Capasity").applyTextStyle(TextFormatting.DARK_GREEN));
         list1.add(new StringTextComponent(" " + this.getChargeTime(stack) + "  ReloadSpeed").applyTextStyle(TextFormatting.DARK_GREEN));
-        list1.add(new StringTextComponent(" " + specs.ammoType.projectilesPerBullet + " X " + specs.ammoType.dmg + "  Attack Damage").applyTextStyle(TextFormatting.DARK_GREEN));
+        list1.add(new StringTextComponent(" " + specs.ammoType.projectilesPerBullet * specs.ammoType.dmg + "  Attack Damage").applyTextStyle(TextFormatting.DARK_GREEN));
 
         tooltip.addAll(list1);
     }
