@@ -1,5 +1,5 @@
 {
-    "itemGroup.ourcraft": "Ourcraft",
+    "itemGroup.ourcraft_core": "Ourcraft Core",
 
     "item.ourcraft-core.wooden_coin": "Wooden Coin",
     "item.ourcraft-core.iron_coin": "Iron Coin",
@@ -9,6 +9,9 @@
     "item.ourcraft-core.emarald_coin": "Emarald Coin",
 
     "item.ourcraft-core.obsidian_ingot": "Obsidian Ingot",
+    "item.ourcraft-core.lead_ingot": "Lead Ingot",
+    "item.ourcraft-core.lead_nugget": "Lead Nugget",
+
     "item.ourcraft-core.obsidian_sword": "Obsidian Sword",
     "item.ourcraft-core.obsidian_katana": "Obsidian Katana",
     "item.ourcraft-core.obsidian_axe": "Obsidian Axe",
@@ -59,6 +62,7 @@
     "item.ourcraft-core.flintlock_pistol": "Flintlock Pistol",
     "item.ourcraft-core.flintlock_blunderbuss": "Flintlock Blunderbuss",
     "item.ourcraft-core.flintlock_ammo": "Flintlock Ammunition",
+    "item.ourcraft-core.blunderbuss_ammo": "Blunderbuss Ammunition",
     "item.ourcraft-core.flintlock_blunderbuss_barrelassembly": "Flintlock blunderbuss Barrel",
     "item.ourcraft-core.flintlock_musket_barrelassembly": "Flintlock Musket Barrel",
     "item.ourcraft-core.gunstock": "Gunstock",
@@ -68,6 +72,4 @@
     "block.ourcraft-core.thorium_ore": "Thorium Ore",
     
     "block.ourcraft-core.obsidian_ingot_block": "Stacked Obsidian Ingots"
-    
-    
 }

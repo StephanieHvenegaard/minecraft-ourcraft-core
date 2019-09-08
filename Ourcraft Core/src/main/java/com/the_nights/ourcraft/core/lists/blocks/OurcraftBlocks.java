@@ -10,9 +10,21 @@ import net.minecraft.block.Block;
  * @author Stephanie
  */
 public class OurcraftBlocks {
+    // Radioactive ores
     public static Block UraniumOre;
-    public static Block LeadOre;
     public static Block ThoriumOre;
+
+    // Ores
+    public static Block LeadOre;
+    public static Block TinOre;
+    public static Block CopperOre;
+    public static Block SilverOre;
+
+    // storage blocks
     public static Block ObsidianIngotBlock;
-    
+    public static Block SilverBlock;
+    public static Block TinBlock;
+    public static Block CopperBlock;
+    public static Block BronzeBlock;
+
 }

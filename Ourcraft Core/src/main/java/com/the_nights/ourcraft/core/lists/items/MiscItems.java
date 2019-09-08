@@ -13,16 +13,21 @@ import net.minecraft.item.Item;
  */
 public class MiscItems {
       public static Item flintlockAmmo;
+      public static Item blunderAmmo;
       //public static Item flintlock;
       public static Item gunstock;
       public static Item musketBarrelAssembly;
       public static Item blunderBarrelAssembly;      
       //Blocks
-      public static Item ObsidianIngotBlockItem;
+      public static Item obsidianIngotBlockItem;
       // Ores 
-      public static Item UraniumOreItem;
-      public static Item LeadOreItem;
-      public static Item ThoriumOreItem;
+      public static Item uraniumOreItem;
+      public static Item leadOreItem;
+      public static Item thoriumOreItem;
       // Ingots
+      public static Item leadIngot;
+
+      // nuggets
+      public static Item leadNugget;
             
 }
