@@ -141,9 +141,9 @@ public class ItemFireArm extends ShootableItem {
         } else {
             Predicate<ItemStack> predicate = getAmmoPredicate();
             ItemStack itemstack = ShootableItem.getHeldAmmo(playerIn, predicate);
-            OurcraftCore.LOGGER.info("looking for ammo predicate. " + predicate + " is empty: " + itemstack);
+            OurcraftCore.LOGGER.debug("looking for ammo predicate. " + predicate + " is empty: " + itemstack);
             if (!itemstack.isEmpty()) {
-                OurcraftCore.LOGGER.info("found ammo, " + itemstack);
+                OurcraftCore.LOGGER.debug("found ammo, " + itemstack);
                 return itemstack;
             } else {
                 predicate = getInventoryAmmoPredicate();
@@ -168,12 +168,12 @@ public class ItemFireArm extends ShootableItem {
     @Override
     public void onPlayerStoppedUsing(ItemStack stack, World worldIn, LivingEntity entityLiving, int timeLeft) {
         int i = this.getUseDuration(stack) - timeLeft;
-        OurcraftCore.LOGGER.info("Time left is : " + timeLeft);
+        OurcraftCore.LOGGER.debug("Time left is : " + timeLeft);
         float f = getCharge(i, stack);
         if (f >= 1.0F && hasAmmo(entityLiving, stack)) {
-            OurcraftCore.LOGGER.info("starting loading.");
+            OurcraftCore.LOGGER.debug("starting loading.");
             if (!isLoaded(stack)) {
-                OurcraftCore.LOGGER.info("loading weapon.");
+                OurcraftCore.LOGGER.debug("loading weapon.");
                 setLoaded(stack, true);
                 SoundCategory soundcategory = entityLiving instanceof PlayerEntity ? SoundCategory.PLAYERS
                         : SoundCategory.HOSTILE;
@@ -189,7 +189,7 @@ public class ItemFireArm extends ShootableItem {
         int j = 1; // i == 0 ? 1 : 3;
         boolean flag = entityIn instanceof PlayerEntity && ((PlayerEntity) entityIn).abilities.isCreativeMode;
         ItemStack itemstack = entityIn instanceof PlayerEntity ? this.findAmmo((PlayerEntity) entityIn, stack) : entityIn.findAmmo(stack);
-        OurcraftCore.LOGGER.info("item stack : " + itemstack);
+        OurcraftCore.LOGGER.debug("item stack : " + itemstack);
         ItemStack itemstack1 = itemstack.copy();
 
         for (int k = 0; k < j; ++k) {
@@ -258,7 +258,7 @@ public class ItemFireArm extends ShootableItem {
         // OurcraftCore.LOGGER.info("Ammo type: " + specs.ammoType);
         switch (specs.ammoType) {
             case FLINT_LOCK_BLUNDERBUSS_AMMO:
-                OurcraftCore.LOGGER.info("found blunderbuss ammo");
+                OurcraftCore.LOGGER.debug("found blunderbuss ammo");
                 return AMMUNITION_BLUNDERBUSS;
             case FLINT_LOCK_MUSKET_AMMO:
             case FLINT_LOCK_PISTOL_AMMO:
