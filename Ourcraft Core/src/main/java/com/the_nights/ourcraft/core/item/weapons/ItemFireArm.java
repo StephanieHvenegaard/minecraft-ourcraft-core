@@ -375,6 +375,7 @@ public class ItemFireArm extends ShootableItem {
             if (p_220016_3_.getItem() instanceof ItemFireArm) {
                 ItemFireArm firearm = (ItemFireArm) p_220016_3_.getItem();
                 velocityMod = firearm.specs.projectileVelocity;
+                ((AbstractArrowEntity) iprojectile).setDamage(firearm.specs.ammoType.dmg);
             }
 
             Vec3d vec3d1 = p_220016_1_.func_213286_i(1.0F);
@@ -398,11 +399,12 @@ public class ItemFireArm extends ShootableItem {
                 : Items.ARROW);
         AbstractArrowEntity abstractarrowentity = arrowitem.createArrow(p_220024_0_, p_220024_3_, p_220024_1_);
         if (p_220024_1_ instanceof PlayerEntity) {
-            abstractarrowentity.setIsCritical(true);
+            abstractarrowentity.setIsCritical(false);
         }
 
         abstractarrowentity.setHitSound(SoundEvents.ITEM_CROSSBOW_HIT);
         abstractarrowentity.func_213865_o(true);
+
         // int i = EnchantmentHelper.getEnchantmentLevel(Enchantments.PIERCING,
         // p_220024_2_);
         // if (i > 0) {
