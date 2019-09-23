@@ -23,6 +23,3 @@ run
 
 # Files from Forge MDK
 forge*changelog.txt
-/ourcraft-mod/.nb-gradle/
-ourcraft-mod/\.vscode/settings\.json
-/.nb-gradle/
