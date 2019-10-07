@@ -37,7 +37,7 @@ import net.minecraft.item.Item;
 public class ItemHoe extends HoeItem{
 
     public ItemHoe(IItemTier itemTier, Item.Properties props) {
-        super(itemTier, ((ToolMaterial)itemTier).getSpeed(), props);
+        super(itemTier, 0.0f, props);
     }
     
     
