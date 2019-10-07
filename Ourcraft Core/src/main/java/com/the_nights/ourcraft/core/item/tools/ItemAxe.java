@@ -36,8 +36,6 @@ import net.minecraft.item.IItemTier;
 public class ItemAxe extends AxeItem{
 
     public ItemAxe(IItemTier itemTier, Properties props) {
-        super(itemTier, -0.5f,((ToolMaterial)itemTier).getSpeed(), props);
+        super(itemTier, 2.0f,-3.0f, props);
     }
-    
-    
 }
