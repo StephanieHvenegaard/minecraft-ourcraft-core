@@ -22,7 +22,7 @@ import net.minecraft.util.SoundEvent;
  * @author Stephanie
  */
 public enum ArmorMaterial implements IArmorMaterial {
-    obsidian("obsidian",  200, 18, 10, 12, 9, 7, 3.0f, ObsidianItems.ingot),
+    obsidian("obsidian",  200, 10, 10, 12, 9, 7, 3.0f, ObsidianItems.ingot),
     Sapphire("sapphire",  200, 25, 10, 12, 9, 7, 3.0f, PinkSapphireItems.ingot),
     blue_glass("blue_glass",  200, 25, 3, 7, 5, 3, 1.0f, BlueGlassItems.ingot),
     wood("wooden",  2, 2, 1, 1,1, 1, 1.0f, null),
