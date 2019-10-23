@@ -37,7 +37,7 @@ import net.minecraft.item.PickaxeItem;
 public class ItemPickAxe extends PickaxeItem{
 
     public ItemPickAxe(IItemTier itemTier, Item.Properties props) {
-        super(itemTier, -1, ((ToolMaterial)itemTier).getSpeed(), props);
+        super(itemTier, -1, -2.8f, props);
     }
     
     

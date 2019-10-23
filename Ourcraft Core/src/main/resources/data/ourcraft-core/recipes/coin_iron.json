@@ -1,21 +1,19 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern":
-            [
-                "II",            
-                "IS"
-            ],
-    "key": 
-            {
-                "S": {
-                    "item": "minecraft:emerald"
-                },
-                "I": {
-                    "item": "minecraft:iron_ingot"
-                }
-            },
-    "result": {
-        "item": "ourcraft-core:iron_coin"
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "II",
+    "IS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:emerald"
     },
-    "count" : 16
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "ourcraft-core:iron_coin",
+    "count": 16
+  }
 }

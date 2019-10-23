@@ -37,7 +37,7 @@ import net.minecraft.item.ShovelItem;
 public class ItemShovel extends ShovelItem{
 
     public ItemShovel(IItemTier itemTier, Item.Properties props) {
-        super(itemTier, -0.5f, ((ToolMaterial)itemTier).getSpeed()-2.0f, props);
+        super(itemTier, -1.5f, -3.0f, props);
     }
     
     
