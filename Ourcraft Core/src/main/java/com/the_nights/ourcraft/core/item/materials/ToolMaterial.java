@@ -51,7 +51,7 @@ public enum ToolMaterial implements IItemTier {
     // Iron 9	
     // turtle 9
     // Diamond 10
-    Obsidian(15.0f, 5.0f, 25.0f, 1562 * 10, 3, 9, ObsidianItems.ingot),
+    Obsidian(15.0f, 5.0f, 20.0f, 1562 * 10, 3, 18, ObsidianItems.ingot),
     Emarald(10.0f, 3.0f, 15.0f, 1562 * 2, 3, 12, Items.EMERALD),
     Diamond(5.0f, 1.0f, 1.0f, 1562, 3, 10, Items.DIAMOND),
     Iron(4.0f, 1.0f, 1.0f, 251, 2, 9, Items.IRON_INGOT),
