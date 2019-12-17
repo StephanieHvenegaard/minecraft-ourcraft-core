@@ -1,8 +1,9 @@
 # Change log
 
 ## Version 0.2.4 for minecraft 1.14.4
-Tested with forge : 28.0.95
+Tested with forge : 28.1.39
 
+- fixed emerald tools recipies.
 
 ## Version 0.2.3 for minecraft 1.14.4
 Tested with forge : 28.0.95
@@ -25,7 +26,6 @@ Tested with forge : 28.0.95
 - added reload animation for firearms (Stephanie)
 - made the mod modular ready. meaning this will become the core component. (Stephanie)
 - fixed firearms, so now they use own ammo instead of arrows. (Stephanie)
-
 
 ## Version 0.2.0 for minecraft 1.14.3
 
