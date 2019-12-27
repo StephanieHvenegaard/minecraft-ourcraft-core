@@ -12,12 +12,6 @@ import net.minecraft.item.Item;
  * @author Stephanie
  */
 public class MiscItems {
-      public static Item flintlockAmmo;
-      public static Item blunderAmmo;
-      //public static Item flintlock;
-      public static Item gunstock;
-      public static Item musketBarrelAssembly;
-      public static Item blunderBarrelAssembly;      
       //Blocks
       public static Item obsidianIngotBlockItem;
       // Ores 

@@ -25,7 +25,6 @@ SOFTWARE.
  */
 package com.the_nights.ourcraft_core.tap;
 
-import com.the_nights.ourcraft_core.lists.items.ObsidianItems;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
