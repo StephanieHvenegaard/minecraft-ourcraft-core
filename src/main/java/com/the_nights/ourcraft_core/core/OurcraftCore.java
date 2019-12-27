@@ -103,7 +103,6 @@ public class OurcraftCore {
     // Event bus for receiving Registry Events)
     @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, modid = OurcraftCore.MODID)
     public static class RegistryEvents {
-
         @SubscribeEvent
         public static void registerItems(final RegistryEvent.Register<Item> event) {
             // register a new item here           
@@ -117,7 +116,6 @@ public class OurcraftCore {
                     MiscItems.leadNugget = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("lead_nugget")),
                     MiscItems.leadIngot = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("lead_ingot")),
                     ObsidianItems.ingot = new Item(new Item.Properties().group(OURCRAFT_GROUP)).setRegistryName(getLocation("obsidian_ingot")),
-
                     // Misc Items 
 
                     // Coins
