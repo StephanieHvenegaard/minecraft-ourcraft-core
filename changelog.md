@@ -1,5 +1,12 @@
 # Change log
 
+## Version 0.3.0 for minecraft 1.14.4
+Tested with forge : 28.1.106
+
+- Removed all things associated with the armory from core.
+- rebalance the Lead to not spawn everywhere.
+- added a posibility for a config.
+
 ## Version 0.2.6 for minecraft 1.14.4
 Tested with forge : 28.1.39
 
