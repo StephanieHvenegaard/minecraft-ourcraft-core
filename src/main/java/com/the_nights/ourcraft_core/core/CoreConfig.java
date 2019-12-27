@@ -9,8 +9,10 @@ import java.util.List;
 
 @Mod.EventBusSubscriber
 public class CoreConfig {
-    
+/*
         protected static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
+
+        protected static final ForgeConfigSpec SPEC = BUILDER.build();
 
         public static final Logs logs = new Logs();
         public static final Leaves leaves = new Leaves();
@@ -78,6 +80,8 @@ public class CoreConfig {
                 CoreConfig.BUILDER.pop();
             }
         }
-        protected static final ForgeConfigSpec SPEC = BUILDER.build();
+
+ */
+
 
 }
