@@ -12,12 +12,5 @@ import net.minecraft.item.Item;
  * @author Stephanie
  */
 public class EmaraldItems {
-
-    public static Item katana;
-    public static Item pickaxe;
-    public static Item axe;
-    public static Item spade;
-    public static Item hoe;
-    public static Item sword;
     public static Item ingot;
 }
