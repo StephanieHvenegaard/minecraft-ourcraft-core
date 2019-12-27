@@ -22,11 +22,11 @@ import net.minecraftforge.registries.ForgeRegistries;
  */
 public class OreGeneration {
 
-    private static CountRangeConfig lead_ore_plancement = new CountRangeConfig(20, 3, 0, 150);
-    static int lead_ore_chance = 15;
-    private static CountRangeConfig uran_ore_plancement = new CountRangeConfig(20, 3, 0, 150);    
-    static int uran_ore_chance = 2;    
-    private static CountRangeConfig thorium_ore_plancement = new CountRangeConfig(20, 3, 0, 20);
+    private static CountRangeConfig lead_ore_plancement = new CountRangeConfig(8, 3, 0, 150);
+    static int lead_ore_chance = 8;
+    private static CountRangeConfig uran_ore_plancement = new CountRangeConfig(8, 3, 0, 150);
+    static int uran_ore_chance = 4;
+    private static CountRangeConfig thorium_ore_plancement = new CountRangeConfig(3, 3, 0, 20);
     static int thorium_ore_chance =1;
 
     public static void setupOregeneration() {

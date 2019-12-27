@@ -20,6 +20,11 @@ public class OurcraftBlocks {
     public static Block CopperOre;
     public static Block SilverOre;
 
+    //Gems
+    public static Block RubinGem;
+    public static Block SafireGem;
+    public static Block Gem;
+
     // storage blocks
     public static Block ObsidianIngotBlock;
     public static Block SilverBlock;
