@@ -1,1 +1,20 @@
+{
+  "itemGroup.ourcraft_core": "Ourcraft Core",
+
+  "item.ourcraft-core.wooden_coin": "Wooden Coin",
+  "item.ourcraft-core.iron_coin": "Iron Coin",
+  "item.ourcraft-core.gold_coin": "Gold Coin",
+  "item.ourcraft-core.golden_diamond_coin": "Golden Diamond Coin",
+  "item.ourcraft-core.diamond_coin": "Diamond Coin",
+  "item.ourcraft-core.emarald_coin": "Emarald Coin",
+
+  "item.ourcraft-core.obsidian_ingot": "Obsidian Ingot",
+  "item.ourcraft-core.lead_ingot": "Lead Ingot",
+  "item.ourcraft-core.lead_nugget": "Lead Nugget",
+  "block.ourcraft-core.lead_ore": "Lead Ore",
+  "block.ourcraft-core.uran_ore": "Uranium Ore",
+  "block.ourcraft-core.thorium_ore": "Thorium Ore",
+
+  "block.ourcraft-core.obsidian_ingot_block": "Stacked Obsidian Ingots"
+}
 
