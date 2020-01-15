@@ -1,5 +1,11 @@
 # Change log
 
+## Version 0.4.0 for minecraft 1.14.4
+Tested with forge : 28.1.114
+
+- updated version number and forge.
+- found a unused click event that has now been removed. 
+
 ## Version 0.3.0 for minecraft 1.14.4
 Tested with forge : 28.1.106
 
